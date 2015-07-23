@@ -1,0 +1,16 @@
+alembic
+Flask
+Flask-Migrate
+Flask-Script
+Flask-SQLAlchemy
+itsdangerous
+Jinja2
+Mako
+MarkupSafe
+mosquitto
+paho-mqtt
+pip
+setuptools
+SQLAlchemy
+Werkzeug
+wheel
