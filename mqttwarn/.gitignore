@@ -1,0 +1,12 @@
+*.pyc
+*.confc
+.DS_Store
+mqttwarn.conf
+*.log
+*.conf
+prowlpy.py
+pushbullet.py
+mqttwarn.ini
+run.sh
+pynsca.py
+pastebin.py
