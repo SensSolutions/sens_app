@@ -17,7 +17,7 @@ class App():
         self.stdin_path = '/dev/null'
         self.stdout_path = '/dev/tty'
         self.stderr_path = '/dev/tty'
-        self.pidfile_path = '/var/run/testdaemon/testdaemon.pid'
+        self.pidfile_path = 'run/testdaemon.pid'
         self.pidfile_timeout = 5
 
     def run(self):
@@ -32,10 +32,24 @@ class App():
             time.sleep(10)
 
 app = App()
+
+# create logger
+logger = logging.getLogger('PSENSv0.1')
+logger.setLevel(logging.DEBUG)
+
+# create console handler and set level to debug
+ch = logging.StreamHandler()
+ch.setLevel(logging.DEBUG)
+
+# create formatter
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(funcName)s - %(lineno)d - %(message)s')
+
+
+
 logger = logging.getLogger("DaemonLog")
 logger.setLevel(logging.INFO)
 formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
-handler = logging.FileHandler("/var/log/testdaemon/testdaemon.log")
+handler = logging.FileHandler("log/testdaemon.log")
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 
