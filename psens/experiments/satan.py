@@ -3,6 +3,7 @@
 import sys, time
 from daemon import Daemon
 
+
 class MyDaemon(Daemon):
 	def run(self):
 		while True:

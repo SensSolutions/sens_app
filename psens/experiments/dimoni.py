@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 
 # To kick off the script, run the following from the python directory:
@@ -17,7 +18,7 @@ class App():
         self.stdin_path = '/dev/null'
         self.stdout_path = '/dev/tty'
         self.stderr_path = '/dev/tty'
-        self.pidfile_path = 'run/testdaemon.pid'
+        self.pidfile_path = '/Users/mcollado/Coding/rasp-tempsensor/psens/experiments/run/testdaemon.pid'
         self.pidfile_timeout = 5
 
     def run(self):
@@ -32,19 +33,6 @@ class App():
             time.sleep(10)
 
 app = App()
-
-# create logger
-logger = logging.getLogger('PSENSv0.1')
-logger.setLevel(logging.DEBUG)
-
-# create console handler and set level to debug
-ch = logging.StreamHandler()
-ch.setLevel(logging.DEBUG)
-
-# create formatter
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(funcName)s - %(lineno)d - %(message)s')
-
-
 
 logger = logging.getLogger("DaemonLog")
 logger.setLevel(logging.INFO)
