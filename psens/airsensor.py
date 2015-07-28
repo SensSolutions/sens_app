@@ -59,8 +59,14 @@ def airSensor(org, place, brokerIP, clientId, cfgfile):
                 logger.debug(tjson)
                 logger.debug(hjson)
 
-                publish.single(topic + sensorName + "/temperature" , tjson, hostname = brokerIP, client_id= clientId, will=None, auth=None, tls=None)
-                publish.single(topic + sensorName + "/humidity" , hjson, hostname = brokerIP, client_id= clientId, will=None, auth=None, tls=None)
+                try: 
+                    publish.single(topic + sensorName + "/temperature", tjson, hostname=brokerIP, client_id=clientId, will=None, auth=None, tls=None)
+                    publish.single(topic + sensorName + "/humidity", hjson, hostname=brokerIP, client_id=clientId, will=None, auth=None, tls=None)
+                    logger.debug("Temperature & Humidity sent")
+                except:
+                    logger.warning("Connecting Error")
+                    # implement a cache file to avoid loose mesurements
+                    # when no connection
 
                 if (writeLog):
                     with open(logName, 'a') as logfile:

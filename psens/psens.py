@@ -27,26 +27,35 @@ import airsensor
 logger = logging.getLogger('PSENSv0.1')
 logger.setLevel(logging.DEBUG)
 
-# create console handler and set level to debug
+# create file handler which logs even debug messages
+fh = logging.FileHandler('log/debug.log')
+fh.setLevel(logging.DEBUG)
+
+# create console handler with a higher log level
 ch = logging.StreamHandler()
-ch.setLevel(logging.DEBUG)
+ch.setLevel(logging.WARNING)
 
 # create formatter
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(funcName)s - %(lineno)d - %(message)s')
 
-# add formatter to ch
+# add formatters
 ch.setFormatter(formatter)
-
-# add ch to logger
+fh.setFormatter(formatter)
+# add the handlers to logger
 logger.addHandler(ch)
+logger.addHandler(fh)
+
+Config = SafeConfigParser()
 
 if len(sys.argv) > 2:
     print "Too much arguments"
-    print "Usage " + str(sys.argv[0]) + "configuration.conf"
+    print "Usage " + str(sys.argv[0]) + "psens.cfg"
 else:
     cfgfile = str(sys.argv[1])
 
-Config = SafeConfigParser()
+if len(sys.argv) == 1:
+    cfgfile = "psens.cfg"
+
 Config.read(cfgfile)
 
 brokerIP   = Config.get('Broker', 'broker_ip')

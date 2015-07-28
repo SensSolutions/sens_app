@@ -14,8 +14,9 @@ def pControl(org, place, brokerIP, clientId):
             logger.debug(org + "/" + place + "/" + "internal/status/ErrorCode = 0")
             if (login):
                 logger.debug(login)
-                # with open(logName, 'a') as logfile:
-                #    logfile.write(logon + "\n")
+
         except:
             logger.warning("Connecting Error")
+            with open(logName, 'a') as logfile:
+                logfile.write(logon + "\n")
         time.sleep(30)

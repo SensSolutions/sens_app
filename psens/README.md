@@ -16,11 +16,13 @@ Temperature Sensor Monitoring
 
 ##TODO
 
- * Automaticaly create output name from sensor version and pin used, or by user choice.
- * Verify that multiple sensors and applications instances works correctly.
+ * Make resilience for connecting errors (create a temporary cache file where write JSON and send one by one where the connection will recover)
+ * Daemonize code (and create startup scripts).
+ ** http://code.activestate.com/recipes/278731/
+ ** http://www.jejik.com/articles/2007/02/a_simple_unix_linux_daemon_in_python/
  * Correct reading errors (sensor return incorrect values).
  * Do a sensor analyse function to calibrate sensor.
- * Daemonize code (and create startup scripts).
+
 
 ##Copyright
 
@@ -28,12 +30,5 @@ Temperature Sensor Monitoring
 * Parts from [Cacti documentation](http://docs.cacti.net/manual:088:3a_advanced_topics.1_data_input_methods#making_your_scripts_work_with_cacti)
 * https://www.eclipse.org/paho/clients/python/docs/
 
-##TODO
-* Add protection from sensor error readings (Â X % last value)
-* Move settings to a external file
-** http://pymotw.com/2/ConfigParser/index.html
-* Capture signal handling (^C and friends)
-* Write logs somewhere?
-* Daemonize?
-** http://code.activestate.com/recipes/278731/
-** http://www.jejik.com/articles/2007/02/a_simple_unix_linux_daemon_in_python/
+
+

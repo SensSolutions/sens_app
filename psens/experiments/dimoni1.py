@@ -11,6 +11,7 @@ import time
 # third party libs
 from daemon import runner
 
+print "Before class load"
 
 class App():
 
@@ -32,16 +33,19 @@ class App():
             logger.error("Error message")
             time.sleep(10)
 
-app = App()
-
 logger = logging.getLogger("DaemonLog")
 logger.setLevel(logging.INFO)
 formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
-handler = logging.FileHandler("log/testdaemon.log")
+handler = logging.FileHandler("./log/testdaemon.log")
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 
+print "Starting app"
+app = App()
+
 daemon_runner = runner.DaemonRunner(app)
-# This ensures that the logger file handle does not get closed during daemonization
+print "Daemonizing app"
+# This ensures that the logger file handle does not get closed
+# during daemonization
 daemon_runner.daemon_context.files_preserve = [handler.stream]
 daemon_runner.do_action()
