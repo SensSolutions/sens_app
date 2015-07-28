@@ -1,0 +1,48 @@
+2015-07-28 13:10:03,655 - PSENSv0.1 - DEBUG - run - 109 - Starting main loop
+2015-07-28 13:10:03,656 - PSENSv0.1 - DEBUG - run - 112 - Starting Main
+2015-07-28 13:10:03,656 - PSENSv0.1 - DEBUG - info - 84 - main line
+2015-07-28 13:10:03,656 - PSENSv0.1 - DEBUG - info - 85 - debug message
+2015-07-28 13:10:03,657 - PSENSv0.1 - DEBUG - info - 88 - parent process : 1
+2015-07-28 13:10:03,657 - PSENSv0.1 - DEBUG - info - 89 - process id: 29157
+2015-07-28 13:10:03,699 - PSENSv0.1 - DEBUG - pControl - 9 - <function pControl at 0x10b5ef320>
+2015-07-28 13:10:03,713 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:10:33,720 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:11:03,725 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:11:33,731 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:12:03,737 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:12:33,743 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:13:03,748 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:13:33,754 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:14:03,760 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:14:33,765 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:19:13,820 - PSENSv0.1 - DEBUG - run - 109 - Starting main loop
+2015-07-28 13:19:13,820 - PSENSv0.1 - DEBUG - run - 112 - Starting Main
+2015-07-28 13:19:13,820 - PSENSv0.1 - DEBUG - info - 84 - main line
+2015-07-28 13:19:13,821 - PSENSv0.1 - DEBUG - info - 85 - debug message
+2015-07-28 13:19:13,821 - PSENSv0.1 - DEBUG - info - 88 - parent process : 1
+2015-07-28 13:19:13,822 - PSENSv0.1 - DEBUG - info - 89 - process id: 29578
+2015-07-28 13:19:13,829 - PSENSv0.1 - DEBUG - pControl - 9 - <function pControl at 0x105ecd320>
+2015-07-28 13:19:13,836 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:19:43,842 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:20:13,848 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:20:43,854 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:21:13,860 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:21:43,866 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:22:13,873 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:22:43,878 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:23:13,884 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:23:43,891 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:24:13,898 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:24:43,904 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:25:13,909 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:25:43,915 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:26:13,922 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:26:43,928 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:27:13,934 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:27:43,941 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:28:13,947 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:28:43,953 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:29:13,959 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:29:43,967 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:30:13,973 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
+2015-07-28 13:30:43,980 - PSENSv0.1 - DEBUG - pControl - 14 - sens.solutions/pool/internal/status/ErrorCode = 0
