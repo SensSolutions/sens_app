@@ -1,0 +1,14 @@
+with open('data.txt', 'w') as outfile:
+     json.dump(jsonData, outfile, sort_keys = True, indent = 4,
+ensure_ascii=False)
+
+# Read line by line multiple line json object
+data = [json.loads(str(item)) for item in contents.strip().split('\n')]
+
+
+import json
+with open("my_data.json") as my_data_file:
+    my_data = json.load(my_data_file)
+
+for row in my_data["rows"]:
+    do_something(row["text"])

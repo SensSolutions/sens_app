@@ -74,7 +74,7 @@ except:
     what = 'unknow'
 
 
-# IMplementing connexion debugging
+# Implementing connexion debugging
 def info(title):
     logger.debug(title)
     logger.debug('debug message')

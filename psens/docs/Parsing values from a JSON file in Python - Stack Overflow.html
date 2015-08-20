@@ -1,0 +1,1788 @@
+<!DOCTYPE html>
+<!-- saved from url=(0084)http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Parsing values from a JSON file in Python - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=6cd6089ee7f6">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=41f6e13ade69">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=ea71a5211a91&amp;a">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="Parsing values from a JSON file in Python">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="I have this JSON in a file:
+
+{
+    &quot;maps&quot;: [
+        {
+            &quot;id&quot;: &quot;blabla&quot;,
+            &quot;iscategorical&quot;: &quot;0&quot;
+        },
+        {
+            &quot;id&quot;: &quot;blabla&quot;,
+            &quot;iscategorical&quot;: &quot;0&quot;...">
+    <meta property="og:url" content="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python">
+    <link rel="canonical" href="./Parsing values from a JSON file in Python - Stack Overflow_files/Parsing values from a JSON file in Python - Stack Overflow.html">
+
+    
+    
+    <script type="text/javascript" async="" src="./Parsing values from a JSON file in Python - Stack Overflow_files/ados"></script><script async="" src="./Parsing values from a JSON file in Python - Stack Overflow_files/quant.js"></script><script async="" src="./Parsing values from a JSON file in Python - Stack Overflow_files/beacon.js"></script><script async="" src="./Parsing values from a JSON file in Python - Stack Overflow_files/analytics.js"></script><script type="text/javascript" async="" src="./Parsing values from a JSON file in Python - Stack Overflow_files/ados.js"></script><script src="./Parsing values from a JSON file in Python - Stack Overflow_files/jquery.min.js"></script>
+    <script src="./Parsing values from a JSON file in Python - Stack Overflow_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./Parsing values from a JSON file in Python - Stack Overflow_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;Parsing values from a JSON file in Python&#39;" href="http://stackoverflow.com/feeds/question/2835559">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:2835559});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '2835559');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1439459865,"networkMetaHostname":"meta.stackexchange.com","routeName":"Questions/Show","styleCode":true,"enableUserHovercards":true,"snippets":{"enabled":true,"domain":"stacksnippets.net"},"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"globalAuthDisabled":true,"nonAsciiTags":true,"enableSocialMediaInSharePopup":true},"user":{"fkey":"ef3c396a1ba6bdf7cfe4699dcab5f216","isAnonymous":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"1a3808a9e36b","js/moderator.en.js":"e24607ba6d77","js/full-anon.en.js":"4a3ef9f73d72","js/full.en.js":"a576bab2da7c","js/wmd.en.js":"a5552a23e801","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"d7aa5bd00f77","js/help.en.js":"79fd6664be3b","js/tageditor.en.js":"b55d3d80afd2","js/tageditornew.en.js":"988c669fe241","js/inline-tag-editing.en.js":"de80429b1816","js/revisions.en.js":"df3cb25dfabf","js/review.en.js":"dc73ad0a4a09","js/tagsuggestions.en.js":"d1ff9b84abe5","js/post-validation.en.js":"22a87805e4c9","js/explore-qlist.en.js":"cd6e5274146c","js/events.en.js":"1de8d4037f36","js/keyboard-shortcuts.en.js":"365934933216","js/external-editor.en.js":"e69c1ec56e39","js/external-editor.en.js":"e69c1ec56e39","js/snippet-javascript.en.js":"ad6b3ff5e697","js/snippet-javascript-codemirror.en.js":"850575511cd7"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    
+    
+<script async="" src="./Parsing values from a JSON file in Python - Stack Overflow_files/full-anon.en.js"></script><script async="" src="./Parsing values from a JSON file in Python - Stack Overflow_files/snippet-javascript.en.js"></script><script async="" src="./Parsing values from a JSON file in Python - Stack Overflow_files/post-validation.en.js"></script><script async="" src="./Parsing values from a JSON file in Python - Stack Overflow_files/prettify-full.en.js"></script><script type="text/javascript" src="./Parsing values from a JSON file in Python - Stack Overflow_files/adFeedback.js"></script><link rel="stylesheet" href="http://static.adzerk.net/Extensions/adFeedback.css"></head>
+<body class="question-page new-topbar">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+            <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                    <a href="http://blog.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:7 })">blog</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&utm_medium=site-ui&utm_campaign=multicollider" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Stack Overflow Careers
+                    </a>
+                </li>
+        </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f2835559%2fparsing-values-from-a-json-file-in-python" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f2835559%2fparsing-values-from-a-json-file-in-python" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 149 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f2835559%2fparsing-values-from-a-json-file-in-python" class="login-link">sign up</a>
+                                <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f2835559%2fparsing-values-from-a-json-file-in-python" class="login-link">log in</a>
+
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                            <a href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                            <a href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&utm_medium=site-ui&utm_campaign=anon-topbar">stack overflow careers</a>
+                    </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                    <input name="q" type="text" placeholder="search" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=41f6e13ade69">
+			<!--googleoff: all-->
+
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://stackoverflow.com/tour" id="tell-me-more" class="button">Take the 2-minute tour</a>
+            <span id="close"><a title="click to dismiss">×</a></span>
+        </span>
+        <div id="blurb">
+            Stack Overflow is a question and answer site for professional and enthusiast programmers. It's 100% free.
+        </div>        
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("question-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/", expires: 365 });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<script>
+				StackExchange.using("gps", function () {
+					StackExchange.gps.track("hero.show", { hero_type: "question-page-mini" }, true);
+				});
+			</script>
+			<div id="question-header">
+                <h1 itemprop="name"><a href="./Parsing values from a JSON file in Python - Stack Overflow_files/Parsing values from a JSON file in Python - Stack Overflow.html" class="question-hyperlink">Parsing values from a JSON file in Python</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="2835559" id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1877348969",4).setZone(43); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1877348969"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjoxODY2MjQsImNoIjoxMTc4LCJjayI6e30sImNyIjo2OTU3MTIsImRpIjoiODVhZjhiZTE1MjFjNDdhNDk3ODQ1NmJhYTI3MDAyMTIiLCJkbSI6MSwiZmMiOjcyMTgwNiwiZmwiOjQzMTc4MCwiaXAiOiI4My41MS4xMTIuMjIyIiwia3ciOiJweXRob24sanNvbixwYXJzaW5nIiwibnciOjIyLCJwYyI6MCwicHIiOjE2MDQsInJ0IjoxLCJyZiI6Imh0dHBzOi8vZHVja2R1Y2tnby5jb20vIiwic3QiOjgyNzcsInVrIjoidWUxLTI5ZDBiYjhkMzkyYTQ5MTQ5MmY3YjkxNDI5NzAzNzk0Iiwiem4iOjQzLCJ0cyI6MTQzOTQ1OTg3NTQyNywiYmYiOnRydWUsInBuIjoiYWR6ZXJrMTg3NzM0ODk2OSIsInVyIjoiaHR0cDovL2NhcmVlcnMuc3RhY2tvdmVyZmxvdy5jb20vam9icy9yZW1vdGU_dXRtX3NvdXJjZT1zdGFja292ZXJmbG93LmNvbSZ1dG1fbWVkaXVtPWFkJnV0bV9jYW1wYWlnbj1jYW5kaWRhdGVzLXdmaCZ1dG1fY29udGVudD1sYi13ZmgtYW55d2hlcmV-In0&s=p5wUH9Lk9KkdJxj-3arS0oj-7y4" rel="nofollow" target="_blank" title=""><img src="./Parsing values from a JSON file in Python - Stack Overflow_files/ed3b3bbfd4364176bfd1feb8506577ed.jpg" title="" alt="" border="0" width="728" height="90"></a><img height="0px" width="0px" border="0" style="position:absolute;" src="./Parsing values from a JSON file in Python - Stack Overflow_files/i.gif"><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="2835559">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">254</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python#" title="This is a favorite question (click again to undo)">favorite</a>
+        <div class="favoritecount"><b>105</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>I have this JSON in a file:</p>
+
+<pre class="lang-py prettyprint prettyprinted" style=""><code><span class="pun">{</span><span class="pln">
+    </span><span class="str">"maps"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="str">"id"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"blabla"</span><span class="pun">,</span><span class="pln">
+            </span><span class="str">"iscategorical"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"0"</span><span class="pln">
+        </span><span class="pun">},</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            </span><span class="str">"id"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"blabla"</span><span class="pun">,</span><span class="pln">
+            </span><span class="str">"iscategorical"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"0"</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">],</span><span class="pln">
+    </span><span class="str">"masks"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+        </span><span class="str">"id"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"valore"</span><span class="pln">
+    </span><span class="pun">],</span><span class="pln">
+    </span><span class="str">"om_points"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"value"</span><span class="pun">,</span><span class="pln">
+    </span><span class="str">"parameters"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">[</span><span class="pln">
+        </span><span class="str">"id"</span><span class="pun">:</span><span class="pln"> </span><span class="str">"valore"</span><span class="pln">
+    </span><span class="pun">]</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>I wrote this script which prints all of the json text:</p>
+
+<pre class="lang-py prettyprint prettyprinted" style=""><code><span class="pln">json_data</span><span class="pun">=</span><span class="pln">open</span><span class="pun">(</span><span class="pln">file_directory</span><span class="pun">).</span><span class="pln">read</span><span class="pun">()</span><span class="pln">
+
+data </span><span class="pun">=</span><span class="pln"> json</span><span class="pun">.</span><span class="pln">loads</span><span class="pun">(</span><span class="pln">json_data</span><span class="pun">)</span><span class="pln">
+pprint</span><span class="pun">(</span><span class="pln">data</span><span class="pun">)</span></code></pre>
+
+<p>How can I parse the file and extract single values?</p>
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/python" class="post-tag js-gps-track" title="show questions tagged &#39;python&#39;" rel="tag">python</a> <a href="http://stackoverflow.com/questions/tagged/json" class="post-tag js-gps-track" title="show questions tagged &#39;json&#39;" rel="tag">json</a> <a href="http://stackoverflow.com/questions/tagged/parsing" class="post-tag js-gps-track" title="show questions tagged &#39;parsing&#39;" rel="tag">parsing</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/2835559" title="short permalink to this question" class="short-link" id="link-post-2835559">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/2835559/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/2835559/revisions" title="show all edits to this post">edited <span title="2014-10-21 20:33:15Z" class="relativetime">Oct 21 '14 at 20:33</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/445131/eric-leschinski"><div class="gravatar-wrapper-32"><img src="./Parsing values from a JSON file in Python - Stack Overflow_files/ydqLz.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/445131/eric-leschinski">Eric Leschinski</a><br>
+        <span class="reputation-score" title="reputation score 27089" dir="ltr">27.1k</span><span title="15 gold badges"><span class="badge1"></span><span class="badgecount">15</span></span><span title="137 silver badges"><span class="badge2"></span><span class="badgecount">137</span></span><span title="141 bronze badges"><span class="badge3"></span><span class="badgecount">141</span></span>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2010-05-14 15:54:20Z" class="relativetime">May 14 '10 at 15:54</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/453712/michele"><div class="gravatar-wrapper-32"><img src="./Parsing values from a JSON file in Python - Stack Overflow_files/5f1aff511c5c9b3e8c04d0d00fa3f9ef" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/453712/michele">michele</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">3,304</span><span title="13 gold badges"><span class="badge1"></span><span class="badgecount">13</span></span><span title="51 silver badges"><span class="badge2"></span><span class="badgecount">51</span></span><span title="86 bronze badges"><span class="badge3"></span><span class="badgecount">86</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-2835559" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-2835559" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								5 Answers
+                                <span style="display:none;" itemprop="answerCount">5</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active">active</a>
+        <a href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest">oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes">votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="2835672"></a>
+<div id="answer-2835672" class="answer accepted-answer" data-answerid="2835672" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="2835672">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">454</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>I think what Ignacio is saying is that your json file is incorrect. You have <code>[]</code>s when you should have <code>{}</code>s. <code>[]</code>s are for lists, <code>{}</code>s are for dictionaries. Here's how your json file should look (your json file wouldn't even load for me):</p>
+
+<pre class="lang-py prettyprint prettyprinted" style=""><code><span class="pun">{</span><span class="str">"maps"</span><span class="pun">:[{</span><span class="str">"id"</span><span class="pun">:</span><span class="str">"blabla"</span><span class="pun">,</span><span class="str">"iscategorical"</span><span class="pun">:</span><span class="str">"0"</span><span class="pun">},{</span><span class="str">"id"</span><span class="pun">:</span><span class="str">"blabla"</span><span class="pun">,</span><span class="str">"iscategorical"</span><span class="pun">:</span><span class="str">"0"</span><span class="pun">}],</span><span class="pln">
+</span><span class="str">"masks"</span><span class="pun">:{</span><span class="str">"id"</span><span class="pun">:</span><span class="str">"valore"</span><span class="pun">},</span><span class="pln">
+</span><span class="str">"om_points"</span><span class="pun">:</span><span class="str">"value"</span><span class="pun">,</span><span class="pln">
+</span><span class="str">"parameters"</span><span class="pun">:{</span><span class="str">"id"</span><span class="pun">:</span><span class="str">"valore"</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>Then you can use your code:</p>
+
+<pre class="lang-py prettyprint prettyprinted" style=""><code><span class="kwd">import</span><span class="pln"> json
+</span><span class="kwd">from</span><span class="pln"> pprint </span><span class="kwd">import</span><span class="pln"> pprint
+
+</span><span class="kwd">with</span><span class="pln"> open</span><span class="pun">(</span><span class="str">'data.json'</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> data_file</span><span class="pun">:</span><span class="pln">    
+    data </span><span class="pun">=</span><span class="pln"> json</span><span class="pun">.</span><span class="pln">load</span><span class="pun">(</span><span class="pln">data_file</span><span class="pun">)</span><span class="pln">
+
+pprint</span><span class="pun">(</span><span class="pln">data</span><span class="pun">)</span></code></pre>
+
+<p>With data, you can now also find values in like so:</p>
+
+<pre class="lang-py prettyprint prettyprinted" style=""><code><span class="pln">data</span><span class="pun">[</span><span class="str">"maps"</span><span class="pun">][</span><span class="lit">0</span><span class="pun">][</span><span class="str">"id"</span><span class="pun">]</span><span class="pln">
+data</span><span class="pun">[</span><span class="str">"masks"</span><span class="pun">][</span><span class="str">"id"</span><span class="pun">]</span><span class="pln">
+data</span><span class="pun">[</span><span class="str">"om_points"</span><span class="pun">]</span></code></pre>
+
+<p>Try those out and see if it starts to make sense.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/2835672" title="short permalink to this answer" class="short-link" id="link-post-2835672">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/2835672/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/2835672/revisions" title="show all edits to this post">edited <span title="2015-03-19 15:34:39Z" class="relativetime">Mar 19 at 15:34</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/3974427/yamm"><div class="gravatar-wrapper-32"><img src="./Parsing values from a JSON file in Python - Stack Overflow_files/d77f9411200f4b65e471d1ac0727cab6" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/3974427/yamm">yamm</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">473</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="15 bronze badges"><span class="badge3"></span><span class="badgecount">15</span></span>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2010-05-14 16:10:15Z" class="relativetime">May 14 '10 at 16:10</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/254617/justin-peel"><div class="gravatar-wrapper-32"><img src="./Parsing values from a JSON file in Python - Stack Overflow_files/b8ae9879d7a5fb62f238a019b272d66f" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/254617/justin-peel">Justin Peel</a><br>
+        <span class="reputation-score" title="reputation score 20914" dir="ltr">20.9k</span><span title="4 gold badges"><span class="badge1"></span><span class="badgecount">4</span></span><span title="30 silver badges"><span class="badge2"></span><span class="badgecount">30</span></span><span title="52 bronze badges"><span class="badge3"></span><span class="badgecount">52</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-2835672" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-2877267" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Ok so I have to control my code because this json file is generated from a java object. Thanks.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/453712/michele" title="3304 reputation" class="comment-user owner">michele</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python#comment2877267_2835672"><span title="2010-05-14 16:26:20Z" class="relativetime-clean">May 14 '10 at 16:26</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-29508825" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="warm">7</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Actually, I think you should have used 'with' in your answer. I still gave a +1 though because I think it is valuable for a newcomer.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/2682142/lpapp" title="1 reputation" class="comment-user">lpapp</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python#comment29508825_2835672"><span title="2013-11-07 17:57:38Z" class="relativetime-clean">Nov 7 '13 at 17:57</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-43672885" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">serialized data is wrapped with [] , and when you read it in you need f.read(), that is if you use the standard.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/2023392/radtek" title="3155 reputation" class="comment-user">radtek</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python#comment43672885_2835672"><span title="2014-12-23 18:43:40Z" class="relativetime-clean">Dec 23 '14 at 18:43</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-44839614" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Thanks for the solution. i'm getting a unicode symbol while printing it. (eg u'valore' ). How to prevent it?</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1221358/diaryfolio" title="81 reputation" class="comment-user">diaryfolio</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python#comment44839614_2835672"><span title="2015-01-30 15:36:35Z" class="relativetime-clean">Jan 30 at 15:36</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-50455391" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Nice but python adds a <code>u'</code> before each key. Any idea why?</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1675976/imray" title="2553 reputation" class="comment-user">Imray</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python#comment50455391_2835672"><span title="2015-07-05 07:14:26Z" class="relativetime-clean">Jul 5 at 7:14</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-2835672" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk2034315292",4).setZone(44); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk2034315292"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjoxODY2MjQsImNoIjoxMTc4LCJjayI6e30sImNyIjo3MjQyOTgsImRpIjoiN2NiMTM3NmI1NDI4NGRjN2FlYzFlZDQ5YmMwNjk4MzIiLCJkbSI6MSwiZmMiOjc1NDA5MiwiZmwiOjQxMDE4MywiaXAiOiI4My41MS4xMTIuMjIyIiwia3ciOiJweXRob24sanNvbixwYXJzaW5nIiwibnciOjIyLCJwYyI6MCwicHIiOjE1NjgsInJ0IjoxLCJyZiI6Imh0dHBzOi8vZHVja2R1Y2tnby5jb20vIiwic3QiOjgyNzcsInVrIjoidWUxLTI5ZDBiYjhkMzkyYTQ5MTQ5MmY3YjkxNDI5NzAzNzk0Iiwiem4iOjQ0LCJ0cyI6MTQzOTQ1OTg3NTQyOSwiYmYiOnRydWUsInBuIjoiYWR6ZXJrMjAzNDMxNTI5MiIsInVyIjoiaHR0cDovL2NhcmVlcnMuc3RhY2tvdmVyZmxvdy5jb20vY3YvZ2V0LW9uZT91dG1fc291cmNlPXN0YWNrb3ZlcmZsb3cuY29tJnV0bV9tZWRpdW09YWQmdXRtX2NhbXBhaWduPWNhbmRpZGF0ZXMtYWRkLWN2JnV0bV9jb250ZW50PWxiLWNhcmVlcnMtZ2l0cHVzaCJ9&s=tjvOu1zHAZG1aHwZ3agbSthh1fg" rel="nofollow" target="_blank" title=""><img src="./Parsing values from a JSON file in Python - Stack Overflow_files/8bb266973e664d288a7f217d15d31d41.png" title="" alt="" border="0" width="728" height="90"></a><img height="0px" width="0px" border="0" style="position:absolute;" src="./Parsing values from a JSON file in Python - Stack Overflow_files/i(1).gif"><div class="adzerk-vote-controls" style="display: none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>
+  
+<a name="13633860"></a>
+<div id="answer-13633860" class="answer" data-answerid="13633860" itemscope="" itemtype="http://schema.org/Answer">
+
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="13633860">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">92</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Your <code>data.json</code> should look like this:</p>
+
+<pre class="lang-py prettyprint prettyprinted" style=""><code><span class="pun">{</span><span class="pln">
+ </span><span class="str">"maps"</span><span class="pun">:[</span><span class="pln">
+         </span><span class="pun">{</span><span class="str">"id"</span><span class="pun">:</span><span class="str">"blabla"</span><span class="pun">,</span><span class="str">"iscategorical"</span><span class="pun">:</span><span class="str">"0"</span><span class="pun">},</span><span class="pln">
+         </span><span class="pun">{</span><span class="str">"id"</span><span class="pun">:</span><span class="str">"blabla"</span><span class="pun">,</span><span class="str">"iscategorical"</span><span class="pun">:</span><span class="str">"0"</span><span class="pun">}</span><span class="pln">
+        </span><span class="pun">],</span><span class="pln">
+</span><span class="str">"masks"</span><span class="pun">:</span><span class="pln">
+         </span><span class="pun">{</span><span class="str">"id"</span><span class="pun">:</span><span class="str">"valore"</span><span class="pun">},</span><span class="pln">
+</span><span class="str">"om_points"</span><span class="pun">:</span><span class="str">"value"</span><span class="pun">,</span><span class="pln">
+</span><span class="str">"parameters"</span><span class="pun">:</span><span class="pln">
+         </span><span class="pun">{</span><span class="str">"id"</span><span class="pun">:</span><span class="str">"valore"</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>Your code should be:</p>
+
+<pre class="lang-py prettyprint prettyprinted" style=""><code><span class="kwd">import</span><span class="pln"> json
+</span><span class="kwd">from</span><span class="pln"> pprint </span><span class="kwd">import</span><span class="pln"> pprint
+
+</span><span class="kwd">with</span><span class="pln"> open</span><span class="pun">(</span><span class="str">'data.json'</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> data_file</span><span class="pun">:</span><span class="pln">    
+    data </span><span class="pun">=</span><span class="pln"> json</span><span class="pun">.</span><span class="pln">load</span><span class="pun">(</span><span class="pln">data_file</span><span class="pun">)</span><span class="pln">
+pprint</span><span class="pun">(</span><span class="pln">data</span><span class="pun">)</span></code></pre>
+
+<p>Note that this only works in Python 2.6 and up, as it depends upon the <a href="http://docs.python.org/2/reference/compound_stmts.html#the-with-statement"><code>with</code>-statement</a>. In Python 2.5 use <code>from __future__ import with_statement</code>, in Python &lt;= 2.4, see <a href="http://stackoverflow.com/a/2835672/906658">Justin Peel's answer</a>, which this answer is based upon.</p>
+
+<p>You can now also access single values like this:</p>
+
+<pre class="lang-py prettyprint prettyprinted" style=""><code><span class="pln">data</span><span class="pun">[</span><span class="str">"maps"</span><span class="pun">][</span><span class="lit">0</span><span class="pun">][</span><span class="str">"id"</span><span class="pun">]</span><span class="pln">  </span><span class="com"># will return 'blabla'</span><span class="pln">
+data</span><span class="pun">[</span><span class="str">"masks"</span><span class="pun">][</span><span class="str">"id"</span><span class="pun">]</span><span class="pln">    </span><span class="com"># will return 'valore'</span><span class="pln">
+data</span><span class="pun">[</span><span class="str">"om_points"</span><span class="pun">]</span><span class="pln">      </span><span class="com"># will return 'value'</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/13633860" title="short permalink to this answer" class="short-link" id="link-post-13633860">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/13633860/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/13633860/revisions" title="show all edits to this post">edited <span title="2015-04-17 22:31:32Z" class="relativetime">Apr 17 at 22:31</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1970734/santhosh"><div class="gravatar-wrapper-32"><img src="./Parsing values from a JSON file in Python - Stack Overflow_files/dXs4i.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1970734/santhosh">Santhosh</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">1,202</span><span title="4 silver badges"><span class="badge2"></span><span class="badgecount">4</span></span><span title="18 bronze badges"><span class="badge3"></span><span class="badgecount">18</span></span>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2012-11-29 20:10:03Z" class="relativetime">Nov 29 '12 at 20:10</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/906658/bengt"><div class="gravatar-wrapper-32"><img src="./Parsing values from a JSON file in Python - Stack Overflow_files/328de31775d6584cbf9ed230e27a7666" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/906658/bengt">Bengt</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">3,491</span><span title="21 silver badges"><span class="badge2"></span><span class="badgecount">21</span></span><span title="38 bronze badges"><span class="badge3"></span><span class="badgecount">38</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-13633860" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-21239751" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I got a downvote on this. Maybe it was not clear, why I thought another  answer was necessary. Added note on compatibility of the with-statement.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/906658/bengt" title="3491 reputation" class="comment-user">Bengt</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python#comment21239751_13633860"><span title="2013-02-26 19:57:38Z" class="relativetime-clean">Feb 26 '13 at 19:57</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-24125766" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Sorry for the roll back, but the suggested code would keep <code>data_file</code> <code>open</code>ed longer than necessary.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/906658/bengt" title="3491 reputation" class="comment-user">Bengt</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python#comment24125766_13633860"><span title="2013-05-25 12:10:18Z" class="relativetime-clean">May 25 '13 at 12:10</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 2 times"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-49758426" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Referring to 2.6 documentation (<a href="https://docs.python.org/2.6/library/io.html" rel="nofollow">docs.python.org/2.6/library/io.html</a>), opening a file in the "with" context will automatically close the file.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/405976/steve-s" title="310 reputation" class="comment-user">Steve S.</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python#comment49758426_13633860"><span title="2015-06-16 01:54:06Z" class="relativetime-clean">Jun 16 at 1:54</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-49790497" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@SteveS. Yes, but not before the context is left. <code>pprint</code>ing in the <code>with</code>-context keeps the <code>data_file</code> open longer.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/906658/bengt" title="3491 reputation" class="comment-user">Bengt</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python#comment49790497_13633860"><span title="2015-06-16 17:45:55Z" class="relativetime-clean">Jun 16 at 17:45</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-13633860" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="16511897"></a>
+<div id="answer-16511897" class="answer" data-answerid="16511897" itemscope="" itemtype="http://schema.org/Answer">
+
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="16511897">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">11</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<pre class="lang-py prettyprint prettyprinted" style=""><code><span class="pln">data </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[]</span><span class="pln">
+</span><span class="kwd">with</span><span class="pln"> codecs</span><span class="pun">.</span><span class="pln">open</span><span class="pun">(</span><span class="str">'d:\output.txt'</span><span class="pun">,</span><span class="str">'rU'</span><span class="pun">,</span><span class="str">'utf-8'</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> f</span><span class="pun">:</span><span class="pln">
+    </span><span class="kwd">for</span><span class="pln"> line </span><span class="kwd">in</span><span class="pln"> f</span><span class="pun">:</span><span class="pln">
+       data</span><span class="pun">.</span><span class="pln">append</span><span class="pun">(</span><span class="pln">json</span><span class="pun">.</span><span class="pln">loads</span><span class="pun">(</span><span class="pln">line</span><span class="pun">))</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/16511897" title="short permalink to this answer" class="short-link" id="link-post-16511897">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/16511897/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-05-12 20:47:46Z" class="relativetime">May 12 '13 at 20:47</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1743724/user1743724"><div class="gravatar-wrapper-32"><img src="./Parsing values from a JSON file in Python - Stack Overflow_files/2fdc58ae1f545b913e40b1b489893672" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1743724/user1743724">user1743724</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">119</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="3 bronze badges"><span class="badge3"></span><span class="badgecount">3</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-16511897" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-16511897" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="30388020"></a>
+<div id="answer-30388020" class="answer" data-answerid="30388020" itemscope="" itemtype="http://schema.org/Answer">
+
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="30388020">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">3</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>@Justin Peel's answer is really helpful.But if you are using Python 3,read json code should be like this:</p>
+
+<pre class="lang-py prettyprint prettyprinted" style=""><code><span class="kwd">with</span><span class="pln"> open</span><span class="pun">(</span><span class="str">'data.json'</span><span class="pun">,</span><span class="pln"> encoding</span><span class="pun">=</span><span class="str">'utf-8'</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">as</span><span class="pln"> data_file</span><span class="pun">:</span><span class="pln">
+    data </span><span class="pun">=</span><span class="pln"> json</span><span class="pun">.</span><span class="pln">loads</span><span class="pun">(</span><span class="pln">data_file</span><span class="pun">.</span><span class="pln">read</span><span class="pun">())</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/30388020" title="short permalink to this answer" class="short-link" id="link-post-30388020">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/30388020/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2015-05-22 03:44:04Z" class="relativetime">May 22 at 3:44</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1713757/geng-jiawen"><div class="gravatar-wrapper-32"><img src="./Parsing values from a JSON file in Python - Stack Overflow_files/edbc1528819dee7ffe9301f406c1b83c" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1713757/geng-jiawen">Geng  Jiawen</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">577</span><span title="3 silver badges"><span class="badge2"></span><span class="badgecount">3</span></span><span title="9 bronze badges"><span class="badge3"></span><span class="badgecount">9</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-30388020" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-50882343" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Why should <code>json.load</code> be avoided in favor of <code>.loads</code> in Python 3?</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/180290/zearin" title="584 reputation" class="comment-user">Zearin</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python#comment50882343_30388020"><span title="2015-07-16 14:55:35Z" class="relativetime-clean">Jul 16 at 14:55</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-50900776" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@Zearin pls check the <a href="https://docs.python.org/3/library/json.html#json.loads" rel="nofollow">official doc</a>.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1713757/geng-jiawen" title="577 reputation" class="comment-user">Geng  Jiawen</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python#comment50900776_30388020"><span title="2015-07-17 02:13:24Z" class="relativetime-clean">Jul 17 at 2:13</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 2 times"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-30388020" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="28952234"></a>
+<div id="answer-28952234" class="answer" data-answerid="28952234" itemscope="" itemtype="http://schema.org/Answer">
+
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="28952234">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Ultra JSON or simply ujson can handle having [] in your json file input. If you're reading a json input file into your program as a list of json elements; such as, [{[{}]}, {}, [], etc...] ujson can handle any arbitrary order of lists of dictionaries, dictionaries of lists. </p>
+
+<p>You can find ujson in the python package index <a href="https://pypi.python.org/pypi/ujson" rel="nofollow">https://pypi.python.org/pypi/ujson</a> and the api is almost identical to python's built-in json library. </p>
+
+<p>ujson is also much more faster if you're loading larger json files. You can see the performance details in comparison to other python json libraries in the same link provided.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/28952234" title="short permalink to this answer" class="short-link" id="link-post-28952234">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/28952234/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/28952234/revisions" title="show all edits to this post">edited <span title="2015-06-29 12:18:12Z" class="relativetime">Jun 29 at 12:18</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2015-03-09 21:38:50Z" class="relativetime">Mar 9 at 21:38</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/667127/moeabdol"><div class="gravatar-wrapper-32"><img src="./Parsing values from a JSON file in Python - Stack Overflow_files/e0208844fc9fce89fb51161781096fbf" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/667127/moeabdol">moeabdol</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">194</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="5 silver badges"><span class="badge2"></span><span class="badgecount">5</span></span><span title="18 bronze badges"><span class="badge3"></span><span class="badgecount">18</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-28952234" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-28952234" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+				        <div class="question-status">
+        <h2>                    <b>protected</b> by <a href="http://stackoverflow.com/users/1190388/hjpotter92">hjpotter92</a> <span dir="ltr"><span title="2014-01-26 10:24:44Z" class="relativetime">Jan 26 '14 at 10:24</span></span>
+</h2>
+        <p>
+Thank you for your interest in this question. 
+Because it has attracted low-quality answers, posting an answer now requires 10 <a href="http://stackoverflow.com/help/whats-reputation">reputation</a> on this site.
+<br><br>
+Would you like to answer one of these <a href="http://stackoverflow.com/unanswered?fromProtectedNotice=true">unanswered questions</a> instead?
+</p>
+    </div>
+
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/python" class="post-tag" title="show questions tagged &#39;python&#39;" rel="tag">python</a> <a href="http://stackoverflow.com/questions/tagged/json" class="post-tag" title="show questions tagged &#39;json&#39;" rel="tag">json</a> <a href="http://stackoverflow.com/questions/tagged/parsing" class="post-tag" title="show questions tagged &#39;parsing&#39;" rel="tag">parsing</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2010-05-14 15:54:20Z"><b>5 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>446871 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python?lastactivity" class="lastactivity-link" title="2015-06-29 12:18:12Z">1 month ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk709494538",[17,2221]).setZone(45); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk709494538"><div id="careersadsdoublehigh" style="display:none;"></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./Parsing values from a JSON file in Python - Stack Overflow_files/i(2).gif"><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file-in-python#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div></div>
+        <div id="hireme">
+            <script>
+;(function(n){var o=20,b="#sidebar [id^='adzerk'].everyonelovesstackoverflow",s="div#hireme,div.hireme",r=setTimeout,f=clearTimeout,t=null,h=!1,e=null,u,c=n.adurl,k=n.azw,d=n.azt,l=Array.prototype,a=l.map,g=l.forEach,v=function(){return(new Date).getTime()},nt=v(),i=function(n){return document.querySelectorAll(n)},tt=function(n){var t={},r=window.StackExchange,e=decodeURIComponent,u,f;return n.length>1&&n.substr(1).split("&").forEach(function(n){var t=n.split("=");this[e(t[0])]=e(t[1])},t),f=t.ac||t.accountid||r&&r.options&&r.options.user&&r.options.user.accountId,f&&(t.ac=f),t.tags||(u=a.call(i(".post-taglist .post-tag"),function(n){return n.innerText}),u.length>0&&(t.tags=u.join(";"))),n==="#large"&&(t.l=1),n==="#abort"&&(t.abort=1),t},y=function(n){return typeof n=="string"&&(n=i(n)),n.length!==0&&n[0].innerHTML.replace(/\s+/g,"").length>0},p=function(n,r){if(!h){h=!0;var l=i(s),y=document,p=encodeURIComponent,w,o,b,e,u;f(t);l.length>0&&((n.l||i("#careersadsdoublehigh").length>0)&&(n.l=1),u=a.call(l,function(n){return"d="+n.id}).join("&"),w=["l","ip","ac","eng","prov","tags","theme","remote","seed"],o=Object.keys(n).filter(function(n){return w.indexOf(n)!==-1}).map(function(t){return p(t)+"="+p(n[t])}).join("&"),o&&(u+="&"+o),r&&(u+="&azt=true"),b=v()-nt,u+="&lw="+b,e=y.createElement("script"),e.type="text/javascript",e.src=c+(c.indexOf("?")===-1?"?":"&")+u,y.body.appendChild(e),window.calculonPlacerStart=(new Date).getTime())}},it=function(n){y(n)||(g.call(i(n),function(n){n.parentNode.removeChild(n)}),t&&f(t))},w=function(n){y(b)?(e&&f(e),p(n)):t=r(w,o,n)};(u=tt(location.hash),u.abort)||(k&&(e=r(p,d,u,!0)),t=r(w,o,u),r(it,2e3,s))}).apply(null, [{"azw":false,"azt":2000,"adurl":"//clc.stackoverflow.com/j/p"}])            </script>
+        </div>
+			  
+    
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/24051378?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/24051378/creating-lists-and-dictionaries-from-json-data-in-python?lq=1" class="question-hyperlink">Creating lists and dictionaries from JSON data in Python</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/27110636?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">-1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/27110636/collecting-a-value-from-json?lq=1" class="question-hyperlink">Collecting a value from Json</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/24361076?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">2</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/24361076/python-script-as-template-to-parse-a-json-file-into-python-object?lq=1" class="question-hyperlink">python script as template to parse a json file into python object</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/20199126?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">32</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/20199126/reading-a-json-file-using-python?lq=1" class="question-hyperlink">Reading a JSON file using Python</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/11174024?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">24</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/11174024/attributeerrorstr-object-has-no-attribute-read?lq=1" class="question-hyperlink">AttributeError(“'str' object has no attribute 'read'”)</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/19067333?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/19067333/create-python-code-to-supply-json-data-for-jquery-datatables?lq=1" class="question-hyperlink">Create Python code to supply json data for jQuery datatables</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/16966494?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">2</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/16966494/python-import-tweet-unicode-data-to-pandas-data-frame-object?lq=1" class="question-hyperlink">Python: Import Tweet unicode data to pandas data frame object</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/27046593?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/27046593/parsing-comma-separated-json-from-a-file?lq=1" class="question-hyperlink">Parsing comma separated JSON from a file</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/13243816?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/13243816/reading-text-file-using-python-and-matching-against-a-value-threshold?lq=1" class="question-hyperlink">Reading text file using python, and matching against a value threshold</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/19340155?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/19340155/reading-a-textgrid-file-into-nltk?lq=1" class="question-hyperlink">Reading a TextGrid file into NLTK</a>
+</div>					<div class="spacer more">
+				<a href="http://stackoverflow.com/questions/linked/2835559?lq=1">see more linked questions…</a>
+			</div>
+	</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/244777?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted extra-large">2400
+    </div>
+</a><a href="http://stackoverflow.com/questions/244777/can-i-comment-a-json-file?rq=1" class="question-hyperlink">Can I comment a JSON file?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/379906?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted large">713
+    </div>
+</a><a href="http://stackoverflow.com/questions/379906/parse-string-to-float-or-int?rq=1" class="question-hyperlink">Parse String to Float or Int</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/477816?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted extra-large">5609
+    </div>
+</a><a href="http://stackoverflow.com/questions/477816/what-is-the-correct-json-content-type?rq=1" class="question-hyperlink">What is the correct JSON content type?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/1212344?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted large">164
+    </div>
+</a><a href="http://stackoverflow.com/questions/1212344/parse-json-in-c-sharp?rq=1" class="question-hyperlink">Parse JSON in C#</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/4935632?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted large">873
+    </div>
+</a><a href="http://stackoverflow.com/questions/4935632/parse-json-in-javascript?rq=1" class="question-hyperlink">Parse JSON in JavaScript?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/13351815?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/13351815/parsing-through-a-json-file-with-python-2-x?rq=1" class="question-hyperlink">Parsing through a JSON file with Python 2.x</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/21728940?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/21728940/how-to-walk-through-and-parse-folder-of-json-files-then-output-to-single-file?rq=1" class="question-hyperlink">How to walk through and parse folder of json files then output to single file</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/23030093?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/23030093/trouble-on-parsing-json-data-within-a-python-script?rq=1" class="question-hyperlink">Trouble on parsing JSON data within a Python script</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/27005813?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/27005813/parsing-json-file-in-python-without-overwrite?rq=1" class="question-hyperlink">Parsing json file in Python without overwrite</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/30143829?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/30143829/python-parsing-using-json-for-use-with-seleium?rq=1" class="question-hyperlink">Python parsing using JSON for use with seleium</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/99114/source-of-scottys-advice-on-appearing-a-genius" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Source of Scotty's advice on appearing a genius
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="http://superuser.com/questions/954262/why-do-damaged-hard-drives-freeze-the-entire-system" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why do damaged hard drives freeze the entire system?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="http://electronics.stackexchange.com/questions/185411/why-are-pcb-mount-ac-dc-converters-so-expensive" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why are PCB-mount AC DC converters so expensive?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-ux" title="User Experience Stack Exchange"></div><a href="http://ux.stackexchange.com/questions/82845/best-way-to-find-and-select-a-country" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:102 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Best way to find and select a country
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/199632/why-didnt-the-big-bang-create-heavy-elements" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why didn't the Big Bang create heavy elements?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/200097/flat-throw-vs-45-degree-throw" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Flat throw vs 45 degree throw
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/99116/what-exactly-is-cellular-peptide-cake" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What exactly is cellular peptide cake?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-writers" title="Writers Stack Exchange"></div><a href="http://writers.stackexchange.com/questions/18591/is-it-okay-to-publish-a-book-at-a-young-age" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:166 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it okay to publish a book at a young age?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/67010/are-psionics-overpowered-or-especially-exploitable" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Are psionics overpowered or especially exploitable?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-cooking" title="Seasoned Advice"></div><a href="http://cooking.stackexchange.com/questions/59807/is-sealing-in-the-flavor-an-actual-thing" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:49 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is "sealing in the flavor" an actual thing?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-crypto" title="Cryptography Stack Exchange"></div><a href="http://crypto.stackexchange.com/questions/27454/is-sha-1-safe-in-ecdhe" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:281 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is SHA-1 safe in ECDHE?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-lifehacks" title="Lifehacks Stack Exchange"></div><a href="http://lifehacks.stackexchange.com/questions/7919/quick-and-dirty-substitute-for-cream-in-coffee" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:593 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Quick and dirty substitute for cream in coffee?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/67006/how-to-begin-a-role-playing-scenario-in-medias-res" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to begin a role-playing scenario in medias res?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-parenting" title="Parenting Stack Exchange"></div><a href="http://parenting.stackexchange.com/questions/21617/when-should-parents-stop-changing-clothes-in-front-of-children" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:228 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    When should parents stop changing clothes in front of children?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="http://workplace.stackexchange.com/questions/52048/refusing-a-customer-service-because-they-make-you-uncomfortable" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Refusing a customer service because they make you uncomfortable
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-fitness" title="Physical Fitness Stack Exchange"></div><a href="http://fitness.stackexchange.com/questions/25840/is-it-okay-to-swim-in-the-middle-of-a-lake" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:216 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it okay to swim in the middle of a lake?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="http://superuser.com/questions/956226/what-are-the-differences-between-the-3-port-types" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What are the differences between the 3 port types?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/266443/alternative-idiom-to-phone-it-in" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Alternative idiom to "phone it in"
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/1395064/how-to-show-these-two-graphs-are-not-isomorphic" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to show these two graphs are not isomorphic?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="http://ell.stackexchange.com/questions/63895/why-should-we-say-play-the-piano-instead-of-play-a-piano" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why should we say "play the piano" instead of "play a piano"?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-dba" title="Database Administrators Stack Exchange"></div><a href="http://dba.stackexchange.com/questions/110870/queries-on-database-migration" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:182 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Queries on database migration
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/99144/what-scifi-series-of-books-features-humans-time-traveling-into-prehistory-whe" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What SciFi series(?) of books features humans time traveling into prehistory where an alien race is already in residence?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/54466/two-makes-all-the-difference-robbers" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Two Makes All The Difference - Robbers
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/51397/reporting-yet-to-be-completed-graduate-study-on-cv" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Reporting yet-to-be completed graduate study on CV
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/2835559" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/2835559/ivc/d0a1');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/2835559/ivc/d0a1" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">lang-py</div></div>
+
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems.">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                        <li><a href="http://expressionengine.stackexchange.com/" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://movies.stackexchange.com/" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (9)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                        <li><a href="http://chemistry.stackexchange.com/" title="scientists, academics, teachers and students">Chemistry</a></li>
+                        <li><a href="http://biology.stackexchange.com/" title="biology researchers, academics, and students">Biology</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (5)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2015 Stack Exchange Inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2015.8.12.686
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () { ados_setKeywords('python,json,parsing');; ados_load(); });         
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');        
+        
+        ga('set', 'dimension2', '|python|json|parsing|');         
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>            
+    
+<script type="text/javascript" src="./Parsing values from a JSON file in Python - Stack Overflow_files/p"></script></body></html>
