@@ -61,6 +61,7 @@ topic      = Config.get('Broker', 'topic')
 sleepTime  = Config.getfloat('Broker', 'sleep_time')
 writeLog   = Config.getboolean('Log','write_log')
 logName    = Config.get('Log', 'logname')
+cachefile  = Config.get('DEFAULT', 'cachefile')
 
 try:
     # sens.solutions/pool/sensors/air/humidity
@@ -79,6 +80,8 @@ def info(title):
     logger.debug(title)
     logger.debug('debug message')
 
+# Debug code, to be cleaned
+#
     if hasattr(os, 'getppid'):  # only available on Unix
         logger.debug('parent process : %i', os.getppid())
     logger.debug('process id: %i', os.getpid())
@@ -87,29 +90,40 @@ def info(title):
     logger.debug("Starting main loop")
 
 if __name__ == '__main__':
-    logger.debug('Starting Main')
+    logger.warning('Starting Main Process: %i', os.getpid())
     info('main line')
-    logger.debug('Starting pControl')
-    p = Process(target=pcontrol.pControl, args=(org, place, brokerIP, clientId, 'log/cache-pcontrol'))
-    p.start()
 
-#        o = Process(target=airsensor.airSensor, args=(org, place, brokerIP, clientId, cfgfile))
-#        o.start()
-    while True:
-        if not p.is_alive():
-           logger.warning('pControl is DEAD - Restarting-it')
-           p.terminate()
-           p.run()
-           time.sleep(0.1)
-           logger.warning("New PID: " + str(p.pid))
-    p.join()
-'''            if not o.is_alive():
-            logger.warning('airSensor is DEAD - Restarting-it')
-            o.terminate()
-            o.run()
-            time.sleep(0.1)
-            logger.warning("New PID: " + str(o.pid))'''
+# Start process
+#
+    logger.warning("Cache prefix: %s", cachefile)
+    try:
+         logger.debug('Starting pControl')
+         p = Process(target=pcontrol.pControl, args=(org, place, brokerIP, clientId, cachefile))
+         p.start()
+         logger.warning('Starting pControl, PID: %s', str(p.pid()))
+
+   #        o = Process(target=airsensor.airSensor, args=(org, place, brokerIP, clientId, cfgfile))
+   #        o.start()
+         while True:
+             if not p.is_alive():
+                 logger.warning('pControl is DEAD - Restarting-it')
+                 p.terminate()
+                 p.run()
+                 time.sleep(0.1)
+                 logger.warning("New PID: %s", str(p.pid))
+             '''
+             if not o.is_alive():
+                 logger.warning('airSensor is DEAD - Restarting-it')
+                 o.terminate()
+                 o.run()
+                 time.sleep(0.1)
+                 logger.warning("New PID: " + str(o.pid))
+             '''
 
 
-#   o.join()
-
+    except KeyboardInterrupt:
+# KeyboardInterrupt
+         logger.warning('Shutingdown Monitoring system')
+    finally:
+         p.join()
+#        o.join()

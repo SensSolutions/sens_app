@@ -8,15 +8,9 @@ import os
 logger = logging.getLogger('PSENSv0.1')
 
 def sendCache(brokerIP, clientId, cachefile):
-#    logger.warning(sendCache)
+
     logger.debug(sendCache)
-
-    # Config = SafeConfigParser()
-    # Config.read(cfgfile)
-
-    # cachefile  = Config.get('DEFAULT', 'cachefile')
     logger.warning ('Reading cache file %s', cachefile)
-
 
     with open (cachefile, "r") as csvfile:
         f = csv.reader(csvfile, delimiter =';')
