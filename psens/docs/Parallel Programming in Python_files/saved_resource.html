@@ -1,0 +1,2346 @@
+<!DOCTYPE html>
+<!-- saved from url=(0285)http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#1 -->
+<html lang="en" dir="ltr" class="js no-touch no-localstorage no-sessionstorage contenteditable use-opacity-transitions"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Disqus Comments</title>
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    
+    
+    <style>
+        html {
+            overflow: hidden;
+        }
+
+        
+    </style>
+
+<link rel="stylesheet" href="http://a.disquscdn.com/next/embed/styles/lounge.fcc2aae7ac79584a0849157bcc4b0f37.css" media="all"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="remote/config" src="config.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="common.bundle" src="common.bundle.5437601cfd0b15d366b3f24228f89565.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lounge.bundle" src="lounge.bundle.adc91b66fb9c4b06f100bf35a882f4f5.js"></script><style id="css_1440329989008"></style><!--<base target="_parent">--><base href="." target="_parent"><script src="event.js" async="" charset="UTF-8"></script><link rel="stylesheet" href="http://a.disquscdn.com/next/embed/styles/discovery.1fe89d176a9928445563cdce9d8680d4.css" media="all"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ga" src="ga(1).js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="discovery/main" src="discovery.bundle.69500bfe7b2a84c2ab7eacd5c59fa197.js"></script></head>
+<body>
+    
+
+    
+    <!--[if lt IE 10]><p style="color: #fff; background-color: #f05f70; padding: 10px; margin-top: 20px;">
+        You're using a browser that we plan to stop supporting soon. Please upgrade or see the
+        <a href="https://help.disqus.com/customer/portal/articles/466228-which-browsers-does-disqus-work-with-" style="color: #fff; text-decoration: underline;">browsers we do support</a>.
+    </p><![endif]-->
+    <div id="error" style="display:none; text-align: center">
+        <p>We were unable to load Disqus. If you are a moderator please see our <a href="https://docs.disqus.com/help/83/"> troubleshooting guide</a>. </p>
+    </div>
+
+    
+    <script type="text/json" id="disqus-forumData">{"session":{"canModerate":false,"audienceSyncVerified":false,"canReply":true,"mustVerifyEmail":false},"features":{},"forum":{"category":null,"description":null,"founder":"37273806","settings":{"supportLevel":0,"adsDRNativeEnabled":false,"disable3rdPartyTrackers":false,"moderatorText":"","ssoRequired":false,"linkAffiliationEnabled":false,"hasCustomAvatar":false,"organicDiscoveryEnabled":true,"colorScheme":"auto","discoveryMax":false,"discoverySettingsUrl":"https://sebastianraschka.disqus.com/admin/settings/ads/","adsVideoEnabled":false,"allowAnonPost":false,"allowMedia":true,"promotedDiscoveryEnabled":false,"allowAnonVotes":false,"mustVerifyEmail":false,"discoveryVariant":"default","adsBannerEnabled":false,"audienceSyncEnabled":false,"typeface":"auto","discoveryLocked":false,"discoveryThumbnailsEnabled":false,"isVIP":false},"url":"http://sebastianraschka.com/","guidelines":null,"favicon":{"permalink":"http://disqus.com/api/forums/favicons/sebastianraschka.jpg","cache":"//a.disquscdn.com/1440101154/images/favicon-default.png"},"language":"en","avatar":{"small":{"permalink":"http://disqus.com/api/forums/avatars/sebastianraschka.jpg?size=32","cache":"//a.disquscdn.com/1440101154/images/noavatar32.png"},"large":{"permalink":"http://disqus.com/api/forums/avatars/sebastianraschka.jpg?size=92","cache":"//a.disquscdn.com/1440101154/images/noavatar92.png"}},"pk":"2564201","signedUrl":"http://disq.us/?url=http%3A%2F%2Fsebastianraschka.com%2F&key=nQFuKrXD803jmsFLpz3yuA","raw_guidelines":null,"id":"sebastianraschka","channel":null,"name":"SebastianRaschka"}}</script>
+
+    
+    <script type="text/json" id="disqus-threadData">{"cursor":{"hasPrev":false,"prev":null,"total":19,"hasNext":false,"next":"1:0:0"},"code":0,"response":{"lastModified":1439225910,"posts":[{"forum":"sebastianraschka","parent":null,"isApproved":true,"author":{"username":"disqus_EhjYFYucLv","about":"","name":"Jayanth","disable3rdPartyTrackers":false,"url":"","isAnonymous":false,"rep":1.233865,"profileUrl":"https://disqus.com/by/disqus_EhjYFYucLv/","reputation":1.233865,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2013-10-01T15:40:33","id":"75592814","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/disqus_EhjYFYucLv.jpg","cache":"//a.disquscdn.com/uploads/users/7559/2814/avatar32.jpg?1403640773"},"isCustom":true,"permalink":"http://disqus.com/api/users/avatars/disqus_EhjYFYucLv.jpg","cache":"//a.disquscdn.com/uploads/users/7559/2814/avatar92.jpg?1403640773","large":{"permalink":"http://disqus.com/api/users/avatars/disqus_EhjYFYucLv.jpg","cache":"//a.disquscdn.com/uploads/users/7559/2814/avatar92.jpg?1403640773"}}},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"Very well written and easy to understand. I was looking forward for this. Thank you","createdAt":"2014-06-24T20:12:51","id":"1452339930","thread":"2779462490","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":6,"isEdited":false,"message":"\u003cp>Very well written and easy to understand. I was looking forward for this. Thank you\u003c/p>","isSpam":false,"isHighlighted":false,"points":6},{"forum":"sebastianraschka","parent":1452339930,"isApproved":true,"author":{"username":"seraschka","about":"Computational biologist at Michigan State University, software developer, book author. Passionate about gadgets, technology news, Python & C++","name":"Sebastian Raschka","disable3rdPartyTrackers":false,"url":"http://www.sebastianraschka.com/","isAnonymous":false,"rep":1.2739989999999999,"profileUrl":"https://disqus.com/by/seraschka/","reputation":1.2739989999999999,"location":"East Lansing","isPrivate":false,"isPrimary":true,"joinedAt":"2012-11-25T08:16:11","id":"37273806","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/seraschka.jpg","cache":"//a.disquscdn.com/uploads/users/3727/3806/avatar32.jpg?1439225957"},"isCustom":true,"permalink":"http://disqus.com/api/users/avatars/seraschka.jpg","cache":"//a.disquscdn.com/uploads/users/3727/3806/avatar92.jpg?1439225957","large":{"permalink":"http://disqus.com/api/users/avatars/seraschka.jpg","cache":"//a.disquscdn.com/uploads/users/3727/3806/avatar92.jpg?1439225957"}}},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"Thank you, I am really glad to hear!","createdAt":"2014-06-25T03:14:49","id":"1453007922","thread":"2779462490","depth":1,"numReports":0,"isDeletedByAuthor":false,"likes":2,"isEdited":false,"message":"\u003cp>Thank you, I am really glad to hear!\u003c/p>","isSpam":false,"isHighlighted":false,"points":2},{"forum":"sebastianraschka","parent":null,"isApproved":true,"author":{"username":"sailakshmana","about":"","name":"Sai Lakshmana","disable3rdPartyTrackers":false,"url":"","isAnonymous":false,"rep":1.232516,"profileUrl":"https://disqus.com/by/sailakshmana/","reputation":1.232516,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2014-10-04T10:29:00","id":"124388318","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/sailakshmana.jpg","cache":"//a.disquscdn.com/uploads/users/12438/8318/avatar32.jpg?1412418542"},"isCustom":true,"permalink":"http://disqus.com/api/users/avatars/sailakshmana.jpg","cache":"//a.disquscdn.com/uploads/users/12438/8318/avatar92.jpg?1412418542","large":{"permalink":"http://disqus.com/api/users/avatars/sailakshmana.jpg","cache":"//a.disquscdn.com/uploads/users/12438/8318/avatar92.jpg?1412418542"}}},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"One of the best articles on using pythons multiprocessing module. Very easy to follow and apply it. Thanks for the wonderful work.","createdAt":"2014-10-04T10:30:09","id":"1619217037","thread":"2779462490","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":4,"isEdited":false,"message":"\u003cp>One of the best articles on using pythons multiprocessing module. Very easy to follow and apply it. Thanks for the wonderful work.\u003c/p>","isSpam":false,"isHighlighted":false,"points":4},{"forum":"sebastianraschka","parent":null,"isApproved":true,"author":{"username":"nelsoncarrasquel","about":"","name":"Nelson Carrasquel","disable3rdPartyTrackers":false,"url":"","isAnonymous":false,"rep":1.236327,"profileUrl":"https://disqus.com/by/nelsoncarrasquel/","reputation":1.236327,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2013-09-22T23:11:25","id":"74395274","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/nelsoncarrasquel.jpg","cache":"//a.disquscdn.com/uploads/users/7439/5274/avatar32.jpg?1425190804"},"isCustom":true,"permalink":"http://disqus.com/api/users/avatars/nelsoncarrasquel.jpg","cache":"//a.disquscdn.com/uploads/users/7439/5274/avatar92.jpg?1425190804","large":{"permalink":"http://disqus.com/api/users/avatars/nelsoncarrasquel.jpg","cache":"//a.disquscdn.com/uploads/users/7439/5274/avatar92.jpg?1425190804"}}},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"Finally, I have found a guide on python parallel for dummies, I found some other articles, but this one was really the easiest to understand, congratulations, P.S: Sorry for my messy english","createdAt":"2014-11-12T04:35:47","id":"1689019742","thread":"2779462490","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":3,"isEdited":false,"message":"\u003cp>Finally, I have found a guide on python parallel for dummies, I found some other articles, but this one was really the easiest to understand, congratulations, P.S: Sorry for my messy english\u003c/p>","isSpam":false,"isHighlighted":false,"points":3},{"forum":"sebastianraschka","parent":null,"isApproved":true,"author":{"username":"rn27in","about":"","name":"rn27in .","disable3rdPartyTrackers":false,"url":"","isAnonymous":false,"rep":1.2323199999999999,"profileUrl":"https://disqus.com/by/rn27in/","reputation":1.2323199999999999,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2014-12-10T13:27:35","id":"135154872","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/rn27in.jpg","cache":"//a.disquscdn.com/1440101154/images/noavatar32.png"},"isCustom":false,"permalink":"http://disqus.com/api/users/avatars/rn27in.jpg","cache":"//a.disquscdn.com/1440101154/images/noavatar92.png","large":{"permalink":"http://disqus.com/api/users/avatars/rn27in.jpg","cache":"//a.disquscdn.com/1440101154/images/noavatar92.png"}}},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"Thanks Sebastian for your wonderful article. When I run the cube function with multiprocessing using Pool, it does not recognize the  function cube defined globally. Even if I use __name__ = '__main__', it does not work. I get this error. self.run(),  self._target(*self._args, **self._kwargs),  task = get(), return recv(). Is there a way I can run this program?  Thanks","createdAt":"2014-12-26T07:06:49","id":"1759329708","thread":"2779462490","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":2,"isEdited":true,"message":"\u003cp>Thanks Sebastian for your wonderful article. When I run the cube function with multiprocessing using Pool, it does not recognize the  function cube defined globally. Even if I use __name__ = '__main__', it does not work. I get this error. \u003ca href=\"http://self.run\" rel=\"nofollow\">self.run\u003c/a>(),  self._target(*self._args, **self._kwargs),  task = get(), return recv(). Is there a way I can run this program?  Thanks\u003c/p>","isSpam":false,"isHighlighted":false,"points":2},{"forum":"sebastianraschka","parent":null,"isApproved":true,"author":{"username":"orangleliu","about":"\u8fd8\u4e0d\u9519","name":"orangleliu","disable3rdPartyTrackers":false,"url":"http://www.orangleliu.info/","isAnonymous":false,"rep":1.2485009999999999,"profileUrl":"https://disqus.com/by/orangleliu/","reputation":1.2485009999999999,"location":"Beijing","isPrivate":false,"isPrimary":true,"joinedAt":"2013-04-18T14:06:03","id":"48488944","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/orangleliu.jpg","cache":"//a.disquscdn.com/uploads/users/4848/8944/avatar32.jpg?1439808597"},"isCustom":true,"permalink":"http://disqus.com/api/users/avatars/orangleliu.jpg","cache":"//a.disquscdn.com/uploads/users/4848/8944/avatar92.jpg?1439808597","large":{"permalink":"http://disqus.com/api/users/avatars/orangleliu.jpg","cache":"//a.disquscdn.com/uploads/users/4848/8944/avatar92.jpg?1439808597"}}},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"great \uff01 thank you","createdAt":"2014-12-25T03:43:23","id":"1758369938","thread":"2779462490","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":2,"isEdited":false,"message":"\u003cp>great \uff01 thank you\u003c/p>","isSpam":false,"isHighlighted":false,"points":2},{"forum":"sebastianraschka","parent":null,"isApproved":true,"author":{"username":"RoFoDo","about":"","name":"Ryan Foley","disable3rdPartyTrackers":false,"url":"","isAnonymous":false,"rep":1.278065,"profileUrl":"https://disqus.com/by/RoFoDo/","reputation":1.278065,"location":"Colorado Springs","isPrivate":false,"isPrimary":true,"joinedAt":"2011-12-28T12:46:43","id":"20606678","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/RoFoDo.jpg","cache":"//a.disquscdn.com/uploads/users/2060/6678/avatar32.jpg?1440131815"},"isCustom":true,"permalink":"http://disqus.com/api/users/avatars/RoFoDo.jpg","cache":"//a.disquscdn.com/uploads/users/2060/6678/avatar92.jpg?1440131815","large":{"permalink":"http://disqus.com/api/users/avatars/RoFoDo.jpg","cache":"//a.disquscdn.com/uploads/users/2060/6678/avatar92.jpg?1440131815"}}},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"This is exactly what I've been looking for.  Thanks a bunch!","createdAt":"2014-09-26T15:45:41","id":"1607056441","thread":"2779462490","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":2,"isEdited":false,"message":"\u003cp>This is exactly what I've been looking for.  Thanks a bunch!\u003c/p>","isSpam":false,"isHighlighted":false,"points":2},{"forum":"sebastianraschka","parent":null,"isApproved":true,"author":{"username":"michaelbraverman","about":"","name":"Misha Bravo","disable3rdPartyTrackers":false,"url":"","isAnonymous":false,"rep":1.2383849999999998,"profileUrl":"https://disqus.com/by/michaelbraverman/","reputation":1.2383849999999998,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2013-07-19T16:43:18","id":"63190638","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/michaelbraverman.jpg","cache":"//a.disquscdn.com/uploads/users/6319/638/avatar32.jpg?1428558700"},"isCustom":true,"permalink":"http://disqus.com/api/users/avatars/michaelbraverman.jpg","cache":"//a.disquscdn.com/uploads/users/6319/638/avatar92.jpg?1428558700","large":{"permalink":"http://disqus.com/api/users/avatars/michaelbraverman.jpg","cache":"//a.disquscdn.com/uploads/users/6319/638/avatar92.jpg?1428558700"}}},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"Love your posts, perfect for enthusiasts who are starting out with python and want to dive into the real problems.","createdAt":"2015-04-09T05:51:38","id":"1954676832","thread":"2779462490","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":1,"isEdited":false,"message":"\u003cp>Love your posts, perfect for enthusiasts who are starting out with python and want to dive into the real problems.\u003c/p>","isSpam":false,"isHighlighted":false,"points":1},{"forum":"sebastianraschka","parent":null,"isApproved":true,"author":{"username":"yaonanzhong","about":"","name":"Yaonan Zhong","disable3rdPartyTrackers":false,"url":"","isAnonymous":false,"rep":1.2442659999999999,"profileUrl":"https://disqus.com/by/yaonanzhong/","reputation":1.2442659999999999,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2014-11-26T21:43:52","id":"133385048","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/yaonanzhong.jpg","cache":"//a.disquscdn.com/uploads/users/13338/5048/avatar32.jpg?1417038267"},"isCustom":true,"permalink":"http://disqus.com/api/users/avatars/yaonanzhong.jpg","cache":"//a.disquscdn.com/uploads/users/13338/5048/avatar92.jpg?1417038267","large":{"permalink":"http://disqus.com/api/users/avatars/yaonanzhong.jpg","cache":"//a.disquscdn.com/uploads/users/13338/5048/avatar92.jpg?1417038267"}}},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"Great article explaining the difference between apply, apply_async, map and map_async. Thank you!","createdAt":"2014-11-26T21:44:03","id":"1714373297","thread":"2779462490","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":1,"isEdited":false,"message":"\u003cp>Great article explaining the difference between apply, apply_async, map and map_async. Thank you!\u003c/p>","isSpam":false,"isHighlighted":false,"points":1},{"forum":"sebastianraschka","parent":null,"isApproved":true,"author":{"username":"disqus_FHX5G2Rdj8","about":"","name":"James bale","disable3rdPartyTrackers":false,"url":"","isAnonymous":false,"rep":1.233058,"profileUrl":"https://disqus.com/by/disqus_FHX5G2Rdj8/","reputation":1.233058,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2014-06-19T08:20:20","id":"111255456","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/disqus_FHX5G2Rdj8.jpg","cache":"//a.disquscdn.com/uploads/users/11125/5456/avatar32.jpg?1403869937"},"isCustom":true,"permalink":"http://disqus.com/api/users/avatars/disqus_FHX5G2Rdj8.jpg","cache":"//a.disquscdn.com/uploads/users/11125/5456/avatar92.jpg?1403869937","large":{"permalink":"http://disqus.com/api/users/avatars/disqus_FHX5G2Rdj8.jpg","cache":"//a.disquscdn.com/uploads/users/11125/5456/avatar92.jpg?1403869937"}}},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"Great!!!","createdAt":"2014-06-27T11:52:16","id":"1456947238","thread":"2779462490","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":1,"isEdited":false,"message":"\u003cp>Great!!!\u003c/p>","isSpam":false,"isHighlighted":false,"points":1},{"forum":"sebastianraschka","parent":null,"isApproved":true,"author":{"username":"streaverli","about":"","name":"Streaver Li","disable3rdPartyTrackers":false,"url":"","isAnonymous":false,"rep":1.232124,"profileUrl":"https://disqus.com/by/streaverli/","reputation":1.232124,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2015-08-10T16:22:51","id":"168852346","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/streaverli.jpg","cache":"//a.disquscdn.com/1440101154/images/noavatar32.png"},"isCustom":false,"permalink":"http://disqus.com/api/users/avatars/streaverli.jpg","cache":"//a.disquscdn.com/1440101154/images/noavatar92.png","large":{"permalink":"http://disqus.com/api/users/avatars/streaverli.jpg","cache":"//a.disquscdn.com/1440101154/images/noavatar92.png"}}},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"Thank you for sharing the knowledge, it is clear and enable me to apply to my own project","createdAt":"2015-08-10T16:23:53","id":"2184636574","thread":"2779462490","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":0,"isEdited":false,"message":"\u003cp>Thank you for sharing the knowledge, it is clear and enable me to apply to my own project\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"forum":"sebastianraschka","parent":2184636574,"isApproved":true,"author":{"username":"seraschka","about":"Computational biologist at Michigan State University, software developer, book author. Passionate about gadgets, technology news, Python & C++","name":"Sebastian Raschka","disable3rdPartyTrackers":false,"url":"http://www.sebastianraschka.com/","isAnonymous":false,"rep":1.2739989999999999,"profileUrl":"https://disqus.com/by/seraschka/","reputation":1.2739989999999999,"location":"East Lansing","isPrivate":false,"isPrimary":true,"joinedAt":"2012-11-25T08:16:11","id":"37273806","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/seraschka.jpg","cache":"//a.disquscdn.com/uploads/users/3727/3806/avatar32.jpg?1439225957"},"isCustom":true,"permalink":"http://disqus.com/api/users/avatars/seraschka.jpg","cache":"//a.disquscdn.com/uploads/users/3727/3806/avatar92.jpg?1439225957","large":{"permalink":"http://disqus.com/api/users/avatars/seraschka.jpg","cache":"//a.disquscdn.com/uploads/users/3727/3806/avatar92.jpg?1439225957"}}},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"Cool, nice to hear! Thanks for the feedback!","createdAt":"2015-08-10T16:58:30","id":"2184701764","thread":"2779462490","depth":1,"numReports":0,"isDeletedByAuthor":false,"likes":0,"isEdited":false,"message":"\u003cp>Cool, nice to hear! Thanks for the feedback!\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"forum":"sebastianraschka","parent":null,"isApproved":true,"author":{"username":"philschiffer","about":"","name":"Phil Schiffer","disable3rdPartyTrackers":false,"url":"","isAnonymous":false,"rep":1.232124,"profileUrl":"https://disqus.com/by/philschiffer/","reputation":1.232124,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2015-05-30T09:21:09","id":"159671261","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/philschiffer.jpg","cache":"//a.disquscdn.com/1440101154/images/noavatar32.png"},"isCustom":false,"permalink":"http://disqus.com/api/users/avatars/philschiffer.jpg","cache":"//a.disquscdn.com/1440101154/images/noavatar92.png","large":{"permalink":"http://disqus.com/api/users/avatars/philschiffer.jpg","cache":"//a.disquscdn.com/1440101154/images/noavatar92.png"}}},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"Very cool intro. Much better to understand than the other ones I saw.","createdAt":"2015-05-30T09:21:49","id":"2052975118","thread":"2779462490","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":0,"isEdited":false,"message":"\u003cp>Very cool intro. Much better to understand than the other ones I saw.\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"forum":"sebastianraschka","parent":null,"isApproved":true,"author":{"username":"rodeneg","about":"just another human being","name":"Rodrigo","disable3rdPartyTrackers":false,"url":"","isAnonymous":false,"rep":1.232124,"profileUrl":"https://disqus.com/by/rodeneg/","reputation":1.232124,"location":"Santiago, Chile","isPrivate":false,"isPrimary":true,"joinedAt":"2015-05-19T19:50:18","id":"158244112","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/rodeneg.jpg","cache":"//a.disquscdn.com/uploads/users/15824/4112/avatar32.jpg?1432065246"},"isCustom":true,"permalink":"http://disqus.com/api/users/avatars/rodeneg.jpg","cache":"//a.disquscdn.com/uploads/users/15824/4112/avatar92.jpg?1432065246","large":{"permalink":"http://disqus.com/api/users/avatars/rodeneg.jpg","cache":"//a.disquscdn.com/uploads/users/15824/4112/avatar92.jpg?1432065246"}}},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"this will be really useful in my work, thanks a lot!!","createdAt":"2015-05-19T19:50:32","id":"2034378168","thread":"2779462490","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":0,"isEdited":false,"message":"\u003cp>this will be really useful in my work, thanks a lot!!\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"forum":"sebastianraschka","parent":null,"isApproved":true,"author":{"username":"cludiotereso","about":"","name":"Cl\u00e1udio Tereso","disable3rdPartyTrackers":false,"url":"","isAnonymous":false,"rep":1.232124,"profileUrl":"https://disqus.com/by/cludiotereso/","reputation":1.232124,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2015-03-18T11:12:50","id":"149734425","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/cludiotereso.jpg","cache":"//a.disquscdn.com/1440101154/images/noavatar32.png"},"isCustom":false,"permalink":"http://disqus.com/api/users/avatars/cludiotereso.jpg","cache":"//a.disquscdn.com/1440101154/images/noavatar92.png","large":{"permalink":"http://disqus.com/api/users/avatars/cludiotereso.jpg","cache":"//a.disquscdn.com/1440101154/images/noavatar92.png"}}},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"Great article. Looking forward to see more developments on this topic. Thanks.","createdAt":"2015-03-18T11:15:10","id":"1913597052","thread":"2779462490","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":0,"isEdited":false,"message":"\u003cp>Great article. Looking forward to see more developments on this topic. Thanks.\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"forum":"sebastianraschka","parent":null,"isApproved":true,"author":{"username":"sai_lakshmana","about":"","name":"Sai Lakshmana","disable3rdPartyTrackers":false,"url":"","isAnonymous":false,"rep":1.2324929999999998,"profileUrl":"https://disqus.com/by/sai_lakshmana/","reputation":1.2324929999999998,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2015-02-19T20:51:41","id":"145195034","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/sai_lakshmana.jpg","cache":"//a.disquscdn.com/uploads/users/14519/5034/avatar32.jpg?1426094431"},"isCustom":true,"permalink":"http://disqus.com/api/users/avatars/sai_lakshmana.jpg","cache":"//a.disquscdn.com/uploads/users/14519/5034/avatar92.jpg?1426094431","large":{"permalink":"http://disqus.com/api/users/avatars/sai_lakshmana.jpg","cache":"//a.disquscdn.com/uploads/users/14519/5034/avatar92.jpg?1426094431"}}},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"I am curious to know, if there is an easy way to get return code after the parallel processing work is done. In order to start a different python script?","createdAt":"2015-03-11T17:20:30","id":"1901568449","thread":"2779462490","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":0,"isEdited":false,"message":"\u003cp>I am curious to know, if there is an easy way to get return code after the parallel processing work is done. In order to start a different python script?\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"forum":"sebastianraschka","parent":null,"isApproved":true,"author":{"username":"gabriel_lema","about":"","name":"Gabriel Lema","disable3rdPartyTrackers":false,"url":"","isAnonymous":false,"rep":1.2324929999999998,"profileUrl":"https://disqus.com/by/gabriel_lema/","reputation":1.2324929999999998,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2014-11-14T20:14:41","id":"131447898","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/gabriel_lema.jpg","cache":"//a.disquscdn.com/1440101154/images/noavatar32.png"},"isCustom":false,"permalink":"http://disqus.com/api/users/avatars/gabriel_lema.jpg","cache":"//a.disquscdn.com/1440101154/images/noavatar92.png","large":{"permalink":"http://disqus.com/api/users/avatars/gabriel_lema.jpg","cache":"//a.disquscdn.com/1440101154/images/noavatar92.png"}}},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"Thank you for this tutorial! What does it mean if I can't seem to complete the first part? http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#The-Process-class\n\nIt doesn't return any result..It looks as it got locked. I'm using Anaconda, with Spyder IDE, and Ipython terminal.\n\nThanks!","createdAt":"2014-11-14T20:14:48","id":"1693541439","thread":"2779462490","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":0,"isEdited":false,"message":"\u003cp>Thank you for this tutorial! What does it mean if I can't seem to complete the first part? \u003ca href=\"http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#The-Process-class\" rel=\"nofollow\">http://sebastianraschka.com/Ar...\u003c/a>\u003c/p>\u003cp>It doesn't return any result..It looks as it got locked. I'm using Anaconda, with Spyder IDE, and Ipython terminal.\u003c/p>\u003cp>Thanks!\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"forum":"sebastianraschka","parent":1693541439,"isApproved":true,"author":{"username":"gabriel_lema","about":"","name":"Gabriel Lema","disable3rdPartyTrackers":false,"url":"","isAnonymous":false,"rep":1.2324929999999998,"profileUrl":"https://disqus.com/by/gabriel_lema/","reputation":1.2324929999999998,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2014-11-14T20:14:41","id":"131447898","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/gabriel_lema.jpg","cache":"//a.disquscdn.com/1440101154/images/noavatar32.png"},"isCustom":false,"permalink":"http://disqus.com/api/users/avatars/gabriel_lema.jpg","cache":"//a.disquscdn.com/1440101154/images/noavatar92.png","large":{"permalink":"http://disqus.com/api/users/avatars/gabriel_lema.jpg","cache":"//a.disquscdn.com/1440101154/images/noavatar92.png"}}},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"Nvmd, I just added the if __name__ = '__main__\" and now it works.","createdAt":"2014-11-14T20:36:08","id":"1693574234","thread":"2779462490","depth":1,"numReports":0,"isDeletedByAuthor":false,"likes":0,"isEdited":false,"message":"\u003cp>Nvmd, I just added the if __name__ = '__main__\" and now it works.\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"forum":"sebastianraschka","parent":1693574234,"isApproved":true,"author":{"username":"disqus_FI1gSgJv8m","about":"Free Lancer","name":"Gee","disable3rdPartyTrackers":false,"url":"","isAnonymous":false,"rep":1.232124,"profileUrl":"https://disqus.com/by/disqus_FI1gSgJv8m/","reputation":1.232124,"location":"hamilton, New zealand","isPrivate":false,"isPrimary":true,"joinedAt":"2014-12-25T05:51:22","id":"136884522","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/disqus_FI1gSgJv8m.jpg","cache":"//a.disquscdn.com/uploads/users/13688/4522/avatar32.jpg?1419486915"},"isCustom":true,"permalink":"http://disqus.com/api/users/avatars/disqus_FI1gSgJv8m.jpg","cache":"//a.disquscdn.com/uploads/users/13688/4522/avatar92.jpg?1419486915","large":{"permalink":"http://disqus.com/api/users/avatars/disqus_FI1gSgJv8m.jpg","cache":"//a.disquscdn.com/uploads/users/13688/4522/avatar92.jpg?1419486915"}}},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"Still no result for me. Something looks wrong with output.get(). Great article though. Thank you  very much.","createdAt":"2014-12-25T05:55:14","id":"1758453758","thread":"2779462490","depth":2,"numReports":0,"isDeletedByAuthor":false,"likes":0,"isEdited":false,"message":"\u003cp>Still no result for me. Something looks wrong with output.get(). Great article though. Thank you  very much.\u003c/p>","isSpam":false,"isHighlighted":false,"points":0}],"thread":{"feed":"https://sebastianraschka.disqus.com/parallel_programming_in_python/latest.rss","uploadAdd":"//sebastianraschka.disqus.com/thread/parallel_programming_in_python/async_media_upload/","identifiers":[],"dislikes":0,"likes":4,"message":"","id":"2779462490","isDeleted":false,"category":"2603171","clean_title":"Parallel Programming in Python","userScore":0,"userSubscription":false,"signedLink":"http://disq.us/?url=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&key=XeuEW2JLJhlfINQlh6V12Q","createdAt":"2014-06-19T22:52:22","hasStreaming":false,"uploadRemove":"//sebastianraschka.disqus.com/thread/parallel_programming_in_python/async_media_remove/","raw_message":"","isClosed":false,"link":"http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html","slug":"parallel_programming_in_python","forum":"sebastianraschka","author":"37273806","posts":19,"moderators":[37273806],"title":"Parallel Programming in Python","highlightedPost":null}},"order":"popular"}</script>
+
+    
+
+    <div id="fixed-content"></div>
+
+
+    
+        
+        <!--[if lte IE 8]>
+<script src="//a.disquscdn.com/1440101154/build/vendor/ie8.js"></script>
+<![endif]-->
+<!--[if IE 9]>
+<script src="//a.disquscdn.com/1440101154/build/vendor/ie9.js"></script>
+<![endif]-->
+
+        
+<script type="text/json" id="disqus-urls">{
+    "root":"//disqus.com",
+    "next":"//a.disquscdn.com/next/current/embed"
+}</script>
+
+        <script src="lounge.load.760632a1b1264d7c9d9ee4b8bec74dda.js" id="bootstrap-script" data-app="lounge"></script>
+    
+
+
+<div id="layout" data-tracking-area="layout">
+
+<div id="placement-top" data-tracking-area="discovery-north"><div class="post-list" style="height: 0px; visibility: hidden;"></div></div>
+
+<div id="onboard" data-tracking-area="onboard"></div>
+
+<div id="highlighted-post" data-tracking-area="highlighted" class="highlighted-post" style="display: none;"></div>
+
+<div id="global-alert"></div>
+
+<header id="main-nav" data-tracking-area="main-nav">
+<nav class="nav nav-primary">
+<ul>
+<li class="tab-conversation active" data-role="post-count">
+<a class="publisher-nav-color">
+<span class="comment-count">
+19 comments
+</span>
+
+<span class="comment-count-placeholder">
+Comments
+</span>
+</a>
+</li>
+<li class="tab-community">
+<a href="https://disqus.com/home/forums/sebastianraschka/" class="publisher-nav-color" data-action="community-sidebar" data-forum="sebastianraschka" id="community-tab">
+<span class="community-name">
+<strong>SebastianRaschka</strong>
+
+</span>
+
+<strong class="community-name-placeholder">Community</strong>
+</a>
+</li>
+<li class="dropdown user-menu" data-role="logout"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="dropdown-toggle" data-toggle="dropdown">
+<span class="dropdown-toggle-wrapper">
+
+<span>
+Login
+</span>
+
+</span> <span class="caret"></span>
+</a>
+<ul class="dropdown-menu">
+
+
+<li>
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="auth:disqus">Disqus</a>
+</li>
+<li>
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="auth:facebook">Facebook</a>
+</li>
+<li>
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="auth:twitter">Twitter</a>
+</li>
+<li>
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="auth:google">Google</a>
+</li>
+
+
+
+</ul>
+</li>
+<li class="notification-menu unread" data-role="notification-menu"><a href="https://disqus.com/home/inbox/" class="notification-container" data-action="home" data-home-path="home/inbox/">
+<span class="notification-icon icon-comment" aria-hidden=""></span>
+<span class="notification-count" data-role="notification-count">1</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<section id="conversation" data-role="main" data-tracking-area="main">
+<div class="nav nav-secondary" data-tracking-area="secondary-nav">
+<ul>
+<li id="recommend-button" class="recommend dropdown">
+<div class="thread-likes"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="recommend" title="Recommend this discussion" class="dropdown-toggle ">
+<span class="icon-heart"></span>
+<span class="label label-default">Recommend</span>
+<span class="label label-recommended">Recommended</span>
+<span class="label label-count">4</span>
+</a>
+<ul class="dropdown-menu coachmark">
+<li>
+<h2>Discussion Recommended!</h2>
+<p>Recommending means this is a discussion worth sharing. It gets shared to your followers' Disqus feeds, and gives the creator kudos!</p>
+<a href="http://disqus.com/home/?utm_source=disqus_embed&utm_content=recommend_btn" class="btn btn-primary" target="_blank">
+ Find More Discussions 
+</a>
+</li>
+</ul>
+</div></li>
+<li id="thread-share-menu" class="dropdown share-menu hidden-sm"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="dropdown-toggle" data-toggle="dropdown" title="Share">
+<span class="icon-export"></span>
+<span class="label">Share</span>
+</a>
+<ul class="share-menu dropdown-menu">
+<li class="share">Share this discussion on
+<ul>
+<li class="twitter">
+<a data-action="share:twitter" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#">Twitter</a>
+</li>
+<li class="facebook">
+<a data-action="share:facebook" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#">Facebook</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-role="post-sort" class="dropdown sorting pull-right">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="dropdown-toggle" data-toggle="dropdown">
+Sort by Best
+
+
+<span class="caret"></span>
+</a>
+<ul class="dropdown-menu pull-right">
+<li class="selected">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="sort" data-sort="popular">Best<i aria-hidden="true" class="icon-checkmark"></i></a>
+</li>
+
+<li>
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="sort" data-sort="desc">Newest<i aria-hidden="true" class="icon-checkmark"></i></a>
+</li>
+
+<li>
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="sort" data-sort="asc">Oldest<i aria-hidden="true" class="icon-checkmark"></i></a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div id="posts">
+<div id="form"><form class="reply">
+<div class="postbox">
+<div role="alert"></div>
+<div class="avatar">
+<span class="user">
+<img data-role="user-avatar" src="noavatar92.b677f9ddbee6f4bb22f473ae3bd61b85.png" alt="Avatar">
+</span>
+</div>
+
+<div class="textarea-wrapper" data-role="textarea" dir="auto"><div><span class="placeholder">Join the discussion…</span><div class="textarea" tabindex="0" role="textbox" aria-multiline="true" contenteditable="true" data-role="editable" aria-label="Join the discussion…" style="overflow: auto; max-height: 350px;"><p><br></p></div><div style="display: none;"><ul class="suggestions">
+<li class="header">
+<h5>in this conversation</h5>
+</li>
+</ul>
+</div></div>
+<div data-role="drag-drop-placeholder" class="media-drag-hover" style="display: none">
+<div class="drag-text">
+⬇ Drag and drop your images here to upload them.
+</div>
+</div>
+<div class="media-preview empty" data-role="media-preview"><ul data-role="media-legacy-list"></ul>
+<ul data-role="media-progress-list"></ul>
+<ul data-role="media-rich-list"></ul>
+<div class="media-expanded empty" data-role="media-preview-expanded">
+<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-role="media-preview-expanded-image" alt="Media preview placeholder">
+</div>
+</div>
+<div class="edit-alert" role="postbox-alert"></div>
+<div class="post-actions">
+<ul class="wysiwyg">
+<li data-role="media-uploader"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" tabindex="-1" data-action="attach" class="attach" title="Upload Images"><span>Attach</span></a>
+<input type="file" data-role="media-upload" tabindex="-1" accept="image/*">
+</li>
+</ul>
+</div>
+</div>
+
+<div data-role="login-form"><div><section class="auth-section logged-out">
+<div class="connect">
+<h6>Log in with</h6>
+<ul data-role="login-menu" class="services login-buttons">
+
+
+<li class="auth-disqus">
+<button type="button" data-action="auth:disqus" title="Disqus"><i class="icon-disqus"></i></button>
+</li>
+<li class="auth-facebook">
+<button type="button" data-action="auth:facebook" title="Facebook"><i class="icon-facebook-circle"></i></button>
+</li>
+<li class="auth-twitter">
+<button type="button" data-action="auth:twitter" title="Twitter"><i class="icon-twitter-circle"></i></button>
+</li>
+<li class="auth-google">
+<button type="button" data-action="auth:google" title="Google"><i class="icon-google-plus-circle"></i></button>
+</li>
+</ul>
+</div>
+<div class="guest">
+<h6 class="guest-form-title">
+<span class="register-text"> or sign up with Disqus </span>
+<span class="guest-text"> or pick a name </span>
+</h6>
+
+<div class="what-is-disqus help-icon">
+<div id="rules" class="tooltip show">
+<h3>Disqus is a discussion network</h3>
+<ul>
+<li><span>Disqus never moderates or censors. The rules on this community are its own.</span></li>
+<li><span>Your email is safe with us. It's only used for moderation and optional notifications.</span></li>
+<li><span>Don't be a jerk or do anything illegal. Everything is easier that way.</span></li>
+</ul>
+<p class="clearfix"><a href="https://docs.disqus.com/kb/terms-and-policies/" class="btn btn-small" target="_blank">Read full terms and conditions</a></p>
+</div>
+</div>
+
+<p class="input-wrapper">
+<input dir="auto" type="text" placeholder="Name" name="display_name" id="view69_display_name" maxlength="30">
+</p>
+
+<div class="guest-details " data-role="guest-details">
+<p class="input-wrapper">
+<input dir="auto" type="email" placeholder="Email" name="email" id="view69_email">
+</p>
+
+<p class="input-wrapper">
+<input dir="auto" type="password" class="register-text" placeholder="Password" name="password" id="view69_password">
+</p>
+
+<div class="acceptance-wrapper register-text">
+By signing up, you agree to the Disqus <a target="_blank" href="https://help.disqus.com/customer/portal/articles/1753105-basic-rules-for-disqus-powered-profiles-and-discussions">Basic Rules</a>, <a target="_blank" href="https://help.disqus.com/customer/portal/articles/466260-terms-of-service">Terms of Service</a>, and <a target="_blank" href="https://help.disqus.com/customer/portal/articles/466259-privacy-policy">Privacy Policy</a>.
+</div>
+<div class="acceptance-wrapper guest-text">
+By posting, you agree to the Disqus <a target="_blank" href="https://help.disqus.com/customer/portal/articles/1753105-basic-rules-for-disqus-powered-profiles-and-discussions">Basic Rules</a>, <a target="_blank" href="https://help.disqus.com/customer/portal/articles/466260-terms-of-service">Terms of Service</a>, and <a target="_blank" href="https://help.disqus.com/customer/portal/articles/466259-privacy-policy">Privacy Policy</a>.
+</div>
+
+<input type="checkbox" name="author-guest" style="display:none">
+
+<div class="proceed" data-role="submit-btn-container">
+<button type="submit" class="btn submit" aria-label="Next"><span class="icon-proceed"></span><div class="spinner"></div></button>
+</div>
+</div>
+</div>
+</section>
+
+</div></div>
+</div>
+</form></div>
+
+<button class="alert realtime" style="display: none;" data-role="realtime-notification">
+</button>
+
+<div id="no-posts" style="display: none;"></div>
+
+<ul id="post-list" class="post-list"><li class="post" id="post-1452339930"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="https://disqus.com/by/disqus_EhjYFYucLv/" class="user" data-action="profile" data-username="disqus_EhjYFYucLv">
+<img data-role="user-avatar" data-user="75592814" src="noavatar92.png" data-src="//a.disquscdn.com/uploads/users/7559/2814/avatar92.jpg?1403640773" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="https://disqus.com/by/disqus_EhjYFYucLv/" data-action="profile" data-username="disqus_EhjYFYucLv" data-role="username">Jayanth</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1452339930" data-role="relative-time" class="time-ago" title="Tuesday, June 24, 2014 10:12 PM">a year ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Very well written and easy to understand. I was looking forward for this. Thank you</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="vote-up  count-6" data-action="upvote" title="">
+
+<span class="updatable count" data-role="likes">6</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1452339930">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1452339930">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"><li class="post" id="post-1453007922"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="https://disqus.com/by/seraschka/" class="user" data-action="profile" data-username="seraschka">
+<img data-role="user-avatar" data-user="37273806" src="noavatar92.png" data-src="//a.disquscdn.com/uploads/users/3727/3806/avatar92.jpg?1439225957" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="https://disqus.com/by/seraschka/" data-action="profile" data-username="seraschka" data-role="username">Sebastian Raschka</a></span>
+<span class="badge moderator">Mod</span>
+
+<span><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1452339930" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> Jayanth</a></span>
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1453007922" data-role="relative-time" class="time-ago" title="Wednesday, June 25, 2014 5:14 AM">a year ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Thank you, I am really glad to hear!</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="vote-up  count-2" data-action="upvote" title="">
+
+<span class="updatable count" data-role="likes">2</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1453007922">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1453007922">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li></ul>
+
+</li><li class="post" id="post-1619217037"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="https://disqus.com/by/sailakshmana/" class="user" data-action="profile" data-username="sailakshmana">
+<img data-role="user-avatar" data-user="124388318" src="noavatar92.png" data-src="//a.disquscdn.com/uploads/users/12438/8318/avatar92.jpg?1412418542" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="https://disqus.com/by/sailakshmana/" data-action="profile" data-username="sailakshmana" data-role="username">Sai Lakshmana</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1619217037" data-role="relative-time" class="time-ago" title="Saturday, October 4, 2014 12:30 PM">a year ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>One of the best articles on using pythons multiprocessing module. Very easy to follow and apply it. Thanks for the wonderful work.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="vote-up  count-4" data-action="upvote" title="">
+
+<span class="updatable count" data-role="likes">4</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1619217037">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1619217037">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li class="post" id="post-1689019742"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="https://disqus.com/by/nelsoncarrasquel/" class="user" data-action="profile" data-username="nelsoncarrasquel">
+<img data-role="user-avatar" data-user="74395274" src="noavatar92.png" data-src="//a.disquscdn.com/uploads/users/7439/5274/avatar92.jpg?1425190804" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="https://disqus.com/by/nelsoncarrasquel/" data-action="profile" data-username="nelsoncarrasquel" data-role="username">Nelson Carrasquel</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1689019742" data-role="relative-time" class="time-ago" title="Wednesday, November 12, 2014 5:35 AM">9 months ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Finally, I have found a guide on python parallel for dummies, I found some other articles, but this one was really the easiest to understand, congratulations, P.S: Sorry for my messy english</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="vote-up  count-3" data-action="upvote" title="">
+
+<span class="updatable count" data-role="likes">3</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1689019742">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1689019742">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li class="post" id="post-1759329708"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="https://disqus.com/by/rn27in/" class="user" data-action="profile" data-username="rn27in">
+<img data-role="user-avatar" data-user="135154872" src="noavatar92.png" data-src="//a.disquscdn.com/1440101154/images/noavatar92.png" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="https://disqus.com/by/rn27in/" data-action="profile" data-username="rn27in" data-role="username">rn27in .</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1759329708" data-role="relative-time" class="time-ago" title="Friday, December 26, 2014 8:06 AM">8 months ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Thanks Sebastian for your wonderful article. When I run the cube function with multiprocessing using Pool, it does not recognize the  function cube defined globally. Even if I use __name__ = '__main__', it does not work. I get this error. <a href="http://self.run/" rel="nofollow">self.run</a>(),  self._target(*self._args, **self._kwargs),  task = get(), return recv(). Is there a way I can run this program?  Thanks</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="vote-up  count-2" data-action="upvote" title="">
+
+<span class="updatable count" data-role="likes">2</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1759329708">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1759329708">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li class="post" id="post-1758369938"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="https://disqus.com/by/orangleliu/" class="user" data-action="profile" data-username="orangleliu">
+<img data-role="user-avatar" data-user="48488944" src="noavatar92.png" data-src="//a.disquscdn.com/uploads/users/4848/8944/avatar92.jpg?1439808597" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="https://disqus.com/by/orangleliu/" data-action="profile" data-username="orangleliu" data-role="username">orangleliu</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1758369938" data-role="relative-time" class="time-ago" title="Thursday, December 25, 2014 4:43 AM">8 months ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>great ！ thank you</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="vote-up  count-2" data-action="upvote" title="">
+
+<span class="updatable count" data-role="likes">2</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1758369938">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1758369938">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li class="post" id="post-1607056441"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="https://disqus.com/by/RoFoDo/" class="user" data-action="profile" data-username="RoFoDo">
+<img data-role="user-avatar" data-user="20606678" src="noavatar92.png" data-src="//a.disquscdn.com/uploads/users/2060/6678/avatar92.jpg?1440131815" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="https://disqus.com/by/RoFoDo/" data-action="profile" data-username="RoFoDo" data-role="username">Ryan Foley</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1607056441" data-role="relative-time" class="time-ago" title="Friday, September 26, 2014 5:45 PM">a year ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>This is exactly what I've been looking for.  Thanks a bunch!</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="vote-up  count-2" data-action="upvote" title="">
+
+<span class="updatable count" data-role="likes">2</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1607056441">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1607056441">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li class="post" id="post-1954676832"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="https://disqus.com/by/michaelbraverman/" class="user" data-action="profile" data-username="michaelbraverman">
+<img data-role="user-avatar" data-user="63190638" src="noavatar92.png" data-src="//a.disquscdn.com/uploads/users/6319/638/avatar92.jpg?1428558700" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="https://disqus.com/by/michaelbraverman/" data-action="profile" data-username="michaelbraverman" data-role="username">Misha Bravo</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1954676832" data-role="relative-time" class="time-ago" title="Thursday, April 9, 2015 7:51 AM">4 months ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Love your posts, perfect for enthusiasts who are starting out with python and want to dive into the real problems.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="vote-up  count-1" data-action="upvote" title="">
+
+<span class="updatable count" data-role="likes">1</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1954676832">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1954676832">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li class="post" id="post-1714373297"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="https://disqus.com/by/yaonanzhong/" class="user" data-action="profile" data-username="yaonanzhong">
+<img data-role="user-avatar" data-user="133385048" src="noavatar92.png" data-src="//a.disquscdn.com/uploads/users/13338/5048/avatar92.jpg?1417038267" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="https://disqus.com/by/yaonanzhong/" data-action="profile" data-username="yaonanzhong" data-role="username">Yaonan Zhong</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1714373297" data-role="relative-time" class="time-ago" title="Wednesday, November 26, 2014 10:44 PM">9 months ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Great article explaining the difference between apply, apply_async, map and map_async. Thank you!</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="vote-up  count-1" data-action="upvote" title="">
+
+<span class="updatable count" data-role="likes">1</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1714373297">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1714373297">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li class="post" id="post-1456947238"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="https://disqus.com/by/disqus_FHX5G2Rdj8/" class="user" data-action="profile" data-username="disqus_FHX5G2Rdj8">
+<img data-role="user-avatar" data-user="111255456" src="noavatar92.png" data-src="//a.disquscdn.com/uploads/users/11125/5456/avatar92.jpg?1403869937" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="https://disqus.com/by/disqus_FHX5G2Rdj8/" data-action="profile" data-username="disqus_FHX5G2Rdj8" data-role="username">James bale</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1456947238" data-role="relative-time" class="time-ago" title="Friday, June 27, 2014 1:52 PM">a year ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Great!!!</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="vote-up  count-1" data-action="upvote" title="">
+
+<span class="updatable count" data-role="likes">1</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1456947238">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1456947238">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li class="post" id="post-2184636574"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="https://disqus.com/by/streaverli/" class="user" data-action="profile" data-username="streaverli">
+<img data-role="user-avatar" data-user="168852346" src="noavatar92.png" data-src="//a.disquscdn.com/1440101154/images/noavatar92.png" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="https://disqus.com/by/streaverli/" data-action="profile" data-username="streaverli" data-role="username">Streaver Li</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-2184636574" data-role="relative-time" class="time-ago" title="Monday, August 10, 2015 6:23 PM">13 days ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Thank you for sharing the knowledge, it is clear and enable me to apply to my own project</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-2184636574">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:2184636574">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"><li class="post" id="post-2184701764"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="https://disqus.com/by/seraschka/" class="user" data-action="profile" data-username="seraschka">
+<img data-role="user-avatar" data-user="37273806" src="noavatar92.png" data-src="//a.disquscdn.com/uploads/users/3727/3806/avatar92.jpg?1439225957" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="https://disqus.com/by/seraschka/" data-action="profile" data-username="seraschka" data-role="username">Sebastian Raschka</a></span>
+<span class="badge moderator">Mod</span>
+
+<span><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-2184636574" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> Streaver Li</a></span>
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-2184701764" data-role="relative-time" class="time-ago" title="Monday, August 10, 2015 6:58 PM">13 days ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Cool, nice to hear! Thanks for the feedback!</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-2184701764">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:2184701764">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li></ul>
+
+</li><li class="post" id="post-2052975118"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="https://disqus.com/by/philschiffer/" class="user" data-action="profile" data-username="philschiffer">
+<img data-role="user-avatar" data-user="159671261" src="noavatar92.png" data-src="//a.disquscdn.com/1440101154/images/noavatar92.png" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="https://disqus.com/by/philschiffer/" data-action="profile" data-username="philschiffer" data-role="username">Phil Schiffer</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-2052975118" data-role="relative-time" class="time-ago" title="Saturday, May 30, 2015 11:21 AM">3 months ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Very cool intro. Much better to understand than the other ones I saw.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-2052975118">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:2052975118">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li class="post" id="post-2034378168"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="https://disqus.com/by/rodeneg/" class="user" data-action="profile" data-username="rodeneg">
+<img data-role="user-avatar" data-user="158244112" src="noavatar92.png" data-src="//a.disquscdn.com/uploads/users/15824/4112/avatar92.jpg?1432065246" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="https://disqus.com/by/rodeneg/" data-action="profile" data-username="rodeneg" data-role="username">Rodrigo</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-2034378168" data-role="relative-time" class="time-ago" title="Tuesday, May 19, 2015 9:50 PM">3 months ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>this will be really useful in my work, thanks a lot!!</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-2034378168">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:2034378168">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li class="post" id="post-1913597052"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="https://disqus.com/by/cludiotereso/" class="user" data-action="profile" data-username="cludiotereso">
+<img data-role="user-avatar" data-user="149734425" src="noavatar92.png" data-src="//a.disquscdn.com/1440101154/images/noavatar92.png" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="https://disqus.com/by/cludiotereso/" data-action="profile" data-username="cludiotereso" data-role="username">Cláudio Tereso</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1913597052" data-role="relative-time" class="time-ago" title="Wednesday, March 18, 2015 12:15 PM">5 months ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Great article. Looking forward to see more developments on this topic. Thanks.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1913597052">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1913597052">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li class="post" id="post-1901568449"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="https://disqus.com/by/sai_lakshmana/" class="user" data-action="profile" data-username="sai_lakshmana">
+<img data-role="user-avatar" data-user="145195034" src="noavatar92.png" data-src="//a.disquscdn.com/uploads/users/14519/5034/avatar92.jpg?1426094431" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="https://disqus.com/by/sai_lakshmana/" data-action="profile" data-username="sai_lakshmana" data-role="username">Sai Lakshmana</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1901568449" data-role="relative-time" class="time-ago" title="Wednesday, March 11, 2015 6:20 PM">5 months ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>I am curious to know, if there is an easy way to get return code after the parallel processing work is done. In order to start a different python script?</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1901568449">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1901568449">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li class="post" id="post-1693541439"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="https://disqus.com/by/gabriel_lema/" class="user" data-action="profile" data-username="gabriel_lema">
+<img data-role="user-avatar" data-user="131447898" src="noavatar92.png" data-src="//a.disquscdn.com/1440101154/images/noavatar92.png" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="https://disqus.com/by/gabriel_lema/" data-action="profile" data-username="gabriel_lema" data-role="username">Gabriel Lema</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1693541439" data-role="relative-time" class="time-ago" title="Friday, November 14, 2014 9:14 PM">9 months ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Thank you for this tutorial! What does it mean if I can't seem to complete the first part? <a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#The-Process-class" rel="nofollow">http://sebastianraschka.com/Ar...</a></p><p>It doesn't return any result..It looks as it got locked. I'm using Anaconda, with Spyder IDE, and Ipython terminal.</p><p>Thanks!</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1693541439">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1693541439">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"><li class="post" id="post-1693574234"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="https://disqus.com/by/gabriel_lema/" class="user" data-action="profile" data-username="gabriel_lema">
+<img data-role="user-avatar" data-user="131447898" src="noavatar92.png" data-src="//a.disquscdn.com/1440101154/images/noavatar92.png" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="https://disqus.com/by/gabriel_lema/" data-action="profile" data-username="gabriel_lema" data-role="username">Gabriel Lema</a></span>
+
+<span><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1693541439" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> Gabriel Lema</a></span>
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1693574234" data-role="relative-time" class="time-ago" title="Friday, November 14, 2014 9:36 PM">9 months ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Nvmd, I just added the if __name__ = '__main__" and now it works.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1693574234">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1693574234">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"><li class="post" id="post-1758453758"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="https://disqus.com/by/disqus_FI1gSgJv8m/" class="user" data-action="profile" data-username="disqus_FI1gSgJv8m">
+<img data-role="user-avatar" data-user="136884522" src="noavatar92.png" data-src="//a.disquscdn.com/uploads/users/13688/4522/avatar92.jpg?1419486915" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="https://disqus.com/by/disqus_FI1gSgJv8m/" data-action="profile" data-username="disqus_FI1gSgJv8m" data-role="username">Gee</a></span>
+
+<span><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1693574234" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> Gabriel Lema</a></span>
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1758453758" data-role="relative-time" class="time-ago" title="Thursday, December 25, 2014 6:55 AM">8 months ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Still no result for me. Something looks wrong with output.get(). Great article though. Thank you  very much.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#comment-1758453758">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1758453758">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li></ul>
+
+</li></ul>
+
+</li></ul>
+
+<div class="load-more" data-role="more" style="display: none;">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" data-action="more-posts" class="btn">Load more comments</a>
+</div>
+</div>
+
+</section>
+
+<div id="placement-bottom" data-tracking-area="discovery-south"><div class="post-list" style="height: auto; visibility: visible;"><div style="display: block; width: 100%;"><div id="discovery-main-c230" class="discovery-main">
+<div id="discovery-note" class="discovery-note">
+<div class="alert">
+<button class="close" data-action="discovery-help-close" title="Close this box">×</button>
+Disqus helps you find new and interesting content, discussions and products. Some sponsors and ecommerce sites may pay us for these recommendations and links. <a href="https://help.disqus.com/customer/portal/articles/666278-introducing-promoted-discovery-and-f-a-q-" target="_blank">Learn more</a>
+ or <a href="https://www.surveymonkey.com/s/GHK872T" target="_blank">
+give us feedback</a>.
+</div>
+</div>
+
+<div class="discovery-options">
+<button class="discovery-help" data-action="discovery-help">
+What's this?
+</button>
+</div>
+
+<section id="col-organic-c314" class="col-organic discovery-col-0 ">
+<header class="discovery-col-header">
+
+<h2>Also on <strong>SebastianRaschka</strong>
+</h2>
+
+
+</header>
+<ul class="discovery-posts" data-role="discovery-posts"><li class="discovery-post post-0" id="discovery-link-organic-2795865264" data-id="2795865264">
+<a href="http://disq.us/url?url=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_scikit_dataprocessing.html%3AHTR5srxBABoKWTO2eD1fOzZi3LE&imp=9clt3k1d5t323&prev_imp&forum_id=2564201&forum=sebastianraschka&thread_id=2779462490&thread=2795865264&zone=thread&area=discovery" class="publisher-anchor-color">
+
+<header class="discovery-post-header">
+<h3 title="Python Data Processing">
+<span data-role="discovery-thread-title" class="title line-truncate" data-line-truncate="2">
+Python Data Processing
+</span>
+
+
+</h3>
+
+<ul class="meta">
+<li class="comments">
+13 comments
+</li>
+<li class="time">a year ago</li>
+</ul>
+</header>
+
+</a><a href="http://disq.us/url?url=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_scikit_dataprocessing.html%3AHTR5srxBABoKWTO2eD1fOzZi3LE&imp=9clt3k1d5t323&prev_imp&forum_id=2564201&forum=sebastianraschka&thread_id=2779462490&thread=2795865264&zone=thread&area=discovery" class="top-comment" data-role="discovery-top-comment">
+<img data-src="//a.disquscdn.com/uploads/users/11221/7067/avatar92.jpg?1403819888" alt="Avatar" data-role="discovery-avatar">
+<p><span class="user" data-role="discovery-top-comment-author">Pierre Noire</span> — <span data-role="discovery-top-comment-snippet" class="line-truncate" data-line-truncate="3"> Is it possible to recall a model like a classification in a new python session without re-training using pickle …</span></p>
+</a>
+
+</li>
+<li class="discovery-post post-1" id="discovery-link-organic-3272579252" data-id="3272579252">
+<a href="http://disq.us/url?url=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_twitter_wordcloud.html%3A832s17jSfbmI3jJEBT9MptD6EvM&imp=9clt3k1d5t323&prev_imp&forum_id=2564201&forum=sebastianraschka&thread_id=2779462490&thread=3272579252&zone=thread&area=discovery" class="publisher-anchor-color">
+
+<header class="discovery-post-header">
+<h3 title="Twitter Word Cloud">
+<span data-role="discovery-thread-title" class="title line-truncate" data-line-truncate="2">
+Twitter Word Cloud
+</span>
+
+
+</h3>
+
+<ul class="meta">
+<li class="comments">
+7 comments
+</li>
+<li class="time">9 months ago</li>
+</ul>
+</header>
+
+</a><a href="http://disq.us/url?url=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_twitter_wordcloud.html%3A832s17jSfbmI3jJEBT9MptD6EvM&imp=9clt3k1d5t323&prev_imp&forum_id=2564201&forum=sebastianraschka&thread_id=2779462490&thread=3272579252&zone=thread&area=discovery" class="top-comment" data-role="discovery-top-comment">
+<img data-src="//a.disquscdn.com/uploads/users/13369/8765/avatar92.jpg?1438715016" alt="Avatar" data-role="discovery-avatar">
+<p><span class="user" data-role="discovery-top-comment-author">Christopher Galpin</span> — <span data-role="discovery-top-comment-snippet" class="line-truncate" data-line-truncate="3"> Awesome. I'd like to see something like this except with rectangles rather than words - though …</span></p>
+</a>
+
+</li>
+<li class="discovery-post post-2" id="discovery-link-organic-2036423200" data-id="2036423200">
+<a href="http://disq.us/url?url=http%3A%2F%2Fsebastianraschka.com%2FArticles%2Fheatmaps_in_r.html%3A8WFfxBnst2XNDlcGVCLoQ0OmH_A&imp=9clt3k1d5t323&prev_imp&forum_id=2564201&forum=sebastianraschka&thread_id=2779462490&thread=2036423200&zone=thread&area=discovery" class="publisher-anchor-color">
+
+<header class="discovery-post-header">
+<h3 title="A short tutorial for decent heat maps in R">
+<span data-role="discovery-thread-title" class="title line-truncate" data-line-truncate="2">
+A short tutorial for decent heat maps in R
+</span>
+
+
+</h3>
+
+<ul class="meta">
+<li class="comments">
+44 comments
+</li>
+<li class="time">2 years ago</li>
+</ul>
+</header>
+
+</a><a href="http://disq.us/url?url=http%3A%2F%2Fsebastianraschka.com%2FArticles%2Fheatmaps_in_r.html%3A8WFfxBnst2XNDlcGVCLoQ0OmH_A&imp=9clt3k1d5t323&prev_imp&forum_id=2564201&forum=sebastianraschka&thread_id=2779462490&thread=2036423200&zone=thread&area=discovery" class="top-comment" data-role="discovery-top-comment">
+<img data-src="//a.disquscdn.com/uploads/users/3323/2111/avatar92.jpg?1387289266" alt="Avatar" data-role="discovery-avatar">
+<p><span class="user" data-role="discovery-top-comment-author">dickoa</span> — <span data-role="discovery-top-comment-snippet" class="line-truncate" data-line-truncate="3"> Very nice post !!!  Just a small typo though if (!require("gplots")) {  install.packages("RColorBrewer", …</span></p>
+</a>
+
+</li>
+<li class="discovery-post post-3" id="discovery-link-organic-2957557422" data-id="2957557422">
+<a href="http://disq.us/url?url=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_python_lda.html%3AeYYI1KKjqqOuGuIK1Ez99qUgbUk&imp=9clt3k1d5t323&prev_imp&forum_id=2564201&forum=sebastianraschka&thread_id=2779462490&thread=2957557422&zone=thread&area=discovery" class="publisher-anchor-color">
+
+<header class="discovery-post-header">
+<h3 title="Linear Discriminant Analysis bit by bit">
+<span data-role="discovery-thread-title" class="title line-truncate" data-line-truncate="2">
+Linear Discriminant Analysis bit by bit
+</span>
+
+
+</h3>
+
+<ul class="meta">
+<li class="comments">
+30 comments
+</li>
+<li class="time">a year ago</li>
+</ul>
+</header>
+
+</a><a href="http://disq.us/url?url=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_python_lda.html%3AeYYI1KKjqqOuGuIK1Ez99qUgbUk&imp=9clt3k1d5t323&prev_imp&forum_id=2564201&forum=sebastianraschka&thread_id=2779462490&thread=2957557422&zone=thread&area=discovery" class="top-comment" data-role="discovery-top-comment">
+<img data-src="//a.disquscdn.com/uploads/users/3727/3806/avatar92.jpg?1439225957" alt="Avatar" data-role="discovery-avatar">
+<p><span class="user" data-role="discovery-top-comment-author">Sebastian Raschka</span> — <span data-role="discovery-top-comment-snippet" class="line-truncate" data-line-truncate="3"> Hi, James, nice to hear that it was helpful. Hope you found everything you wanted to know ;)  And …</span></p>
+</a>
+
+</li>
+</ul>
+</section>
+
+</div>
+</div></div></div>
+
+<div id="footer" data-tracking-area="footer">
+<ul>
+<li class="logo"><a href="https://disqus.com/" rel="nofollow" title="Powered by Disqus">Powered by Disqus</a></li>
+<li id="thread-subscribe-button" class="email"> 
+<div class="default">
+<a href="http://disqus.com/embed/comments/?base=default&version=760632a1b1264d7c9d9ee4b8bec74dda&f=sebastianraschka&t_u=http%3A%2F%2Fsebastianraschka.com%2FArticles%2F2014_multiprocessing_intro.html&t_d=Parallel%20Programming%20in%20Python&t_t=Parallel%20Programming%20in%20Python&s_o=default#" rel="nofollow" data-action="subscribe" title="Subscribe and get email updates from this discussion"><i aria-hidden="true" class="icon-mail"></i><span class="clip">Subscribe</span> <i aria-hidden="true" class="icon-checkmark"></i></a>
+</div>
+<div class="form">
+<div class="input-wrapper"><input id="thread-subscribe-email" type="email" placeholder="yourname@email.com"></div>
+</div>
+</li>
+<li class="install">
+<a href="https://publishers.disqus.com/engage?utm_source=sebastianraschka&utm_medium=Disqus-Footer" rel="nofollow" target="_blank">
+<i aria-hidden="true" class="icon-disqus"></i>
+<span class="clip">Add Disqus to your site</span>
+</a>
+</li>
+<li class="privacy">
+<a href="https://help.disqus.com/customer/portal/articles/1657951?utm_source=disqus&utm_medium=embed-footer&utm_content=privacy-btn" rel="nofollow" target="_blank">
+<i aria-hidden="true" class="icon-lock"></i>
+<span class="clip">Privacy</span>
+</a>
+</li>
+</ul>
+</div>
+</div></body></html>

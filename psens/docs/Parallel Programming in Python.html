@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="initial-scale=0, maximum-scale=0">
+    <meta charset="utf-8">
+	<meta name="description" content="An introduction to parallel programming using Python&#39;s multiprocessing module">
+	<meta name="Author" content="Sebastian Raschka">
+
+    <title>Parallel Programming in Python</title>
+
+    <!-- JavaScript -->
+	<script src="./Parallel Programming in Python_files/cb=gapi.loaded_1" async=""></script><script type="text/javascript" async="" src="./Parallel Programming in Python_files/ga.js"></script><script id="twitter-wjs" src="./Parallel Programming in Python_files/widgets.js"></script><script src="./Parallel Programming in Python_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" src="./Parallel Programming in Python_files/jquery-latest.js"></script>
+	<script type="text/javascript" src="./Parallel Programming in Python_files/plusone.js" gapi_processed="true"></script>
+
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="./Parallel Programming in Python_files/style.css" media="screen"><link media="screen and (max-device-width: 767px)" rel="stylesheet" href="http://sebastianraschka.com/CSS/mobile.css">
+	<link rel="stylesheet" type="text/css" href="./Parallel Programming in Python_files/article.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="./Parallel Programming in Python_files/codehilite.css" media="screen">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="http://sebastianraschka.com/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="http://sebastianraschka.com/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="http://sebastianraschka.com/favicon-196.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="http://sebastianraschka.com/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="http://sebastianraschka.com/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="http://sebastianraschka.com/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="http://sebastianraschka.com/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="http://sebastianraschka.com/favicon-16.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="http://sebastianraschka.com/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="http://sebastianraschka.com/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="http://sebastianraschka.com/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="http://sebastianraschka.com/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="http://sebastianraschka.com/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="http://sebastianraschka.com/favicon-72.png">
+	<link rel="apple-touch-icon" href="http://sebastianraschka.com/favicon-57.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="/favicon-144.png">
+	<meta name="msapplication-config" content="/browserconfig.xml">
+
+
+<script type="text/javascript" async="" src="./Parallel Programming in Python_files/embed.js"></script></head>
+
+<body>
+
+<!-- Main Navigation Bar START -->
+
+<div id="header">
+
+    <ul>
+			  <li><a href="http://sebastianraschka.com/index.html">home</a></li>
+        <li><a href="http://sebastianraschka.com/articles.html" id="active">blog</a></li>
+        <li><a href="http://sebastianraschka.com/webapps.html">webapps</a></li>
+        <li><a href="http://sebastianraschka.com/projects.html">projects</a></li>
+	    <li><a href="http://sebastianraschka.com/publications.html">books</a></li>
+    <li><a href="http://sebastianraschka.com/talks.html">talks</a></li>
+	    <li><a href="http://sebastianraschka.com/contact.html">about+contact</a></li>
+    </ul>
+</div>
+
+<!-- Main Navigation Bar END -->
+
+    <!-- Article Header -->
+<article>
+<div id="main_article">
+
+
+	    <h1 class="with_subtitle">An introduction to parallel programming </h1>
+        <h3 class="with_subtitle">using Python's multiprocessing module</h3>
+		<div class="author_date"><em>-- written by Sebastian Raschka</em> June 20, 2014</div>
+
+	<!-- Twitter Button -->
+
+  		 <iframe id="twitter-widget-i1440329980645756376" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" src="./Parallel Programming in Python_files/tweet_button.eb4cec9922931259d39f7e6e609af430.en.html" style="position: static; visibility: visible; width: 87px; height: 20px;" data-url="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html"></iframe>
+
+   		<script>!function(d,s,id){var
+        		js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}
+                (document,"script","twitter-wjs");</script>
+
+   	<!-- Google+ -->
+
+        <div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background-color: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px; background-position: initial initial; background-repeat: initial initial;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1440329971877" name="I0_1440329971877" src="./Parallel Programming in Python_files/fastbutton.html" data-gapiattached="true" title="+1"></iframe></div><br>
+
+
+    <!-- Article -->
+
+
+<p id="abstract">CPUs with multiple cores have become the standard in the recent development of modern computer architectures and we can not only find them in supercomputer facilities but also in our desktop machines at home, and our laptops; even Apple's iPhone 5S got a 1.3 Ghz Dual-core processor in 2013.</p>
+
+<p>However, the default Python interpreter was designed with simplicity in mind and has a thread-safe mechanism, the so-called "GIL" (Global Interpreter Lock). In order to prevent conflicts between threads, it executes only one statement at a time (so-called serial processing, or single-threading).</p>
+
+<p>In this introduction to Python's <code>multiprocessing</code> module, we will see how we can spawn multiple subprocesses to avoid some of the GIL's disadvantages.</p>
+
+
+
+
+<p><a id="table-of-contents"></a></p>
+<h1 style="padding-top:60px;">Table of Contents</h1>
+<ul>
+
+
+
+<li><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#An-introduction-to-parallel-programming-using-Python's-multiprocessing-module">An introduction to parallel programming using Python's <code>multiprocessing</code> module</a><ul>
+<li><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#Multi-Threading-vs.-Multi-Processing">Multi-Threading vs. Multi-Processing</a></li>
+</ul>
+</li>
+<li><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#Introduction-to-the-multiprocessing-module">Introduction to the <code>multiprocessing</code> module</a><ul>
+<li><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#The-Process-class">The <code>Process</code> class</a><ul>
+<li><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#How-to-retrieve-results-in-a-particular-order">How to retrieve results in a particular order</a></li>
+</ul>
+</li>
+<li><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#The-Pool-class">The <code>Pool</code> class</a></li>
+</ul>
+</li>
+<li><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#Kernel-density-estimation-as-benchmarking-function">Kernel density estimation as benchmarking function</a><ul>
+<li><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#The-Parzen-window-method-in-a-nutshell">The Parzen-window method in a nutshell</a></li>
+<li><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#Sample-data-and-timeit-benchmarks">Sample data and <code>timeit</code> benchmarks</a></li>
+<li><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#Benchmarking-functions">Benchmarking functions</a></li>
+<li><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#Preparing-the-plotting-of-the-results">Preparing the plotting of the results</a></li>
+</ul>
+</li>
+<li><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#Results">Results</a></li>
+<li><a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#Conclusion">Conclusion</a></li>
+</ul>
+<font size="1em">This table of contents was created by <a href="https://github.com/rasbt/markdown-toclify">markdown-toclify</a></font>
+
+<div style="height:60px;"></div>
+
+<p><a id="Multi-Threading-vs.-Multi-Processing"></a></p>
+<h2 style="padding-top:60px;">Multi-Threading vs. Multi-Processing</h2>
+<div class="back_to_top">[<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#table-of-contents">back to top</a>]</div>
+<p>Depending on the application, two common approaches in parallel programming are either to run code via threads or multiple processes, respectively. If we submit "jobs" to different threads, those jobs can be pictured as "sub-tasks" of a single process and those threads will usually have access to the same memory areas (i.e., shared memory). This approach can easily lead to conflicts in case of improper  synchronization, for example, if processes are writing to the same memory location at the same time.  </p>
+<p>A safer approach (although it comes with an additional overhead due to the communication overhead between separate processes) is to submit multiple processes to completely separate memory locations (i.e., distributed memory): Every process will run completely independent from each other.</p>
+<p>Here, we will take a look at Python's <a href="https://docs.python.org/dev/library/multiprocessing.html"><code>multiprocessing</code></a> module and how we can use it to submit multiple processes that can run independently from each other in order to make best use of our CPU cores.</p>
+<p><img alt="" src="./Parallel Programming in Python_files/multiprocessing_scheme.png"></p>
+<p><a id="Introduction-to-the-multiprocessing-module"></a></p>
+<h1 style="padding-top:60px;">Introduction to the <code>multiprocessing</code> module</h1>
+<div class="back_to_top">[<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#table-of-contents">back to top</a>]</div>
+<p>The <a href="https://docs.python.org/dev/library/multiprocessing.html">multiprocessing</a> module in Python's Standard Library has a lot of powerful features. If you want to read about all the nitty-gritty tips, tricks, and details, I would recommend to use the <a href="https://docs.python.org/dev/library/multiprocessing.html">official documentation</a> as an entry point.  </p>
+<p>In the following sections, I want to provide a brief overview of different approaches to show how the <code>multiprocessing</code> module can be used for parallel programming.</p>
+<p><a id="The-Process-class"></a></p>
+<h2 style="padding-top:60px;">The <code>Process</code> class</h2>
+<div class="back_to_top">[<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#table-of-contents">back to top</a>]</div>
+<p>The most basic approach is probably to use the <code>Process</code> class from the <code>multiprocessing</code> module.<br>
+Here, we will use a simple random string generator to generate 4 random string in parallel processes.</p>
+<div class="codehilite"><pre><span class="kn">import</span> <span class="nn">multiprocessing</span> <span class="kn">as</span> <span class="nn">mp</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">string</span>
+
+<span class="c"># Define an output queue</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+
+<span class="c"># define a example function</span>
+<span class="k">def</span> <span class="nf">rand_string</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">output</span><span class="p">):</span>
+    <span class="sd">""" Generates a random string of numbers, lower- and uppercase chars. """</span>
+    <span class="n">rand_str</span> <span class="o">=</span> <span class="s">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span>
+                    <span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span>
+                    <span class="o">+</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_uppercase</span>
+                    <span class="o">+</span> <span class="n">string</span><span class="o">.</span><span class="n">digits</span><span class="p">)</span>
+               <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">))</span>
+    <span class="n">output</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">rand_str</span><span class="p">)</span>
+
+<span class="c"># Setup a list of processes that we want to run</span>
+<span class="n">processes</span> <span class="o">=</span> <span class="p">[</span><span class="n">mp</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">rand_string</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">output</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+
+<span class="c"># Run processes</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">processes</span><span class="p">:</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="c"># Exit the completed processes</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">processes</span><span class="p">:</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+
+<span class="c"># Get process results from the output queue</span>
+<span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="n">output</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">processes</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+
+
+<pre class="output_code">['yzQfA', 'PQpqM', 'SHZYV', 'PSNkD']</pre>
+
+<p><br></p>
+<p><a id="How-to-retrieve-results-in-a-particular-order"></a></p>
+<h3 style="padding-top:40px;">How to retrieve results in a particular order</h3>
+<div class="back_to_top">[<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#table-of-contents">back to top</a>]</div>
+<p>The order of the obtained results does not necessarily have to match the order of the processes (in the <code>processes</code> list). Since we eventually use the <code>.get()</code> method to retrieve the results from the <code>Queue</code> sequentially, the order in which the processes finished determines the order of our results.<br>
+E.g., if the second process has finished just before the first process, the order of the strings in the <code>results</code> list could have also been
+<code>['PQpqM', 'yzQfA', 'SHZYV', 'PSNkD']</code> instead of <code>['yzQfA', 'PQpqM', 'SHZYV', 'PSNkD']</code></p>
+<p>If our application required us to retrieve results in a particular order, one possibility would be to refer to the processes' <code>._identity</code> attribute. In this case, we could also simply use the values from our <code>range</code> object as position argument. The modified code would be:</p>
+<div class="codehilite"><pre><span class="c"># define a example function</span>
+<span class="k">def</span> <span class="nf">rand_string</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">output</span><span class="p">):</span>
+    <span class="sd">""" Generates a random string of numbers, lower- and uppercase chars. """</span>
+    <span class="n">rand_str</span> <span class="o">=</span> <span class="s">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span>
+                    <span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span>
+                    <span class="o">+</span> <span class="n">string</span><span class="o">.</span><span class="n">ascii_uppercase</span>
+                    <span class="o">+</span> <span class="n">string</span><span class="o">.</span><span class="n">digits</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">))</span>
+    <span class="n">output</span><span class="o">.</span><span class="n">put</span><span class="p">((</span><span class="n">pos</span><span class="p">,</span> <span class="n">rand_str</span><span class="p">))</span>
+
+<span class="c"># Setup a list of processes that we want to run</span>
+<span class="n">processes</span> <span class="o">=</span> <span class="p">[</span><span class="n">mp</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">rand_string</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">output</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+</pre></div>
+
+
+<p>And the retrieved results would be tuples, for example, <code>[(0, 'KAQo6'), (1, '5lUya'), (2, 'nj6Q0'), (3, 'QQvLr')]</code> <br>
+or <code>[(1, '5lUya'), (3, 'QQvLr'), (0, 'KAQo6'), (2, 'nj6Q0')]</code></p>
+<p>To make sure that we retrieved the results in order, we could simply sort the results and optionally get rid of the position argument:</p>
+<div class="codehilite"><pre><span class="n">results</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span>
+</pre></div>
+
+
+<pre class="output_code">['KAQo6', '5lUya', 'nj6Q0', 'QQvLr']</pre>
+
+<p><strong>A simpler way to to maintain an ordered list of results is to use the <code>Pool.apply</code> and <code>Pool.map</code> functions which we will discuss in the next section.</strong></p>
+<p><a id="The-Pool-class"></a></p>
+<h2 style="padding-top:60px;">The <code>Pool</code> class</h2>
+<div class="back_to_top">[<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#table-of-contents">back to top</a>]</div>
+<p>Another and more convenient approach for simple parallel-processing tasks is provided by the <code>Pool</code> class.  </p>
+<p>There are four methods that are particularly interesting:</p>
+<ul>
+<li>
+<p><code>Pool.apply</code></p>
+</li>
+<li>
+<p><code>Pool.map</code></p>
+</li>
+<li>
+<p><code>Pool.apply_async</code></p>
+</li>
+<li>
+<p><code>Pool.map_async</code></p>
+</li>
+</ul>
+<p>The <code>Pool.apply</code> and <code>Pool.map</code> methods are basically equivalents to Python's in-built <a href="https://docs.python.org/2/library/functions.html#apply"><code>apply</code></a> and <a href="https://docs.python.org/2/library/functions.html#map"><code>map</code></a> functions.</p>
+<p>Before we come to the <code>async</code> variants of the <code>Pool</code> methods, let us take a look at a simple example using <code>Pool.apply</code> and <code>Pool.map</code>. Here, we will set the number of processes to 4, which means that the <code>Pool</code> class will only allow 4 processes running at the same time.<br>
+This time, we will use a simple cube-function that returns the cube of an input number.</p>
+<div class="codehilite"><pre><span class="k">def</span> <span class="nf">cube</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span>
+</pre></div>
+
+
+<p><br></p>
+<div class="codehilite"><pre><span class="n">pool</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="n">pool</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,))</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">)]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+
+
+<pre class="output_code">[1, 8, 27, 64, 125, 216]</pre>
+
+<div class="codehilite"><pre><span class="n">pool</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+
+
+<pre class="output_code">[1, 8, 27, 64, 125, 216]</pre>
+
+<p>The <code>Pool.map</code> and <code>Pool.apply</code> will lock the main program until a process has finished, which is quite useful if we want to obtain results in a particular order for certain applications.<br>
+In contrast, the <code>async</code> variants will submit all processes at once and retrieve the results as soon as they are finished.
+For example, the resulting sequence of cubes could also have been [8, 1, 64, 27, 125, 216] if the cube processes finished in a different order.  </p>
+<p>One more difference is that we need to use the <code>get</code> method after the <code>apply_async()</code> call in order to obtain the <code>return</code> values of the finished processes.</p>
+<div class="codehilite"><pre><span class="n">pool</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="n">pool</span><span class="o">.</span><span class="n">apply_async</span><span class="p">(</span><span class="n">cube</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,))</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">)]</span>
+<span class="n">output</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+
+
+<pre class="output_code">[1, 8, 27, 64, 125, 216]</pre>
+
+<p><a id="Kernel-density-estimation-as-benchmarking-function"></a></p>
+<h1 style="padding-top:60px;">Kernel density estimation as benchmarking function</h1>
+<div class="back_to_top">[<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#table-of-contents">back to top</a>]</div>
+<p>In the following section, I want to do a simple comparison of a serial vs. multiprocessing approach where I will use a slightly more complex function than the <code>cube</code> example that we have been using above.  </p>
+<p>Here, I define a function for performing a Kernel density estimation for probability density functions using the Parzen-window technique.<br>
+I don't want to go into much detail about the theory of this technique, since we are mostly interested to see how <code>multiprocessing</code> can be used for performance improvements, but you are welcome to read my more detailed article about the <a href="http://sebastianraschka.com/Articles/2014_parzen_density_est.html">Parzen-window method here</a>. </p>
+<div class="codehilite"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">parzen_estimation</span><span class="p">(</span><span class="n">x_samples</span><span class="p">,</span> <span class="n">point_x</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Implementation of a hypercube kernel for Parzen-window estimation.</span>
+
+<span class="sd">    Keyword arguments:</span>
+<span class="sd">        x_sample:training sample, 'd x 1'-dimensional numpy array</span>
+<span class="sd">        x: point x for density estimation, 'd x 1'-dimensional numpy array</span>
+<span class="sd">        h: window width</span>
+
+<span class="sd">    Returns the predicted pdf as float.</span>
+
+<span class="sd">    """</span>
+    <span class="n">k_n</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">x_samples</span><span class="p">:</span>
+        <span class="n">x_i</span> <span class="o">=</span> <span class="p">(</span><span class="n">point_x</span> <span class="o">-</span> <span class="n">row</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">h</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">x_i</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">):</span>
+                <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span> <span class="c"># "completion-else"*</span>
+            <span class="n">k_n</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">k_n</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">x_samples</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">h</span><span class="o">**</span><span class="n">point_x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+
+
+<p></p><hr>
+<strong>A quick note about the "completion else""</strong><p></p>
+<p>In the past, I received some comments about whether I used this for-else combination intentionally or if it happened by mistake. This is a legitimate question, since this "completion-else" is rarely used (that's what I call it, I am not aware of a more "official" for the <code>else</code> in this context; if there is one, please let me know).<br>
+I have a more detailed explanation <a href="http://sebastianraschka.com/Articles/2014_deep_python.html#else_clauses">here</a> in one of my blog-posts, but in a nutshell: In contrast to a conditional else (in combination with if-statements), the "completion else" is only executed if the preceding code block (here the <code>for</code>-loop) has finished.
+</p><hr><p></p>
+<p><a id="The-Parzen-window-method-in-a-nutshell"></a></p>
+<h2 style="padding-top:60px;">The Parzen-window method in a nutshell</h2>
+<div class="back_to_top">[<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#table-of-contents">back to top</a>]</div>
+<p>So, what does this Parzen-window function do? The answer in a nutshell: It counts points in a defined region (the so-called window), and divides the number of those points inside by the number of total points to estimate the probability of a single point being in a certain region.</p>
+<p>Below is a simple example where our Parzen-window is represented by a hypercube centered at the origin, and we want to get an estimate of the probability for a point being in the center of the plot based on this hypercube.</p>
+<div class="codehilite"><pre><span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">product</span><span class="p">,</span> <span class="n">combinations</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">gca</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s">'3d'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s">"equal"</span><span class="p">)</span>
+
+<span class="c"># Plot Points</span>
+
+<span class="c"># samples within the cube</span>
+<span class="n">X_inside</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.2</span><span class="p">],[</span><span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">]])</span>
+
+<span class="n">X_outside</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mf">1.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">,</span><span class="o">-</span><span class="mf">0.3</span><span class="p">],[</span><span class="mf">0.8</span><span class="p">,</span><span class="o">-</span><span class="mf">0.82</span><span class="p">,</span><span class="o">-</span><span class="mf">0.9</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">0.2</span><span class="p">],[</span><span class="mf">0.7</span><span class="p">,</span><span class="o">-</span><span class="mf">0.8</span><span class="p">,</span><span class="o">-</span><span class="mf">0.45</span><span class="p">],[</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mf">0.7</span><span class="p">,</span><span class="o">-</span><span class="mf">0.6</span><span class="p">,</span><span class="o">-</span><span class="mf">0.8</span><span class="p">]])</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">X_inside</span><span class="p">:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s">"r"</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s">'^'</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">X_outside</span><span class="p">:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s">"k"</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="c"># Plot Cube</span>
+<span class="n">h</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">combinations</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">product</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">h</span><span class="p">,</span><span class="n">h</span><span class="p">))),</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">e</span><span class="p">))</span> <span class="o">==</span> <span class="n">h</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">h</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot3D</span><span class="p">(</span><span class="o">*</span><span class="nb">zip</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">e</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s">"g"</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_zlim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+
+<p><img alt="" src="./Parallel Programming in Python_files/multiprocessing_cube.png"></p>
+<div class="codehilite"><pre><span class="n">point_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">X_all</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">X_inside</span><span class="p">,</span><span class="n">X_outside</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">'p(x) ='</span><span class="p">,</span> <span class="n">parzen_estimation</span><span class="p">(</span><span class="n">X_all</span><span class="p">,</span> <span class="n">point_x</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+
+
+<pre class="output_code">p(x) = 0.3</pre>
+
+<p><a id="Sample-data-and-timeit-benchmarks"></a></p>
+<h2 style="padding-top:60px;">Sample data and <code>timeit</code> benchmarks</h2>
+<div class="back_to_top">[<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#table-of-contents">back to top</a>]</div>
+<p>In the section below, we will create a random dataset from a bivariate Gaussian distribution with a mean vector centered at the origin and an identity matrix as covariance matrix. </p>
+<div class="codehilite"><pre><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+
+<span class="c"># Generate random 2D-patterns</span>
+<span class="n">mu_vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">cov_mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">x_2Dgauss</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="p">(</span><span class="n">mu_vec</span><span class="p">,</span> <span class="n">cov_mat</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+</pre></div>
+
+
+<p>The expected probability of a point at the center of the distribution is ~ 0.15915 as we can see below.<br>
+And our goal here is to use the Parzen-window approach to predict this density based on the sample data set that we have created above.  </p>
+<p>In order to make a "good" prediction via the Parzen-window technique, it is - among other things - crucial to select an appropriate window width. Here, we will use multiple processes to predict the density at the center of the bivariate Gaussian distribution using different window widths.</p>
+<div class="codehilite"><pre><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">multivariate_normal</span>
+<span class="n">var</span> <span class="o">=</span> <span class="n">multivariate_normal</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">cov</span><span class="o">=</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'actual probability density:'</span><span class="p">,</span> <span class="n">var</span><span class="o">.</span><span class="n">pdf</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+
+
+<pre class="output_code">actual probability density: 0.159154943092</pre>
+
+<p><a id="Benchmarking-functions"></a></p>
+<h2 style="padding-top:60px;">Benchmarking functions</h2>
+<div class="back_to_top">[<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#table-of-contents">back to top</a>]</div>
+<p>Below, we will set up benchmarking functions for our serial and multiprocessing approach that we can pass to our <code>timeit</code> benchmark function.<br>
+We will be using the <code>Pool.apply_async</code> function to take advantage of firing up processes simultaneously: Here, we don't care about the order in which the results for the different window widths are computed, we just need to associate each result with the input window width.<br>
+Thus we add a little tweak to our Parzen-density-estimation function by returning a tuple of 2 values: window width and the estimated density, which will allow us to to sort our list of results later.</p>
+<div class="codehilite"><pre><span class="k">def</span> <span class="nf">parzen_estimation</span><span class="p">(</span><span class="n">x_samples</span><span class="p">,</span> <span class="n">point_x</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+    <span class="n">k_n</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">x_samples</span><span class="p">:</span>
+        <span class="n">x_i</span> <span class="o">=</span> <span class="p">(</span><span class="n">point_x</span> <span class="o">-</span> <span class="n">row</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">h</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">x_i</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="o">&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">):</span>
+                <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span> <span class="c"># "completion-else"*</span>
+            <span class="n">k_n</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="p">(</span><span class="n">k_n</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">x_samples</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">h</span><span class="o">**</span><span class="n">point_x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+
+
+<p><br></p>
+<div class="codehilite"><pre><span class="k">def</span> <span class="nf">serial</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">widths</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">parzen_estimation</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">widths</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">multiprocess</span><span class="p">(</span><span class="n">processes</span><span class="p">,</span> <span class="n">samples</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">widths</span><span class="p">):</span>
+    <span class="n">pool</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="n">processes</span><span class="p">)</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="n">pool</span><span class="o">.</span><span class="n">apply_async</span><span class="p">(</span><span class="n">parzen_estimation</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">widths</span><span class="p">]</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span>
+    <span class="n">results</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> <span class="c"># to sort the results by input window width</span>
+    <span class="k">return</span> <span class="n">results</span>
+</pre></div>
+
+
+<p>Just to get an idea what the results would look like (i.e., the predicted densities for different window widths):</p>
+<div class="codehilite"><pre><span class="n">widths</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">point_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">multiprocess</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">x_2Dgauss</span><span class="p">,</span> <span class="n">point_x</span><span class="p">,</span> <span class="n">widths</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'h = </span><span class="si">%s</span><span class="s">, p(x) = </span><span class="si">%s</span><span class="s">'</span> <span class="o">%</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+
+
+<pre class="output_code">h = 0.1, p(x) = 0.016
+h = 0.2, p(x) = 0.0305
+h = 0.3, p(x) = 0.045
+h = 0.4, p(x) = 0.06175
+h = 0.5, p(x) = 0.078
+h = 0.6, p(x) = 0.0911666666667
+h = 0.7, p(x) = 0.106
+h = 0.8, p(x) = 0.117375
+h = 0.9, p(x) = 0.132666666667
+h = 1.0, p(x) = 0.1445
+h = 1.1, p(x) = 0.157090909091
+h = 1.2, p(x) = 0.1685</pre>
+
+<p>Based on the results, we can say that the best window-width would be h=1.1, since the estimated result is close to the actual result ~0.15915.<br>
+Thus, for the benchmark, let us create 100 evenly spaced window width in the range of 1.0 to 1.2.</p>
+<div class="codehilite"><pre><span class="n">widths</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.2</span> <span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+
+
+<p><br></p>
+<div class="codehilite"><pre><span class="kn">import</span> <span class="nn">timeit</span>
+
+<span class="n">mu_vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">cov_mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10000</span>
+
+<span class="n">x_2Dgauss</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="p">(</span><span class="n">mu_vec</span><span class="p">,</span> <span class="n">cov_mat</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+<span class="n">benchmarks</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">benchmarks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">timeit</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="s">'serial(x_2Dgauss, point_x, widths)'</span><span class="p">,</span>
+        <span class="s">'from __main__ import serial, x_2Dgauss, point_x, widths'</span><span class="p">)</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">benchmarks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">timeit</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="s">'multiprocess(2, x_2Dgauss, point_x, widths)'</span><span class="p">,</span>
+        <span class="s">'from __main__ import multiprocess, x_2Dgauss, point_x, widths'</span><span class="p">)</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">benchmarks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">timeit</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="s">'multiprocess(3, x_2Dgauss, point_x, widths)'</span><span class="p">,</span>
+        <span class="s">'from __main__ import multiprocess, x_2Dgauss, point_x, widths'</span><span class="p">)</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">benchmarks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">timeit</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="s">'multiprocess(4, x_2Dgauss, point_x, widths)'</span><span class="p">,</span>
+        <span class="s">'from __main__ import multiprocess, x_2Dgauss, point_x, widths'</span><span class="p">)</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="n">benchmarks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">timeit</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="s">'multiprocess(6, x_2Dgauss, point_x, widths)'</span><span class="p">,</span>
+        <span class="s">'from __main__ import multiprocess, x_2Dgauss, point_x, widths'</span><span class="p">)</span><span class="o">.</span><span class="n">timeit</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+
+
+<p><a id="Preparing-the-plotting-of-the-results"></a></p>
+<h2 style="padding-top:60px;">Preparing the plotting of the results</h2>
+<div class="back_to_top">[<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#table-of-contents">back to top</a>]</div>
+<div class="codehilite"><pre><span class="kn">import</span> <span class="nn">platform</span>
+
+<span class="k">def</span> <span class="nf">print_sysinfo</span><span class="p">():</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">Python version  :'</span><span class="p">,</span> <span class="n">platform</span><span class="o">.</span><span class="n">python_version</span><span class="p">())</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'compiler        :'</span><span class="p">,</span> <span class="n">platform</span><span class="o">.</span><span class="n">python_compiler</span><span class="p">())</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">system     :'</span><span class="p">,</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">())</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'release    :'</span><span class="p">,</span> <span class="n">platform</span><span class="o">.</span><span class="n">release</span><span class="p">())</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'machine    :'</span><span class="p">,</span> <span class="n">platform</span><span class="o">.</span><span class="n">machine</span><span class="p">())</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'processor  :'</span><span class="p">,</span> <span class="n">platform</span><span class="o">.</span><span class="n">processor</span><span class="p">())</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'CPU count  :'</span><span class="p">,</span> <span class="n">mp</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">())</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'interpreter:'</span><span class="p">,</span> <span class="n">platform</span><span class="o">.</span><span class="n">architecture</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="se">\n\n</span><span class="s">'</span><span class="p">)</span>
+</pre></div>
+
+
+<p><br></p>
+<div class="codehilite"><pre><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">plot_results</span><span class="p">():</span>
+    <span class="n">bar_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s">'serial'</span><span class="p">,</span> <span class="s">'2'</span><span class="p">,</span> <span class="s">'3'</span><span class="p">,</span> <span class="s">'4'</span><span class="p">,</span> <span class="s">'6'</span><span class="p">]</span>
+
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+
+    <span class="c"># plot bars</span>
+    <span class="n">y_pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">benchmarks</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">y_pos</span><span class="p">,</span> <span class="n">bar_labels</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">bars</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">y_pos</span><span class="p">,</span> <span class="n">benchmarks</span><span class="p">,</span>
+         <span class="n">align</span><span class="o">=</span><span class="s">'center'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'g'</span><span class="p">)</span>
+
+    <span class="c"># annotation and labels</span>
+
+    <span class="k">for</span> <span class="n">ba</span><span class="p">,</span><span class="n">be</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">bars</span><span class="p">,</span> <span class="n">benchmarks</span><span class="p">):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">ba</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">+</span> <span class="mf">1.4</span><span class="p">,</span> <span class="n">ba</span><span class="o">.</span><span class="n">get_y</span><span class="p">()</span> <span class="o">+</span> <span class="n">ba</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>
+            <span class="s">'{0:.2%}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">benchmarks</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">be</span><span class="p">),</span>
+            <span class="n">ha</span><span class="o">=</span><span class="s">'center'</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s">'bottom'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'time in seconds for n=</span><span class="si">%s</span><span class="s">'</span> <span class="o">%</span><span class="n">n</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'number of processes'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">'Serial vs. Multiprocessing via Parzen-window estimation'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">benchmarks</span><span class="p">)</span><span class="o">+</span><span class="mf">0.5</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="nb">max</span><span class="p">(</span><span class="n">benchmarks</span><span class="p">)</span><span class="o">*</span><span class="mf">1.1</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">benchmarks</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">benchmarks</span><span class="p">)</span><span class="o">+</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s">'dashed'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+
+<p><a id="Results"></a></p>
+<h1 style="padding-top:60px;">Results</h1>
+<div class="back_to_top">[<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#table-of-contents">back to top</a>]</div>
+<div class="codehilite"><pre><span class="n">plot_results</span><span class="p">()</span>
+<span class="n">print_sysinfo</span><span class="p">()</span>
+</pre></div>
+
+
+<p><img alt="" src="./Parallel Programming in Python_files/multiprocessing_benchmark.png"></p>
+<pre class="output_code">Python version  : 3.4.1
+compiler        : GCC 4.2.1 (Apple Inc. build 5577)
+
+system     : Darwin
+release    : 13.2.0
+machine    : x86_64
+processor  : i386
+CPU count  : 4
+interpreter: 64bit</pre>
+
+<p><a id="Conclusion"></a></p>
+<h1 style="padding-top:60px;">Conclusion</h1>
+<div class="back_to_top">[<a href="http://sebastianraschka.com/Articles/2014_multiprocessing_intro.html#table-of-contents">back to top</a>]</div>
+<p>We can see that we could speed up the density estimations for our Parzen-window function if we submitted them in parallel. However, on my particular machine, the submission of 6 parallel 6 processes doesn't lead to a further performance improvement, which makes sense for a 4-core CPU.<br>
+We also notice that there was a significant performance increase when we were using 3 instead of only 2 processes in parallel. However, the performance increase was less significant when we moved up to 4 parallel processes, respectively.<br>
+This can be attributed to the fact that in this case, the CPU consists of only 4 cores, and system processes, such as the operating system, are also running in the background. Thus, the fourth core simply does not have enough capacity left to further increase the performance of the fourth process to a large extend. And we also have to keep in mind that every additional process comes with an additional overhead for inter-process communication.</p>
+
+<p>Also, an improvement due to parallel processing only makes sense if our tasks are "CPU-bound" where the majority of the task is spent in the CPU in contrast to I/O bound tasks, i.e., tasks that are processing data from a disk.</p>
+
+
+		</div> 	<!-- close article -->
+
+</article>
+
+			<!--close main -->
+
+	<!--close content -->
+
+
+
+
+
+<!-- START Footer -->
+	<div id="footer">
+        <hr>
+        © 2013-present Sebastian Raschka |<a href="https://twitter.com/rasbt">@rasbt</a> <a href="mailto:se.raschka@gmail.com">email</a> <a href="http://sebastianraschka.com/rss_feed.xml">rss</a>
+	    <hr>
+    </div>
+<!-- END Footer -->
+
+<!-- Start Google Analytics -->
+	<script type="text/javascript">
+
+  		var _gaq = _gaq || [];
+  		_gaq.push(['_setAccount', 'UA-38457794-1']);
+  		_gaq.push(['_trackPageview']);
+
+  		(function() {
+    	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  		})();
+	</script>
+
+
+<!-- End  Google Analytics -->
+
+<!-- START DISQUS -->
+
+ <div id="disqus_thread"><iframe id="dsq-1" data-disqus-uid="1" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Parallel Programming in Python_files/saved_resource.html" style="width: 100% !important; border: none !important; overflow: hidden !important; height: 2467px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'sebastianraschka'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the &lt;a href="http://disqus.com/?ref_noscript"&gt;comments powered by Disqus.&lt;/a&gt;</noscript>
+    
+
+<!-- END DISQUS -->
+
+
+
+<iframe name="oauth2relay1413276167" id="oauth2relay1413276167" src="./Parallel Programming in Python_files/postmessageRelay.html" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe></body></html>

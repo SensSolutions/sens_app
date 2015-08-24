@@ -1,0 +1,8 @@
+{
+	"sensors": [
+		{"name":"internal","message":0},
+		{"name":"air","type":22,"pin":4, "sleep_time":60},
+		{"name":"sensor_a", "type":"bogus"}],
+	"configuration":[
+		{"broker":"127.0.0.1", "clientID":"PSens", "place":"pool", "path": "/home/marck/Coding/sens_platform/psens"}]
+}
