@@ -2,9 +2,10 @@ from multiprocessing import Process
 import importlib
 import time
 import random
+import sensors
 
-dsensors=[{"name":"air","type":"th","subtype":"DTH"},
-          {"name":"water","type":"time","subtype":"DS22"},
+dsensors=[{"name":"air","type":"th","subtype":"DTH","app":"sensors.th.th"},
+          {"name":"water","type":"temp","subtype":"DS22"},
           {"name":"internal","type":"bogus","subtype":"PSens","sleep_time":60}]
 
 def sensor(d, *o):
@@ -15,8 +16,10 @@ def sensor(d, *o):
             This code isn't working yet, maybe it can be left
             for a n+1 version
         '''
-        my_module = importlib.import_module(d["type"],package=sensors)
-        my_module.run()
+        my_module = importlib.import_module('sensors',package=None)
+        #my_module.run()
+        print "\t\t[+] Loading Sensors"
+        sensors.th.th(d)
 
     except Exception, e:
         print "Error importing custom module: " + str(e)
@@ -30,8 +33,7 @@ def bogus_sensor(d,*o):
             for val in o:
                 print "Others: "+ val
 
-        print "process name: " + d["name"]
-        print "\t Sensor subtype: "+d["subtype"]
+        print "process name: " + d["name"] + " Sensor subtype: "+d["subtype"] + "Control App: "+ d["app"]
 
         t= random.randint(1,10)
         print "\tGoing to sleep for " + str(t) + "s"
