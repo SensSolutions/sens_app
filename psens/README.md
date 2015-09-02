@@ -14,6 +14,10 @@ Temperature Sensor Monitoring
      source env/bin/activate
      pip install -r requirements.txt 
 
+#### Upgrade virtual environement if necessary
+
+     pip freeze|sed -e 's/==.*//'|xargs pip install --upgrade
+
 ##TODO
 
  * Make resilience for connecting errors (create a temporary cache file where write JSON and send one by one where the connection will recover)
