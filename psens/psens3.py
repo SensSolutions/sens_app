@@ -124,6 +124,7 @@ if __name__ == '__main__':
     except KeyboardInterrupt:
 # KeyboardInterrupt
          logger.warning('Shutingdown Monitoring system')
+         sys.exit(0)
     finally:
          p.join()
 #        o.join()

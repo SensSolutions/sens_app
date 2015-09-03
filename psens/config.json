@@ -1,8 +1,13 @@
-{
-	"sensors": [
-		{"name":"internal","message":0},
-		{"name":"air","type":22,"pin":4, "sleep_time":60},
-		{"name":"sensor_a", "type":"bogus"}],
-	"configuration":[
-		{"broker":"127.0.0.1", "clientID":"PSens", "place":"pool", "path": "/home/marck/Coding/sens_platform/psens"}]
-}
+{"config": {
+    "sensors": [
+        {"name":"internal","type":"control", "message":0, "sleep_time":10},
+        {"name":"air", "type" : "th", "subtype" : "DHT", "driver":"dht","pin":4, "sleep_time":60},
+        {"name":"water", "type":"th", "subtype":"ds18b20", "driver":"ds18b20"},
+        {"name":"internal", "type":"bogus", "subtype":"PSens", "driver":"bogus", "sleep_time":60},
+        {"name":"joke", "type":"th", "subtype":"Joke", "driver":"joke"},
+        {"name":"sensor_a", "type":"bogus", "driver":"bogus", "sleep_time":2}
+     ],
+     "app":[
+         {"broker":"127.0.0.1", "clientID":"PSens", "place":"pool", "path": "/home/marck/Coding/sens_platform/psens"}
+     ]
+}}

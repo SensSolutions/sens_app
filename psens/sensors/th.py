@@ -1,6 +1,8 @@
 from random import randint
 import time
+import logger
 
+logger = logging.getLogger('PSENSv0.1')
 
 def dht(d, *o):
     try:
@@ -17,7 +19,10 @@ def dht(d, *o):
         print "\t\t[+]" + d['name'] + " say by by"
     except Exception, e:
         print "\t\t[+]Error: " + str(e) + " on module: " + __name__
-
+    except KeyboardInterrupt:
+        # KeyboardInterrupt
+        logger.warning('Shutingdown Monitoring system')
+        sys.exit(0)
 
 def ds18b20(d, *o):
     try:

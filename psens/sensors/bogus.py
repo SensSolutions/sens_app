@@ -1,6 +1,9 @@
 import time
 from random import randint
+import logging
+import sys
 
+logger = logging.getLogger('PSENSv0.1')
 
 def bogus(d,*o):
     try:
@@ -8,11 +11,14 @@ def bogus(d,*o):
             for val in o:
                 print "Others: " + val
 
-        print "process name: " + d['name'] + " Sensor subtype: "+d['subtype'] + " Driver: "+ d['driver']
+        logger.debug("process name: %s Sensor subtype: %s driver: %s", d['name'], d['subtype'], d['driver'])
 
         t = randint(1, 10)
-        print "\t" + str(d['name']) + " is going to sleep for " + str(t) + "s"
+        logger.debug("%s is going to sleep for %i s", d['name'], t)
         time.sleep(t)
-        print "\t" + d['name'] + " say by by"
-    except Exception, e:
-        print "Error: " + str(e)
+        logger.warning("%s says bye bye.", d['name'])
+    except Exception, err:
+        logger.warning("Error: %s", str(err))
+    except KeyboardInterrupt:
+        sys.exit(0)
+
