@@ -10,31 +10,29 @@ import logging
 from sensors import bogus
 import importlib
 import json
-import logging
-import os
 import sys
 import time
 
-'''
-dsensors=[{"name":"air", "type" : "th", "subtype" : "DHT", "driver":"dht"},
+"""
+sensorsList=[{"name":"air", "type" : "th", "subtype" : "DHT", "driver":"dht"},
         {"name":"water", "type":"th", "subtype":"ds18b20", "driver":"ds18b20"},
         {"name":"internal", "type":"bogus", "subtype":"PSens", "driver":"bogus", "sleep_time":60},
         {"name":"joke", "type":"th", "subtype":"Joke", "driver":"joke"}]
-'''
+"""
 
 if len(sys.argv) > 2:
     print "Too much arguments"
     print "Usage " + str(sys.argv[0]) + "config.file"
     print 'default configfile = "config.json"'
 # elif len(sys.argv) == 1:
-#    cfgfile = str(sys.argv[1])
+#    conf_file = str(sys.argv[1])
 else:
-    cfgfile = "config.json"
+    conf_file = "config.json"
 
-with open(cfgfile) as jsonfile:
+with open(conf_file) as jsonfile:
     config = json.load(jsonfile)
 
-json.dumps(config, sort_keys = True, ensure_ascii=False)
+json.dumps(config, sort_keys=True, ensure_ascii=False)
 
 
 # create logger
@@ -59,9 +57,9 @@ logger.addHandler(ch)
 logger.addHandler(fh)
 
 
-def sensor(d, *o):
+def sensor(SensorDict):
     try:
-        '''
+        """
         http://stackoverflow.com/a/5391245
         try:
             func = getattr(modulename, funcname)
@@ -69,9 +67,8 @@ def sensor(d, *o):
             print 'function not found "%s" (%s)' % (funcname, arg)
         else:
             func(arg)
-        '''
 
-        '''
+
         http://stackoverflow.com/a/15004155
         The gettattr function has an optional third argument for a default
         value to return if the attribute does not exist, so you could use that:
@@ -82,38 +79,38 @@ def sensor(d, *o):
             print 'function not found "%s" (%s)' % (funcname, arg)
         else
             fun(arg)
-        '''
-        s_module = "sensors." + d['type']
-        logger.debug("Loading Sensor module %s with driver %s", s_module, d['driver'])
+        """
+        s_module = "sensors." + SensorDict['type']
+        logger.debug("Loading Sensor module %s with driver %s", s_module, SensorDict['driver'])
         my_module = importlib.import_module(s_module, package=None)
         try:
-            my_function = getattr(my_module, d['driver'])
+            my_function = getattr(my_module, SensorDict['driver'])
         except AttributeError:
-            logger.warning("Function not found %s (%s)", d['driver'], d)
-        result = my_function(d)
+            logger.warning("Function not found %s (%s)", SensorDict['driver'], SensorDict)
+        result = my_function(SensorDict)
 
     except Exception, err:
         logger.warning("Error importing custom module: %s No driver for: %s", str(err), s_module)
         # logger.warning("No driver for: ", s_module)
         logger.debug("Using Bogus function")
-        bogus.bogus(d)
+        bogus.bogus(SensorDict)
 
-dsensors = config['config']['sensors']
+sensorsList = config['config']['sensors']
 
 logger.warning("Start Monitoring System")
-for s in dsensors:
+for s in sensorsList:
     try:
         # print s
         p = Process(target=sensor, args=(s,))
         p.start()
         logger.warning("Starting Module: %s PID: %i", s["name"], p.pid)
         while True:
-             if not p.is_alive():
-                 logger.warning('%s is DEAD - Restarting-it', s['name'])
-                 p.terminate()
-                 p.run()
-                 time.sleep(0.1)
-                 logger.warning("New PID: %s", str(p.pid))
+            if not p.is_alive():
+                logger.warning('%s is DEAD - Restarting-it', s['name'])
+                p.terminate()
+                p.run()
+                time.sleep(0.1)
+                logger.warning("New PID: %s", str(p.pid))
 
     except Exception, err:
         logger.warning("Error: %s", str(err))
