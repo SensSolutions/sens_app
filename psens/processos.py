@@ -57,7 +57,10 @@ logger.addHandler(ch)
 logger.addHandler(fh)
 
 
-def sensor(SensorDict):
+def readSensor(SensorDict, configData):
+    '''
+    This funtion loads correct driver for every sensor and returns the read values
+    '''
     try:
         """
         http://stackoverflow.com/a/5391245
@@ -81,27 +84,44 @@ def sensor(SensorDict):
             fun(arg)
         """
         s_module = "sensors." + SensorDict['type']
-        logger.debug("Loading Sensor module %s with driver %s", s_module, SensorDict['driver'])
+        logger.debug('Loading Sensor module %s with driver "%s"', s_module, SensorDict['driver'])
         my_module = importlib.import_module(s_module, package=None)
         try:
+            print s_module
+            print my_module
             my_function = getattr(my_module, SensorDict['driver'])
-        except AttributeError:
-            logger.warning("Function not found %s (%s)", SensorDict['driver'], SensorDict)
-        result = my_function(SensorDict)
+            # except AttributeError:
+            # logger.warning("Function not found %s (%s)", SensorDict['driver'], SensorDict)
+        except Exception, err1:
+            logger.warning("[+] Error: %s", err1)
+        my_function(SensorDict)
 
-    except Exception, err:
-        logger.warning("Error importing custom module: %s No driver for: %s", str(err), s_module)
+    except Exception, err2:
+        logger.warning("Error importing custom module: %s No driver for: %s", str(err2), s_module)
         # logger.warning("No driver for: ", s_module)
         logger.debug("Using Bogus function")
         bogus.bogus(SensorDict)
 
+
+def sendData(data):
+    pass
+    '''
+    This function send data recoverd by sensor to broker
+    '''
+    '''
+    Must remove non required keys before send json:
+    required_fields = ['name', 'last_name', 'phone_number', 'email']
+    dict2 = {key:value for key, value in dict1.items() if key in required_fields}
+    '''
+
 sensorsList = config['config']['sensors']
+configData = config['config']['app']
 
 logger.warning("Start Monitoring System")
 for s in sensorsList:
     try:
         # print s
-        p = Process(target=sensor, args=(s,))
+        p = Process(target=readSensor, args=(s, configData,))
         p.start()
         logger.warning("Starting Module: %s PID: %i", s["name"], p.pid)
         while True:
@@ -112,12 +132,12 @@ for s in sensorsList:
                 time.sleep(0.1)
                 logger.warning("New PID: %s", str(p.pid))
 
-    except Exception, err:
-        logger.warning("Error: %s", str(err))
     except KeyboardInterrupt:
         # Not working, not hidding Traceback
         logger.warning('Shutdown Monitoring system')
         p.join(timeout=2)
         sys.exit(0)
+    except Exception, err:
+        logger.warning("Error: %s", str(err))
     finally:
         p.join()
