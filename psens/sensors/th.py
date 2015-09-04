@@ -1,3 +1,11 @@
+'''
+Module containig temperature and humidity modules
+
+created on Tue Jul 29 10:12:58 2014
+
+@author: mcollado
+'''
+
 from random import randint
 import time
 import datetime
@@ -8,6 +16,7 @@ logger = logging.getLogger('PSENSv0.1')
 
 
 def dht(d):
+    ''' Function to recover data from DHT type sensor with Adafruit Library '''
     try:
         # import Adafruit_DHT
         while True:
@@ -17,7 +26,7 @@ def dht(d):
             (waiting 2 seconds between each retry).
             """
             #d['humidity'], d['temperature'] = Adafruit_DHT.read_retry(round(d['device'],2), round(d['pin'],2)
-            d['humidity'],d['temperature'] = (50.0,25.5)
+            d['humidity'], d['temperature'] = (50.0, 25.5)
 
             """
             Note that sometimes you won't get a reading and
@@ -28,7 +37,7 @@ def dht(d):
             if d['humidity'] is not None and d['temperature'] is not None:
                 now = datetime.datetime.now()
                 d['hora'] = now.strftime("%Y-%m-%d %H:%M:%S")
-                logger.debug("Data read: %s",  json.dumps(d, sort_keys=True))
+                logger.debug("Data read: %s", json.dumps(d, sort_keys=True))
                 time.sleep(d['sleep_time'])
             else:
                 logger.warning("Failed to get reading. Try again!")
@@ -42,6 +51,7 @@ def dht(d):
 
 
 def ds18b20(d, *o):
+    ''' Function to recover data from DS18B20 type sensor '''
     try:
         if o:
             for val in o:
