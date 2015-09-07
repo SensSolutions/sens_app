@@ -1,5 +1,5 @@
 '''
-Module containig bogus module and sensor template
+Module containig bogus module and actuator template
 
 created on Tue Jul 29 10:12:58 2014
 

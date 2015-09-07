@@ -624,3 +624,1237 @@
 2015-08-22 21:12:17,964 - PSENSv0.1 - WARNING - pControl - 48 - Writing CSV line to cache file: /home/marck/Coding/sens_platform/psens/log/cache-PControl
 2015-08-22 21:12:18,977 - PSENSv0.1 - WARNING - pControl - 38 - Error: [Errno 111] Connection refused, 127.0.0.1
 2015-08-22 21:12:18,978 - PSENSv0.1 - WARNING - pControl - 48 - Writing CSV line to cache file: /home/marck/Coding/sens_platform/psens/log/cache-PControl
+2015-09-03 13:15:15,617 - PSENSv0.1 - WARNING - <module> - 103 - Starting Module: air
+2015-09-03 13:15:15,739 - PSENSv0.1 - WARNING - <module> - 103 - Starting Module: water
+2015-09-03 13:15:15,741 - PSENSv0.1 - WARNING - <module> - 103 - Starting Module: internal
+2015-09-03 13:15:15,743 - PSENSv0.1 - WARNING - <module> - 103 - Starting Module: joke
+2015-09-03 13:17:24,659 - PSENSv0.1 - WARNING - <module> - 103 - Starting Module: air
+2015-09-03 13:17:24,662 - PSENSv0.1 - WARNING - <module> - 103 - Starting Module: water
+2015-09-03 13:17:24,664 - PSENSv0.1 - WARNING - <module> - 103 - Starting Module: internal
+2015-09-03 13:17:24,666 - PSENSv0.1 - WARNING - <module> - 103 - Starting Module: joke
+2015-09-03 13:19:23,085 - PSENSv0.1 - WARNING - <module> - 103 - Starting Module: air
+2015-09-03 13:19:23,088 - PSENSv0.1 - WARNING - <module> - 103 - Starting Module: water
+2015-09-03 13:19:23,091 - PSENSv0.1 - WARNING - <module> - 103 - Starting Module: internal
+2015-09-03 13:19:23,093 - PSENSv0.1 - WARNING - <module> - 103 - Starting Module: joke
+2015-09-03 13:24:04,600 - PSENSv0.1 - WARNING - <module> - 100 - Starting application
+2015-09-03 13:24:04,600 - PSENSv0.1 - WARNING - <module> - 103 - Starting Module: air
+2015-09-03 13:24:04,603 - PSENSv0.1 - WARNING - <module> - 103 - Starting Module: water
+2015-09-03 13:24:04,605 - PSENSv0.1 - WARNING - <module> - 103 - Starting Module: internal
+2015-09-03 13:24:04,607 - PSENSv0.1 - WARNING - <module> - 103 - Starting Module: joke
+2015-09-03 13:27:55,720 - PSENSv0.1 - WARNING - <module> - 102 - Starting application
+2015-09-03 13:27:55,720 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: internal
+2015-09-03 13:27:55,744 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: air
+2015-09-03 13:27:55,746 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: water
+2015-09-03 13:27:55,748 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: internal
+2015-09-03 13:27:55,748 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: 'driver'
+2015-09-03 13:27:55,751 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: joke
+2015-09-03 13:27:55,753 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: sensor_a
+2015-09-03 13:27:55,761 - PSENSv0.1 - WARNING - sensor - 97 - Using Bogus function
+2015-09-03 13:31:30,649 - PSENSv0.1 - WARNING - <module> - 102 - Starting application
+2015-09-03 13:31:30,649 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: internal
+2015-09-03 13:31:30,654 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: air
+2015-09-03 13:31:30,656 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: water
+2015-09-03 13:31:30,658 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: 'driver'
+2015-09-03 13:31:30,659 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: internal
+2015-09-03 13:31:30,660 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver dht
+2015-09-03 13:31:30,661 - PSENSv0.1 - WARNING - sensor - 97 - Using Bogus function
+2015-09-03 13:31:30,663 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver ds18b20
+2015-09-03 13:31:30,662 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: joke
+2015-09-03 13:31:30,666 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: sensor_a
+2015-09-03 13:31:30,667 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.bogus with driver bogus
+2015-09-03 13:31:30,669 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver joke
+2015-09-03 13:31:30,673 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.bogus with driver bogus
+2015-09-03 13:32:22,511 - PSENSv0.1 - WARNING - <module> - 102 - Starting application
+2015-09-03 13:32:22,511 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: internal
+2015-09-03 13:32:22,515 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: air
+2015-09-03 13:32:22,517 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: water
+2015-09-03 13:32:22,519 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: 'driver'
+2015-09-03 13:32:22,520 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: internal
+2015-09-03 13:32:22,521 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver dht
+2015-09-03 13:32:22,524 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver ds18b20
+2015-09-03 13:32:22,526 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.bogus with driver bogus
+2015-09-03 13:32:22,522 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: joke
+2015-09-03 13:32:22,533 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 13:32:22,535 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: sensor_a
+2015-09-03 13:32:22,538 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver joke
+2015-09-03 13:32:22,541 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.bogus with driver bogus
+2015-09-03 13:32:39,913 - PSENSv0.1 - WARNING - <module> - 102 - Starting application
+2015-09-03 13:32:39,913 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: internal
+2015-09-03 13:32:39,916 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: air
+2015-09-03 13:32:39,919 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: water
+2015-09-03 13:32:39,920 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: 'driver'
+2015-09-03 13:32:39,922 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: internal
+2015-09-03 13:32:39,923 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver dht
+2015-09-03 13:32:39,924 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: joke
+2015-09-03 13:32:39,925 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 13:32:39,926 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver ds18b20
+2015-09-03 13:32:39,927 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: sensor_a
+2015-09-03 13:32:39,929 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.bogus with driver bogus
+2015-09-03 13:32:39,930 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver joke
+2015-09-03 13:32:39,934 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.bogus with driver bogus
+2015-09-03 13:34:00,915 - PSENSv0.1 - WARNING - <module> - 102 - Starting application
+2015-09-03 13:34:00,915 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: internal
+2015-09-03 13:34:00,919 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: air
+2015-09-03 13:34:00,921 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: water
+2015-09-03 13:34:00,923 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: internal
+2015-09-03 13:34:00,925 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver dht
+2015-09-03 13:34:00,927 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver ds18b20
+2015-09-03 13:34:00,929 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.bogus with driver bogus
+2015-09-03 13:34:00,926 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: joke
+2015-09-03 13:34:00,933 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 13:34:00,935 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: sensor_a
+2015-09-03 13:34:00,939 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver joke
+2015-09-03 13:34:00,941 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.bogus with driver bogus
+2015-09-03 13:34:54,633 - PSENSv0.1 - WARNING - <module> - 102 - Starting application
+2015-09-03 13:34:54,633 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: internal
+2015-09-03 13:34:54,636 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: air
+2015-09-03 13:34:54,639 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: water
+2015-09-03 13:34:54,643 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 13:34:54,643 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: internal
+2015-09-03 13:34:54,643 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver dht
+2015-09-03 13:34:54,645 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: joke
+2015-09-03 13:34:54,647 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver ds18b20
+2015-09-03 13:34:54,648 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: sensor_a
+2015-09-03 13:34:54,649 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.bogus with driver bogus
+2015-09-03 13:34:54,652 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver joke
+2015-09-03 13:34:54,654 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.bogus with driver bogus
+2015-09-03 13:35:41,051 - PSENSv0.1 - WARNING - <module> - 102 - Starting application
+2015-09-03 13:35:41,051 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: internal
+2015-09-03 13:35:41,054 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: air
+2015-09-03 13:35:41,057 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: water
+2015-09-03 13:35:41,058 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 13:35:41,059 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 13:35:41,059 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: internal
+2015-09-03 13:35:41,061 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver dht
+2015-09-03 13:35:41,062 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: joke
+2015-09-03 13:35:41,063 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver ds18b20
+2015-09-03 13:35:41,064 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: sensor_a
+2015-09-03 13:35:41,066 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.bogus with driver bogus
+2015-09-03 13:35:41,068 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver joke
+2015-09-03 13:35:41,070 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.bogus with driver bogus
+2015-09-03 13:36:01,404 - PSENSv0.1 - WARNING - <module> - 102 - Starting application
+2015-09-03 13:36:01,404 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: internal
+2015-09-03 13:36:01,407 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: air
+2015-09-03 13:36:01,410 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: water
+2015-09-03 13:36:01,412 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: internal
+2015-09-03 13:36:01,411 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 13:36:01,413 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 13:36:01,414 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver dht
+2015-09-03 13:36:01,414 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: joke
+2015-09-03 13:36:01,416 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver ds18b20
+2015-09-03 13:36:01,417 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: sensor_a
+2015-09-03 13:36:01,418 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.bogus with driver bogus
+2015-09-03 13:36:01,421 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver joke
+2015-09-03 13:36:01,424 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.bogus with driver bogus
+2015-09-03 13:43:38,263 - PSENSv0.1 - WARNING - <module> - 102 - Starting application
+2015-09-03 13:43:38,264 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: internal
+2015-09-03 13:43:38,267 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: air
+2015-09-03 13:43:38,269 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: water
+2015-09-03 13:43:38,272 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: internal
+2015-09-03 13:43:38,272 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 13:43:38,273 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 13:43:38,273 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver dht
+2015-09-03 13:43:38,274 - PSENSv0.1 - WARNING - bogus - 20 - Error: 'subtype'
+2015-09-03 13:43:38,274 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: joke
+2015-09-03 13:43:38,276 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver ds18b20
+2015-09-03 13:43:38,277 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-03 13:43:38,277 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 13:43:38,277 - PSENSv0.1 - DEBUG - bogus - 13 - process name: air Sensor subtype: DHT driver: dht
+2015-09-03 13:43:38,278 - PSENSv0.1 - WARNING - bogus - 16 - air is going to sleep for 1 s
+2015-09-03 13:43:38,277 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: sensor_a
+2015-09-03 13:43:38,278 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-03 13:43:38,278 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.bogus with driver bogus
+2015-09-03 13:43:38,279 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 13:43:38,279 - PSENSv0.1 - DEBUG - bogus - 13 - process name: internal Sensor subtype: PSens driver: bogus
+2015-09-03 13:43:38,279 - PSENSv0.1 - DEBUG - bogus - 13 - process name: water Sensor subtype: ds18b20 driver: ds18b20
+2015-09-03 13:43:38,279 - PSENSv0.1 - WARNING - bogus - 16 - internal is going to sleep for 9 s
+2015-09-03 13:43:38,279 - PSENSv0.1 - WARNING - bogus - 16 - water is going to sleep for 5 s
+2015-09-03 13:43:38,281 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver joke
+2015-09-03 13:43:38,282 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-03 13:43:38,283 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 13:43:38,283 - PSENSv0.1 - DEBUG - bogus - 13 - process name: joke Sensor subtype: Joke driver: joke
+2015-09-03 13:43:38,283 - PSENSv0.1 - WARNING - bogus - 16 - joke is going to sleep for 8 s
+2015-09-03 13:43:38,283 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.bogus with driver bogus
+2015-09-03 13:43:38,284 - PSENSv0.1 - WARNING - bogus - 20 - Error: 'subtype'
+2015-09-03 13:43:39,279 - PSENSv0.1 - WARNING - bogus - 18 - air says bye bye.
+2015-09-03 13:43:43,281 - PSENSv0.1 - WARNING - bogus - 18 - water says bye bye.
+2015-09-03 13:43:46,285 - PSENSv0.1 - WARNING - bogus - 18 - joke says bye bye.
+2015-09-03 13:43:47,281 - PSENSv0.1 - WARNING - bogus - 18 - internal says bye bye.
+2015-09-03 13:44:43,247 - PSENSv0.1 - WARNING - <module> - 102 - Starting application
+2015-09-03 13:44:43,248 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: internal
+2015-09-03 13:44:43,252 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: air
+2015-09-03 13:44:43,254 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: water
+2015-09-03 13:44:43,255 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 13:44:43,257 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 13:44:43,256 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: internal
+2015-09-03 13:44:43,257 - PSENSv0.1 - WARNING - bogus - 20 - Error: 'subtype'
+2015-09-03 13:44:43,258 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver dht
+2015-09-03 13:44:43,259 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: joke
+2015-09-03 13:44:43,261 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-03 13:44:43,261 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 13:44:43,261 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver ds18b20
+2015-09-03 13:44:43,261 - PSENSv0.1 - DEBUG - bogus - 13 - process name: air Sensor subtype: DHT driver: dht
+2015-09-03 13:44:43,262 - PSENSv0.1 - WARNING - bogus - 16 - air is going to sleep for 4 s
+2015-09-03 13:44:43,263 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-03 13:44:43,263 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 13:44:43,263 - PSENSv0.1 - DEBUG - bogus - 13 - process name: water Sensor subtype: ds18b20 driver: ds18b20
+2015-09-03 13:44:43,262 - PSENSv0.1 - WARNING - <module> - 105 - Starting Module: sensor_a
+2015-09-03 13:44:43,263 - PSENSv0.1 - WARNING - bogus - 16 - water is going to sleep for 1 s
+2015-09-03 13:44:43,263 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.bogus with driver bogus
+2015-09-03 13:44:43,264 - PSENSv0.1 - DEBUG - bogus - 13 - process name: internal Sensor subtype: PSens driver: bogus
+2015-09-03 13:44:43,264 - PSENSv0.1 - WARNING - bogus - 16 - internal is going to sleep for 7 s
+2015-09-03 13:44:43,266 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver joke
+2015-09-03 13:44:43,267 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-03 13:44:43,268 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 13:44:43,268 - PSENSv0.1 - DEBUG - bogus - 13 - process name: joke Sensor subtype: Joke driver: joke
+2015-09-03 13:44:43,268 - PSENSv0.1 - WARNING - bogus - 16 - joke is going to sleep for 2 s
+2015-09-03 13:44:43,269 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.bogus with driver bogus
+2015-09-03 13:44:43,270 - PSENSv0.1 - WARNING - bogus - 20 - Error: 'subtype'
+2015-09-03 13:44:44,265 - PSENSv0.1 - WARNING - bogus - 18 - water says bye bye.
+2015-09-03 13:44:45,270 - PSENSv0.1 - WARNING - bogus - 18 - joke says bye bye.
+2015-09-03 13:44:47,262 - PSENSv0.1 - WARNING - bogus - 18 - air says bye bye.
+2015-09-03 13:44:50,266 - PSENSv0.1 - WARNING - bogus - 18 - internal says bye bye.
+2015-09-03 13:54:13,521 - PSENSv0.1 - WARNING - <module> - 102 - Start Monitoring System
+2015-09-03 13:54:13,524 - PSENSv0.1 - WARNING - <module> - 108 - Starting Module: internal PID: 94494
+2015-09-03 13:54:13,528 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 13:54:13,529 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 13:54:13,529 - PSENSv0.1 - WARNING - bogus - 20 - Error: 'subtype'
+2015-09-03 13:54:13,533 - PSENSv0.1 - WARNING - <module> - 108 - Starting Module: air PID: 94495
+2015-09-03 13:54:13,537 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver dht
+2015-09-03 13:54:13,539 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-03 13:54:13,540 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 13:54:13,540 - PSENSv0.1 - DEBUG - bogus - 13 - process name: air Sensor subtype: DHT driver: dht
+2015-09-03 13:54:13,540 - PSENSv0.1 - DEBUG - bogus - 16 - air is going to sleep for 8 s
+2015-09-03 15:11:30,939 - PSENSv0.1 - WARNING - <module> - 102 - Start Monitoring System
+2015-09-03 15:11:31,009 - PSENSv0.1 - WARNING - <module> - 108 - Starting Module: internal PID: 95102
+2015-09-03 15:11:31,013 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:11:31,015 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 15:11:31,015 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:11:31,019 - PSENSv0.1 - WARNING - <module> - 108 - Starting Module: air PID: 95103
+2015-09-03 15:11:31,022 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver dht
+2015-09-03 15:11:31,024 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-03 15:11:31,024 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 15:11:31,024 - PSENSv0.1 - DEBUG - bogus - 14 - process name: air Sensor subtype: DHT driver: dht
+2015-09-03 15:11:31,025 - PSENSv0.1 - DEBUG - bogus - 17 - air is going to sleep for 1 s
+2015-09-03 15:11:32,026 - PSENSv0.1 - WARNING - bogus - 19 - air says bye bye.
+2015-09-03 15:11:32,030 - PSENSv0.1 - WARNING - <module> - 108 - Starting Module: water PID: 95104
+2015-09-03 15:11:32,033 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver ds18b20
+2015-09-03 15:11:32,035 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-03 15:11:32,035 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 15:11:32,035 - PSENSv0.1 - DEBUG - bogus - 14 - process name: water Sensor subtype: ds18b20 driver: ds18b20
+2015-09-03 15:11:32,035 - PSENSv0.1 - DEBUG - bogus - 17 - water is going to sleep for 10 s
+2015-09-03 15:12:04,937 - PSENSv0.1 - WARNING - <module> - 102 - Start Monitoring System
+2015-09-03 15:12:04,940 - PSENSv0.1 - WARNING - <module> - 108 - Starting Module: internal PID: 95123
+2015-09-03 15:12:04,943 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:12:04,945 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 15:12:04,945 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:12:04,948 - PSENSv0.1 - WARNING - <module> - 108 - Starting Module: air PID: 95124
+2015-09-03 15:12:04,951 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver dht
+2015-09-03 15:12:04,952 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-03 15:12:04,953 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 15:12:04,953 - PSENSv0.1 - DEBUG - bogus - 14 - process name: air Sensor subtype: DHT driver: dht
+2015-09-03 15:12:04,953 - PSENSv0.1 - DEBUG - bogus - 17 - air is going to sleep for 10 s
+2015-09-03 15:14:09,827 - PSENSv0.1 - WARNING - <module> - 102 - Start Monitoring System
+2015-09-03 15:14:09,829 - PSENSv0.1 - WARNING - <module> - 108 - Starting Module: internal PID: 95167
+2015-09-03 15:14:09,834 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:14:09,836 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 15:14:09,836 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:14:09,840 - PSENSv0.1 - WARNING - <module> - 108 - Starting Module: air PID: 95168
+2015-09-03 15:14:09,843 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver dht
+2015-09-03 15:14:09,846 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-03 15:14:09,847 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 15:14:09,847 - PSENSv0.1 - DEBUG - bogus - 14 - process name: air Sensor subtype: DHT driver: dht
+2015-09-03 15:14:09,847 - PSENSv0.1 - DEBUG - bogus - 17 - air is going to sleep for 7 s
+2015-09-03 15:15:21,766 - PSENSv0.1 - WARNING - <module> - 102 - Start Monitoring System
+2015-09-03 15:15:21,769 - PSENSv0.1 - WARNING - <module> - 108 - Starting Module: internal PID: 95192
+2015-09-03 15:15:21,773 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:15:21,774 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 15:15:21,775 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:15:21,778 - PSENSv0.1 - WARNING - <module> - 108 - Starting Module: air PID: 95193
+2015-09-03 15:15:21,781 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver dht
+2015-09-03 15:15:21,782 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-03 15:15:21,783 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 15:15:21,783 - PSENSv0.1 - DEBUG - bogus - 14 - process name: air Sensor subtype: DHT driver: dht
+2015-09-03 15:15:21,783 - PSENSv0.1 - DEBUG - bogus - 17 - air is going to sleep for 6 s
+2015-09-03 15:17:49,395 - PSENSv0.1 - WARNING - <module> - 102 - Start Monitoring System
+2015-09-03 15:17:49,398 - PSENSv0.1 - WARNING - <module> - 108 - Starting Module: internal PID: 95224
+2015-09-03 15:17:49,401 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:17:49,403 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 15:17:49,403 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:17:49,405 - PSENSv0.1 - WARNING - <module> - 111 - internal is DEAD - Restarting-it
+2015-09-03 15:17:49,405 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:17:49,406 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 15:17:49,406 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:17:49,406 - PSENSv0.1 - WARNING - <module> - 118 - Error: name 'time' is not defined
+2015-09-03 15:17:49,407 - PSENSv0.1 - WARNING - <module> - 108 - Starting Module: air PID: 95225
+2015-09-03 15:17:49,410 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver dht
+2015-09-03 15:17:49,412 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-03 15:17:49,412 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 15:17:49,412 - PSENSv0.1 - DEBUG - bogus - 14 - process name: air Sensor subtype: DHT driver: dht
+2015-09-03 15:17:49,412 - PSENSv0.1 - DEBUG - bogus - 17 - air is going to sleep for 2 s
+2015-09-03 15:17:51,413 - PSENSv0.1 - WARNING - bogus - 19 - air says bye bye.
+2015-09-03 15:17:51,415 - PSENSv0.1 - WARNING - <module> - 111 - air is DEAD - Restarting-it
+2015-09-03 15:17:51,416 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver dht
+2015-09-03 15:17:51,417 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-03 15:17:51,417 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 15:17:51,417 - PSENSv0.1 - DEBUG - bogus - 14 - process name: air Sensor subtype: DHT driver: dht
+2015-09-03 15:17:51,417 - PSENSv0.1 - DEBUG - bogus - 17 - air is going to sleep for 9 s
+2015-09-03 15:18:00,421 - PSENSv0.1 - WARNING - bogus - 19 - air says bye bye.
+2015-09-03 15:18:00,421 - PSENSv0.1 - WARNING - <module> - 118 - Error: name 'time' is not defined
+2015-09-03 15:18:00,423 - PSENSv0.1 - WARNING - <module> - 108 - Starting Module: water PID: 95229
+2015-09-03 15:18:00,426 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver ds18b20
+2015-09-03 15:18:00,427 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-03 15:18:00,428 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 15:18:00,428 - PSENSv0.1 - DEBUG - bogus - 14 - process name: water Sensor subtype: ds18b20 driver: ds18b20
+2015-09-03 15:18:00,428 - PSENSv0.1 - DEBUG - bogus - 17 - water is going to sleep for 1 s
+2015-09-03 15:18:01,429 - PSENSv0.1 - WARNING - bogus - 19 - water says bye bye.
+2015-09-03 15:18:01,431 - PSENSv0.1 - WARNING - <module> - 111 - water is DEAD - Restarting-it
+2015-09-03 15:18:01,432 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver ds18b20
+2015-09-03 15:18:01,433 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-03 15:18:01,433 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 15:18:01,433 - PSENSv0.1 - DEBUG - bogus - 14 - process name: water Sensor subtype: ds18b20 driver: ds18b20
+2015-09-03 15:18:01,433 - PSENSv0.1 - DEBUG - bogus - 17 - water is going to sleep for 3 s
+2015-09-03 15:18:04,436 - PSENSv0.1 - WARNING - bogus - 19 - water says bye bye.
+2015-09-03 15:18:04,437 - PSENSv0.1 - WARNING - <module> - 118 - Error: name 'time' is not defined
+2015-09-03 15:18:04,438 - PSENSv0.1 - WARNING - <module> - 108 - Starting Module: internal PID: 95231
+2015-09-03 15:18:04,442 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.bogus with driver bogus
+2015-09-03 15:18:04,443 - PSENSv0.1 - DEBUG - bogus - 14 - process name: internal Sensor subtype: PSens driver: bogus
+2015-09-03 15:18:04,443 - PSENSv0.1 - DEBUG - bogus - 17 - internal is going to sleep for 1 s
+2015-09-03 15:18:05,444 - PSENSv0.1 - WARNING - bogus - 19 - internal says bye bye.
+2015-09-03 15:18:05,446 - PSENSv0.1 - WARNING - <module> - 111 - internal is DEAD - Restarting-it
+2015-09-03 15:18:05,447 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.bogus with driver bogus
+2015-09-03 15:18:05,447 - PSENSv0.1 - DEBUG - bogus - 14 - process name: internal Sensor subtype: PSens driver: bogus
+2015-09-03 15:18:05,447 - PSENSv0.1 - DEBUG - bogus - 17 - internal is going to sleep for 9 s
+2015-09-03 15:18:14,451 - PSENSv0.1 - WARNING - bogus - 19 - internal says bye bye.
+2015-09-03 15:18:14,451 - PSENSv0.1 - WARNING - <module> - 118 - Error: name 'time' is not defined
+2015-09-03 15:18:14,453 - PSENSv0.1 - WARNING - <module> - 108 - Starting Module: joke PID: 95233
+2015-09-03 15:18:14,456 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver joke
+2015-09-03 15:18:14,458 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-03 15:18:14,458 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 15:18:14,458 - PSENSv0.1 - DEBUG - bogus - 14 - process name: joke Sensor subtype: Joke driver: joke
+2015-09-03 15:18:14,458 - PSENSv0.1 - DEBUG - bogus - 17 - joke is going to sleep for 6 s
+2015-09-03 15:18:20,460 - PSENSv0.1 - WARNING - bogus - 19 - joke says bye bye.
+2015-09-03 15:18:20,462 - PSENSv0.1 - WARNING - <module> - 111 - joke is DEAD - Restarting-it
+2015-09-03 15:18:20,463 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.th with driver joke
+2015-09-03 15:18:20,464 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-03 15:18:20,464 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-03 15:18:20,464 - PSENSv0.1 - DEBUG - bogus - 14 - process name: joke Sensor subtype: Joke driver: joke
+2015-09-03 15:18:20,464 - PSENSv0.1 - DEBUG - bogus - 17 - joke is going to sleep for 7 s
+2015-09-03 15:18:27,466 - PSENSv0.1 - WARNING - bogus - 19 - joke says bye bye.
+2015-09-03 15:18:27,466 - PSENSv0.1 - WARNING - <module> - 118 - Error: name 'time' is not defined
+2015-09-03 15:18:27,468 - PSENSv0.1 - WARNING - <module> - 108 - Starting Module: sensor_a PID: 95235
+2015-09-03 15:18:27,471 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.bogus with driver bogus
+2015-09-03 15:18:27,472 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:18:27,473 - PSENSv0.1 - WARNING - <module> - 111 - sensor_a is DEAD - Restarting-it
+2015-09-03 15:18:27,474 - PSENSv0.1 - DEBUG - sensor - 86 - Loading Sensor module sensors.bogus with driver bogus
+2015-09-03 15:18:27,474 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:18:27,474 - PSENSv0.1 - WARNING - <module> - 118 - Error: name 'time' is not defined
+2015-09-03 15:21:01,957 - PSENSv0.1 - WARNING - <module> - 103 - Start Monitoring System
+2015-09-03 15:21:01,960 - PSENSv0.1 - WARNING - <module> - 109 - Starting Module: internal PID: 95284
+2015-09-03 15:21:01,965 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:01,966 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:01,967 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:01,968 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:01,969 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:01,969 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:01,969 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:02,074 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:02,074 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:02,075 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:02,075 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:02,075 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:02,178 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:02,178 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:02,178 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:02,178 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:02,179 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:02,283 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:02,283 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:02,284 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:02,284 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:02,284 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:02,387 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:02,388 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:02,388 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:02,388 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:02,388 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:02,491 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:02,492 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:02,492 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:02,492 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:02,492 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:02,596 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:02,597 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:02,597 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:02,597 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:02,597 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:02,701 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:02,702 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:02,702 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:02,702 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:02,702 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:02,804 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:02,805 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:02,805 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:02,805 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:02,805 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:02,909 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:02,909 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:02,909 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:02,909 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:02,909 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:03,014 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:03,014 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:03,014 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:03,014 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:03,014 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:03,120 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:03,120 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:03,120 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:03,120 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:03,121 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:03,221 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:03,222 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:03,222 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:03,222 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:03,222 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:03,323 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:03,323 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:03,323 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:03,323 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:03,323 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:03,427 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:03,428 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:03,428 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:03,428 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:03,428 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:03,533 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:03,534 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:03,534 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:03,534 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:03,534 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:03,638 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:03,639 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:03,639 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:03,639 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:03,639 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:03,741 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:03,741 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:03,741 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:03,741 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:03,742 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:03,842 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:03,842 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:03,843 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:03,843 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:03,843 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:03,944 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:03,944 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:03,944 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:03,944 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:03,945 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:04,049 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:04,049 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:04,049 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:04,050 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:04,050 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:04,154 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:04,154 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:04,154 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:04,155 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:04,155 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:04,255 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:04,256 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:04,256 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:04,256 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:04,256 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:04,359 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:04,359 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:04,359 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:04,359 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:04,359 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:04,461 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:04,461 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:04,461 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:04,462 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:04,462 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:04,566 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:04,566 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:04,567 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:04,567 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:04,567 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:04,667 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:04,667 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:04,668 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:04,668 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:04,668 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:04,772 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:04,773 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:04,773 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:04,773 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:04,773 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:04,873 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:04,874 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:04,874 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:04,874 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:04,874 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:04,975 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:04,976 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:04,976 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:04,976 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:04,976 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:05,081 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:05,082 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:05,082 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:05,082 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:05,082 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:05,186 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:05,186 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:05,186 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:05,186 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:05,186 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:05,291 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:05,291 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:05,291 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:05,291 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:05,292 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:05,393 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:05,393 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:05,394 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:05,394 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:05,394 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:05,498 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:05,498 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:05,498 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:05,499 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:05,499 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:05,603 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:05,603 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:05,603 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:05,604 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:05,604 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:05,706 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:05,707 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:05,707 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:05,707 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:05,707 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:05,809 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:05,809 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:05,809 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:05,809 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:05,810 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:05,913 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:05,913 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:05,913 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:05,913 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:05,913 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:06,014 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:06,014 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:06,014 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:06,014 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:06,015 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:06,120 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:06,120 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:06,120 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:06,120 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:06,120 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:06,224 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:06,224 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:06,224 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:06,224 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:06,224 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:06,325 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:06,326 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:06,326 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:06,326 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:06,326 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:06,431 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:06,431 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:06,431 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:06,432 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:06,432 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:06,535 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:06,536 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:06,536 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:06,536 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:06,536 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:06,640 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:06,641 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:06,641 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:06,641 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:06,641 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:06,742 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:06,742 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:06,742 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:06,743 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:06,743 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:06,845 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:06,845 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:06,845 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:06,845 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:06,845 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:06,948 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:06,948 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:06,948 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:06,948 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:06,948 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:07,054 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:07,054 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:07,054 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:07,054 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:07,054 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:07,159 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:07,159 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:07,159 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:07,159 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:07,159 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:07,264 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:07,264 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:07,264 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:07,264 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:07,265 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:07,365 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:07,366 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:07,366 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:07,366 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:07,366 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:07,468 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:07,468 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:07,469 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:07,469 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:07,469 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:07,574 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:07,574 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:07,574 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:07,574 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:07,574 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:07,675 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:07,676 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:07,676 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:07,676 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:07,676 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:07,779 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:07,779 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:07,780 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:07,780 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:07,780 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:07,880 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:07,880 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:07,881 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:07,881 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:07,881 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:07,982 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:07,982 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:07,983 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:07,983 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:07,983 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:08,087 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:08,088 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:08,088 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:08,088 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:08,088 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:08,190 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:08,190 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:08,190 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:08,191 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:08,191 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:08,292 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:08,292 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:08,293 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:08,293 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:08,293 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:08,395 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:08,395 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:08,395 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:08,395 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:08,396 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:08,498 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:08,499 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:08,499 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:08,500 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:08,500 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:08,601 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:08,601 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:08,601 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:08,601 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:08,602 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:08,705 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:08,706 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:08,706 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:08,706 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:08,706 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:08,807 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:08,808 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:08,808 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:08,808 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:08,808 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:08,909 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:08,909 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:08,909 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:08,910 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:08,910 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:09,014 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:09,015 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:09,015 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:09,015 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:09,015 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:09,116 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:09,116 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:09,116 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:09,116 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:09,116 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:09,220 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:09,221 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:09,221 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:09,221 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:09,221 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:09,324 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:09,324 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:09,324 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:09,325 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:09,325 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:09,425 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:09,426 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:09,426 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:09,426 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:09,426 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:09,528 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:09,528 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:09,528 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:09,528 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:09,529 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:09,633 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:09,634 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:09,634 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:09,634 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:09,634 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:09,736 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:09,737 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:09,737 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:09,737 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:09,739 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:09,842 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:09,842 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:09,843 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:09,843 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:09,843 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:09,944 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:09,944 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:09,944 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:09,944 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:09,944 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:10,049 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:10,050 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:10,050 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:10,050 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:10,050 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:10,155 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:10,155 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:10,155 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:10,155 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:10,155 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:10,260 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:10,260 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:10,260 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:10,260 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:10,260 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:10,362 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:10,362 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:10,362 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:10,363 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:10,363 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:10,467 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:10,467 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:10,467 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:10,468 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:10,468 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:10,569 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:10,570 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:10,570 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:10,570 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:10,570 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:10,674 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:10,674 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:10,674 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:10,674 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:10,674 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:10,778 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:10,779 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:10,779 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:10,779 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:10,779 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:10,884 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:10,885 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:10,885 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:10,885 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:10,885 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:10,990 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:10,990 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:10,991 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:10,991 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:10,991 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:11,095 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:11,095 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:11,095 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:11,096 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:11,096 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:11,199 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:11,200 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:11,200 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:11,200 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:11,200 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:11,300 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:11,301 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:11,301 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:11,301 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:11,301 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:11,406 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:11,407 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:11,407 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:11,407 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:11,407 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:11,509 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:11,509 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:11,509 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:11,510 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:11,510 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:11,611 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:11,611 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:11,612 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:11,612 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:11,612 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:11,714 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:11,715 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:11,715 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:11,715 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:11,715 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:11,816 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:11,816 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:11,816 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:11,816 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:11,816 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:11,919 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:11,919 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:11,920 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:11,920 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:11,920 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:12,025 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:12,025 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:12,026 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:12,026 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:12,026 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:12,128 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:12,129 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:12,129 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:12,129 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:12,129 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:12,234 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:12,234 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:12,234 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:12,234 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:12,234 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:12,338 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:12,339 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:12,339 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:12,339 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:12,339 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:12,442 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:12,443 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:12,443 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:12,443 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:12,443 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:12,546 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:12,546 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:12,546 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:12,546 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:12,547 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:12,651 - PSENSv0.1 - WARNING - <module> - 116 - New PID: 95284
+2015-09-03 15:21:12,652 - PSENSv0.1 - WARNING - <module> - 112 - internal is DEAD - Restarting-it
+2015-09-03 15:21:12,652 - PSENSv0.1 - WARNING - sensor - 96 - Error importing custom module: 'driver' No driver for: sensors.control
+2015-09-03 15:21:12,652 - PSENSv0.1 - DEBUG - sensor - 98 - Using Bogus function
+2015-09-03 15:21:12,652 - PSENSv0.1 - WARNING - bogus - 21 - Error: 'subtype'
+2015-09-03 15:21:12,671 - PSENSv0.1 - WARNING - <module> - 122 - Shutdown Monitoring system
+2015-09-04 11:46:33,005 - PSENSv0.1 - WARNING - <module> - 100 - Start Monitoring System
+2015-09-04 11:46:33,089 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver dht
+2015-09-04 11:46:33,086 - PSENSv0.1 - WARNING - <module> - 106 - Starting Module: air PID: 4801
+2015-09-04 11:46:33,153 - PSENSv0.1 - WARNING - sensor - 93 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-04 11:46:33,154 - PSENSv0.1 - DEBUG - sensor - 95 - Using Bogus function
+2015-09-04 11:46:33,154 - PSENSv0.1 - DEBUG - bogus - 14 - process name: air Sensor subtype: DHT driver: dht
+2015-09-04 11:46:33,154 - PSENSv0.1 - DEBUG - bogus - 17 - air is going to sleep for 9 s
+2015-09-04 11:46:42,156 - PSENSv0.1 - WARNING - bogus - 19 - air says bye bye.
+2015-09-04 11:46:42,159 - PSENSv0.1 - WARNING - <module> - 109 - air is DEAD - Restarting-it
+2015-09-04 11:46:42,160 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver dht
+2015-09-04 11:46:42,161 - PSENSv0.1 - WARNING - sensor - 93 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-04 11:46:42,162 - PSENSv0.1 - DEBUG - sensor - 95 - Using Bogus function
+2015-09-04 11:46:42,162 - PSENSv0.1 - DEBUG - bogus - 14 - process name: air Sensor subtype: DHT driver: dht
+2015-09-04 11:46:42,162 - PSENSv0.1 - DEBUG - bogus - 17 - air is going to sleep for 2 s
+2015-09-04 11:46:44,162 - PSENSv0.1 - WARNING - bogus - 19 - air says bye bye.
+2015-09-04 11:46:44,265 - PSENSv0.1 - WARNING - <module> - 113 - New PID: 4801
+2015-09-04 11:46:44,266 - PSENSv0.1 - WARNING - <module> - 109 - air is DEAD - Restarting-it
+2015-09-04 11:46:44,266 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver dht
+2015-09-04 11:46:44,266 - PSENSv0.1 - WARNING - sensor - 93 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-04 11:46:44,267 - PSENSv0.1 - DEBUG - sensor - 95 - Using Bogus function
+2015-09-04 11:46:44,267 - PSENSv0.1 - DEBUG - bogus - 14 - process name: air Sensor subtype: DHT driver: dht
+2015-09-04 11:46:44,267 - PSENSv0.1 - DEBUG - bogus - 17 - air is going to sleep for 9 s
+2015-09-04 11:56:14,024 - PSENSv0.1 - WARNING - <module> - 100 - Start Monitoring System
+2015-09-04 11:56:14,027 - PSENSv0.1 - WARNING - <module> - 106 - Starting Module: air PID: 4922
+2015-09-04 11:56:14,030 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver dht
+2015-09-04 11:56:14,034 - PSENSv0.1 - WARNING - sensor - 93 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-04 11:56:14,034 - PSENSv0.1 - DEBUG - sensor - 95 - Using Bogus function
+2015-09-04 11:56:14,034 - PSENSv0.1 - DEBUG - bogus - 14 - process name: air Sensor subtype: DHT driver: dht
+2015-09-04 11:56:14,034 - PSENSv0.1 - DEBUG - bogus - 17 - air is going to sleep for 9 s
+2015-09-04 11:56:23,035 - PSENSv0.1 - WARNING - bogus - 19 - air says bye bye.
+2015-09-04 11:56:23,038 - PSENSv0.1 - WARNING - <module> - 109 - air is DEAD - Restarting-it
+2015-09-04 11:56:23,039 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver dht
+2015-09-04 11:56:23,041 - PSENSv0.1 - WARNING - sensor - 93 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-04 11:56:23,041 - PSENSv0.1 - DEBUG - sensor - 95 - Using Bogus function
+2015-09-04 11:56:23,041 - PSENSv0.1 - DEBUG - bogus - 14 - process name: air Sensor subtype: DHT driver: dht
+2015-09-04 11:56:23,041 - PSENSv0.1 - DEBUG - bogus - 17 - air is going to sleep for 9 s
+2015-09-04 11:56:32,047 - PSENSv0.1 - WARNING - bogus - 19 - air says bye bye.
+2015-09-04 11:56:32,149 - PSENSv0.1 - WARNING - <module> - 113 - New PID: 4922
+2015-09-04 11:56:32,149 - PSENSv0.1 - WARNING - <module> - 109 - air is DEAD - Restarting-it
+2015-09-04 11:56:32,150 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver dht
+2015-09-04 11:56:32,150 - PSENSv0.1 - WARNING - sensor - 93 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-04 11:56:32,150 - PSENSv0.1 - DEBUG - sensor - 95 - Using Bogus function
+2015-09-04 11:56:32,151 - PSENSv0.1 - DEBUG - bogus - 14 - process name: air Sensor subtype: DHT driver: dht
+2015-09-04 11:56:32,151 - PSENSv0.1 - DEBUG - bogus - 17 - air is going to sleep for 9 s
+2015-09-04 11:58:25,519 - PSENSv0.1 - WARNING - <module> - 102 - Start Monitoring System
+2015-09-04 11:58:25,521 - PSENSv0.1 - WARNING - <module> - 108 - Starting Module: air PID: 4952
+2015-09-04 11:58:25,525 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver dht
+2015-09-04 11:58:25,529 - PSENSv0.1 - WARNING - sensor - 91 - [+] Error: No module named logger
+2015-09-04 11:58:25,530 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: local variable 'my_function' referenced before assignment No driver for: sensors.th
+2015-09-04 11:58:25,530 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-04 11:58:25,530 - PSENSv0.1 - DEBUG - bogus - 14 - process name: air Sensor subtype: DHT driver: dht
+2015-09-04 11:58:25,530 - PSENSv0.1 - DEBUG - bogus - 17 - air is going to sleep for 6 s
+2015-09-04 11:58:31,532 - PSENSv0.1 - WARNING - bogus - 19 - air says bye bye.
+2015-09-04 11:58:31,534 - PSENSv0.1 - WARNING - <module> - 111 - air is DEAD - Restarting-it
+2015-09-04 11:58:31,535 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver dht
+2015-09-04 11:58:31,537 - PSENSv0.1 - WARNING - sensor - 91 - [+] Error: No module named logger
+2015-09-04 11:58:31,537 - PSENSv0.1 - WARNING - sensor - 95 - Error importing custom module: local variable 'my_function' referenced before assignment No driver for: sensors.th
+2015-09-04 11:58:31,537 - PSENSv0.1 - DEBUG - sensor - 97 - Using Bogus function
+2015-09-04 11:58:31,537 - PSENSv0.1 - DEBUG - bogus - 14 - process name: air Sensor subtype: DHT driver: dht
+2015-09-04 11:58:31,537 - PSENSv0.1 - DEBUG - bogus - 17 - air is going to sleep for 7 s
+2015-09-04 12:02:12,467 - PSENSv0.1 - WARNING - <module> - 104 - Start Monitoring System
+2015-09-04 12:02:12,470 - PSENSv0.1 - WARNING - <module> - 110 - Starting Module: air PID: 4997
+2015-09-04 12:02:12,473 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver dht
+2015-09-04 12:02:12,475 - PSENSv0.1 - WARNING - sensor - 93 - [+] Error: local variable 'my_module' referenced before assignment
+2015-09-04 12:02:12,476 - PSENSv0.1 - WARNING - sensor - 97 - Error importing custom module: local variable 'my_function' referenced before assignment No driver for: sensors.th
+2015-09-04 12:02:12,476 - PSENSv0.1 - DEBUG - sensor - 99 - Using Bogus function
+2015-09-04 12:02:12,476 - PSENSv0.1 - DEBUG - bogus - 14 - process name: air Sensor subtype: DHT driver: dht
+2015-09-04 12:02:12,477 - PSENSv0.1 - DEBUG - bogus - 17 - air is going to sleep for 6 s
+2015-09-04 12:02:18,478 - PSENSv0.1 - WARNING - bogus - 19 - air says bye bye.
+2015-09-04 12:02:18,480 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:02:18,481 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver dht
+2015-09-04 12:02:18,482 - PSENSv0.1 - WARNING - sensor - 93 - [+] Error: local variable 'my_module' referenced before assignment
+2015-09-04 12:02:18,482 - PSENSv0.1 - WARNING - sensor - 97 - Error importing custom module: local variable 'my_function' referenced before assignment No driver for: sensors.th
+2015-09-04 12:02:18,482 - PSENSv0.1 - DEBUG - sensor - 99 - Using Bogus function
+2015-09-04 12:02:18,482 - PSENSv0.1 - DEBUG - bogus - 14 - process name: air Sensor subtype: DHT driver: dht
+2015-09-04 12:02:18,482 - PSENSv0.1 - DEBUG - bogus - 17 - air is going to sleep for 9 s
+2015-09-04 12:02:42,212 - PSENSv0.1 - WARNING - <module> - 104 - Start Monitoring System
+2015-09-04 12:02:42,216 - PSENSv0.1 - WARNING - <module> - 110 - Starting Module: air PID: 5015
+2015-09-04 12:02:42,220 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver dht
+2015-09-04 12:02:42,224 - PSENSv0.1 - WARNING - sensor - 97 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-04 12:02:42,225 - PSENSv0.1 - DEBUG - sensor - 99 - Using Bogus function
+2015-09-04 12:02:42,225 - PSENSv0.1 - DEBUG - bogus - 14 - process name: air Sensor subtype: DHT driver: dht
+2015-09-04 12:02:42,225 - PSENSv0.1 - DEBUG - bogus - 17 - air is going to sleep for 3 s
+2015-09-04 12:02:45,227 - PSENSv0.1 - WARNING - bogus - 19 - air says bye bye.
+2015-09-04 12:02:45,229 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:02:45,230 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver dht
+2015-09-04 12:02:45,232 - PSENSv0.1 - WARNING - sensor - 97 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-04 12:02:45,232 - PSENSv0.1 - DEBUG - sensor - 99 - Using Bogus function
+2015-09-04 12:02:45,232 - PSENSv0.1 - DEBUG - bogus - 14 - process name: air Sensor subtype: DHT driver: dht
+2015-09-04 12:02:45,232 - PSENSv0.1 - DEBUG - bogus - 17 - air is going to sleep for 6 s
+2015-09-04 12:03:16,877 - PSENSv0.1 - WARNING - <module> - 104 - Start Monitoring System
+2015-09-04 12:03:16,880 - PSENSv0.1 - WARNING - <module> - 110 - Starting Module: air PID: 5034
+2015-09-04 12:03:16,883 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver dht
+2015-09-04 12:03:16,888 - PSENSv0.1 - WARNING - sensor - 97 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-04 12:03:16,889 - PSENSv0.1 - DEBUG - sensor - 99 - Using Bogus function
+2015-09-04 12:03:16,889 - PSENSv0.1 - DEBUG - bogus - 14 - process name: air Sensor subtype: DHT driver: dht
+2015-09-04 12:03:16,890 - PSENSv0.1 - DEBUG - bogus - 17 - air is going to sleep for 2 s
+2015-09-04 12:03:18,891 - PSENSv0.1 - WARNING - bogus - 19 - air says bye bye.
+2015-09-04 12:03:18,894 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:03:18,895 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver dht
+2015-09-04 12:03:18,896 - PSENSv0.1 - WARNING - sensor - 97 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-04 12:03:18,897 - PSENSv0.1 - DEBUG - sensor - 99 - Using Bogus function
+2015-09-04 12:03:18,897 - PSENSv0.1 - DEBUG - bogus - 14 - process name: air Sensor subtype: DHT driver: dht
+2015-09-04 12:03:18,897 - PSENSv0.1 - DEBUG - bogus - 17 - air is going to sleep for 4 s
+2015-09-04 12:03:22,897 - PSENSv0.1 - WARNING - bogus - 19 - air says bye bye.
+2015-09-04 12:03:23,000 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5034
+2015-09-04 12:03:23,000 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:03:23,001 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver dht
+2015-09-04 12:03:23,001 - PSENSv0.1 - WARNING - sensor - 97 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-04 12:03:23,001 - PSENSv0.1 - DEBUG - sensor - 99 - Using Bogus function
+2015-09-04 12:03:23,002 - PSENSv0.1 - DEBUG - bogus - 14 - process name: air Sensor subtype: DHT driver: dht
+2015-09-04 12:03:23,002 - PSENSv0.1 - DEBUG - bogus - 17 - air is going to sleep for 7 s
+2015-09-04 12:09:50,986 - PSENSv0.1 - WARNING - <module> - 104 - Start Monitoring System
+2015-09-04 12:09:50,989 - PSENSv0.1 - WARNING - <module> - 110 - Starting Module: air PID: 5196
+2015-09-04 12:09:50,994 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:09:50,999 - PSENSv0.1 - WARNING - sensor - 97 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-04 12:09:50,999 - PSENSv0.1 - DEBUG - sensor - 99 - Using Bogus function
+2015-09-04 12:09:50,999 - PSENSv0.1 - DEBUG - bogus - 14 - process name: air Sensor subtype: DHT driver: dht
+2015-09-04 12:09:51,000 - PSENSv0.1 - DEBUG - bogus - 17 - air is going to sleep for 10 s
+2015-09-04 12:10:01,001 - PSENSv0.1 - WARNING - bogus - 19 - air says bye bye.
+2015-09-04 12:10:01,004 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:10:01,005 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:10:01,006 - PSENSv0.1 - WARNING - sensor - 97 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-04 12:10:01,007 - PSENSv0.1 - DEBUG - sensor - 99 - Using Bogus function
+2015-09-04 12:10:01,007 - PSENSv0.1 - DEBUG - bogus - 14 - process name: air Sensor subtype: DHT driver: dht
+2015-09-04 12:10:01,007 - PSENSv0.1 - DEBUG - bogus - 17 - air is going to sleep for 8 s
+2015-09-04 12:10:09,012 - PSENSv0.1 - WARNING - bogus - 19 - air says bye bye.
+2015-09-04 12:10:09,117 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5196
+2015-09-04 12:10:09,118 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:10:09,118 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:10:09,119 - PSENSv0.1 - WARNING - sensor - 97 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-04 12:10:09,119 - PSENSv0.1 - DEBUG - sensor - 99 - Using Bogus function
+2015-09-04 12:10:09,119 - PSENSv0.1 - DEBUG - bogus - 14 - process name: air Sensor subtype: DHT driver: dht
+2015-09-04 12:10:09,119 - PSENSv0.1 - DEBUG - bogus - 17 - air is going to sleep for 6 s
+2015-09-04 12:10:15,123 - PSENSv0.1 - WARNING - bogus - 19 - air says bye bye.
+2015-09-04 12:10:15,224 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5196
+2015-09-04 12:10:15,225 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:10:15,225 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:10:15,226 - PSENSv0.1 - WARNING - sensor - 97 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-04 12:10:15,226 - PSENSv0.1 - DEBUG - sensor - 99 - Using Bogus function
+2015-09-04 12:10:15,226 - PSENSv0.1 - DEBUG - bogus - 14 - process name: air Sensor subtype: DHT driver: dht
+2015-09-04 12:10:15,226 - PSENSv0.1 - DEBUG - bogus - 17 - air is going to sleep for 4 s
+2015-09-04 12:10:48,399 - PSENSv0.1 - WARNING - <module> - 104 - Start Monitoring System
+2015-09-04 12:10:48,402 - PSENSv0.1 - WARNING - <module> - 110 - Starting Module: air PID: 5216
+2015-09-04 12:10:48,405 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:10:48,409 - PSENSv0.1 - WARNING - sensor - 97 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-04 12:10:48,409 - PSENSv0.1 - DEBUG - sensor - 99 - Using Bogus function
+2015-09-04 12:10:48,409 - PSENSv0.1 - DEBUG - bogus - 14 - process name: air Sensor subtype: DHT driver: dht
+2015-09-04 12:10:48,410 - PSENSv0.1 - DEBUG - bogus - 17 - air is going to sleep for 9 s
+2015-09-04 12:10:57,411 - PSENSv0.1 - WARNING - bogus - 19 - air says bye bye.
+2015-09-04 12:10:57,414 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:10:57,415 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:10:57,417 - PSENSv0.1 - WARNING - sensor - 97 - Error importing custom module: No module named logger No driver for: sensors.th
+2015-09-04 12:10:57,417 - PSENSv0.1 - DEBUG - sensor - 99 - Using Bogus function
+2015-09-04 12:10:57,417 - PSENSv0.1 - DEBUG - bogus - 14 - process name: air Sensor subtype: DHT driver: dht
+2015-09-04 12:10:57,417 - PSENSv0.1 - DEBUG - bogus - 17 - air is going to sleep for 2 s
+2015-09-04 12:11:47,498 - PSENSv0.1 - WARNING - <module> - 104 - Start Monitoring System
+2015-09-04 12:11:47,500 - PSENSv0.1 - WARNING - <module> - 110 - Starting Module: air PID: 5238
+2015-09-04 12:11:47,504 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:11:47,510 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: No module named Adafruit_DHT
+2015-09-04 12:11:47,512 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:11:47,512 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:11:47,514 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: No module named Adafruit_DHT
+2015-09-04 12:11:47,615 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5238
+2015-09-04 12:11:47,615 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:11:47,615 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:11:47,616 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: No module named Adafruit_DHT
+2015-09-04 12:11:47,717 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5238
+2015-09-04 12:11:47,717 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:11:47,717 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:11:47,718 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: No module named Adafruit_DHT
+2015-09-04 12:11:47,818 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5238
+2015-09-04 12:11:47,819 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:11:47,819 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:11:47,819 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: No module named Adafruit_DHT
+2015-09-04 12:11:47,921 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5238
+2015-09-04 12:11:47,922 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:11:47,922 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:11:47,923 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: No module named Adafruit_DHT
+2015-09-04 12:11:48,023 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5238
+2015-09-04 12:11:48,024 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:11:48,024 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:11:48,024 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: No module named Adafruit_DHT
+2015-09-04 12:11:48,129 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5238
+2015-09-04 12:11:48,129 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:11:48,129 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:11:48,130 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: No module named Adafruit_DHT
+2015-09-04 12:11:48,230 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5238
+2015-09-04 12:11:48,231 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:11:48,231 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:11:48,231 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: No module named Adafruit_DHT
+2015-09-04 12:11:48,337 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5238
+2015-09-04 12:11:48,337 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:11:48,337 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:11:48,338 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: No module named Adafruit_DHT
+2015-09-04 12:11:48,439 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5238
+2015-09-04 12:11:48,440 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:11:48,440 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:11:48,440 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: No module named Adafruit_DHT
+2015-09-04 12:11:48,543 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5238
+2015-09-04 12:11:48,543 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:11:48,543 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:11:48,544 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: No module named Adafruit_DHT
+2015-09-04 12:11:48,647 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5238
+2015-09-04 12:11:48,647 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:11:48,647 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:11:48,648 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: No module named Adafruit_DHT
+2015-09-04 12:11:48,752 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5238
+2015-09-04 12:11:48,752 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:11:48,752 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:11:48,753 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: No module named Adafruit_DHT
+2015-09-04 12:11:48,857 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5238
+2015-09-04 12:11:48,857 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:11:48,857 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:11:48,858 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: No module named Adafruit_DHT
+2015-09-04 12:11:48,962 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5238
+2015-09-04 12:11:48,962 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:11:48,963 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:11:48,963 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: No module named Adafruit_DHT
+2015-09-04 12:11:49,067 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5238
+2015-09-04 12:11:49,067 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:11:49,067 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:11:49,068 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: No module named Adafruit_DHT
+2015-09-04 12:11:49,170 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5238
+2015-09-04 12:11:49,170 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:11:49,170 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:11:49,171 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: No module named Adafruit_DHT
+2015-09-04 12:11:49,276 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5238
+2015-09-04 12:11:49,277 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:11:49,277 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:11:49,277 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: No module named Adafruit_DHT
+2015-09-04 12:11:49,381 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5238
+2015-09-04 12:11:49,381 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:11:49,382 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:11:49,382 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: No module named Adafruit_DHT
+2015-09-04 12:11:49,487 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5238
+2015-09-04 12:11:49,488 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:11:49,488 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:11:49,488 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: No module named Adafruit_DHT
+2015-09-04 12:11:49,593 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5238
+2015-09-04 12:11:49,594 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:11:49,594 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:11:49,594 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: No module named Adafruit_DHT
+2015-09-04 12:11:49,650 - PSENSv0.1 - WARNING - <module> - 121 - Shutdown Monitoring system
+2015-09-04 12:12:37,908 - PSENSv0.1 - WARNING - <module> - 104 - Start Monitoring System
+2015-09-04 12:12:37,911 - PSENSv0.1 - WARNING - <module> - 110 - Starting Module: air PID: 5258
+2015-09-04 12:12:37,915 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:12:37,920 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: global name 'humidity' is not defined
+2015-09-04 12:12:37,923 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:12:37,923 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:12:37,925 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: global name 'humidity' is not defined
+2015-09-04 12:12:38,030 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5258
+2015-09-04 12:12:38,030 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:12:38,031 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:12:38,031 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: global name 'humidity' is not defined
+2015-09-04 12:12:38,135 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5258
+2015-09-04 12:12:38,135 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:12:38,135 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:12:38,135 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: global name 'humidity' is not defined
+2015-09-04 12:12:38,238 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5258
+2015-09-04 12:12:38,239 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:12:38,239 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:12:38,239 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: global name 'humidity' is not defined
+2015-09-04 12:12:38,342 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5258
+2015-09-04 12:12:38,343 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:12:38,343 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:12:38,343 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: global name 'humidity' is not defined
+2015-09-04 12:12:38,447 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5258
+2015-09-04 12:12:38,447 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:12:38,448 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:12:38,448 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: global name 'humidity' is not defined
+2015-09-04 12:12:38,551 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5258
+2015-09-04 12:12:38,551 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:12:38,551 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:12:38,552 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: global name 'humidity' is not defined
+2015-09-04 12:12:38,653 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5258
+2015-09-04 12:12:38,654 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:12:38,654 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:12:38,654 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: global name 'humidity' is not defined
+2015-09-04 12:12:38,755 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5258
+2015-09-04 12:12:38,756 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:12:38,756 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:12:38,756 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: global name 'humidity' is not defined
+2015-09-04 12:12:38,856 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5258
+2015-09-04 12:12:38,857 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:12:38,857 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:12:38,857 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: global name 'humidity' is not defined
+2015-09-04 12:12:38,960 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5258
+2015-09-04 12:12:38,960 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:12:38,960 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:12:38,961 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: global name 'humidity' is not defined
+2015-09-04 12:12:39,063 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5258
+2015-09-04 12:12:39,064 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:12:39,064 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:12:39,064 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: global name 'humidity' is not defined
+2015-09-04 12:12:39,169 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5258
+2015-09-04 12:12:39,170 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:12:39,170 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:12:39,170 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: global name 'humidity' is not defined
+2015-09-04 12:12:39,272 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5258
+2015-09-04 12:12:39,272 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:12:39,272 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:12:39,272 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: global name 'humidity' is not defined
+2015-09-04 12:12:39,375 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5258
+2015-09-04 12:12:39,376 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:12:39,376 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:12:39,376 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: global name 'humidity' is not defined
+2015-09-04 12:12:39,476 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5258
+2015-09-04 12:12:39,477 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:12:39,477 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:12:39,477 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: global name 'humidity' is not defined
+2015-09-04 12:12:39,582 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5258
+2015-09-04 12:12:39,582 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:12:39,583 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:12:39,583 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: global name 'humidity' is not defined
+2015-09-04 12:12:39,685 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5258
+2015-09-04 12:12:39,685 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:12:39,686 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:12:39,686 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: global name 'humidity' is not defined
+2015-09-04 12:12:39,789 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5258
+2015-09-04 12:12:39,790 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:12:39,790 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:12:39,790 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: global name 'humidity' is not defined
+2015-09-04 12:12:39,894 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5258
+2015-09-04 12:12:39,894 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:12:39,895 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:12:39,895 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: global name 'humidity' is not defined
+2015-09-04 12:12:39,997 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5258
+2015-09-04 12:12:39,998 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:12:39,998 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:12:39,998 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: global name 'humidity' is not defined
+2015-09-04 12:12:40,100 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5258
+2015-09-04 12:12:40,100 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:12:40,100 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:12:40,100 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: global name 'humidity' is not defined
+2015-09-04 12:12:40,204 - PSENSv0.1 - WARNING - <module> - 117 - New PID: 5258
+2015-09-04 12:12:40,204 - PSENSv0.1 - WARNING - <module> - 113 - air is DEAD - Restarting-it
+2015-09-04 12:12:40,204 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:12:40,205 - PSENSv0.1 - WARNING - dht - 47 - Critical Error: global name 'humidity' is not defined
+2015-09-04 12:12:40,249 - PSENSv0.1 - WARNING - <module> - 121 - Shutdown Monitoring system
+2015-09-04 12:13:31,999 - PSENSv0.1 - WARNING - <module> - 104 - Start Monitoring System
+2015-09-04 12:13:32,003 - PSENSv0.1 - WARNING - <module> - 110 - Starting Module: air PID: 5279
+2015-09-04 12:13:32,006 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:13:55,983 - PSENSv0.1 - WARNING - <module> - 121 - Shutdown Monitoring system
+2015-09-04 12:15:45,317 - PSENSv0.1 - WARNING - <module> - 104 - Start Monitoring System
+2015-09-04 12:15:45,320 - PSENSv0.1 - WARNING - <module> - 110 - Starting Module: air PID: 5313
+2015-09-04 12:15:45,324 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:15:59,100 - PSENSv0.1 - WARNING - <module> - 121 - Shutdown Monitoring system
+2015-09-04 12:22:02,317 - PSENSv0.1 - WARNING - <module> - 104 - Start Monitoring System
+2015-09-04 12:22:02,320 - PSENSv0.1 - WARNING - <module> - 110 - Starting Module: air PID: 5367
+2015-09-04 12:22:02,324 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:24:04,258 - PSENSv0.1 - WARNING - <module> - 121 - Shutdown Monitoring system
+2015-09-04 12:24:05,191 - PSENSv0.1 - WARNING - <module> - 104 - Start Monitoring System
+2015-09-04 12:24:05,194 - PSENSv0.1 - WARNING - <module> - 110 - Starting Module: air PID: 5395
+2015-09-04 12:24:05,197 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:28:25,653 - PSENSv0.1 - WARNING - <module> - 121 - Shutdown Monitoring system
+2015-09-04 12:28:26,267 - PSENSv0.1 - WARNING - <module> - 104 - Start Monitoring System
+2015-09-04 12:28:26,270 - PSENSv0.1 - WARNING - <module> - 110 - Starting Module: air PID: 5449
+2015-09-04 12:28:26,274 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:29:05,343 - PSENSv0.1 - WARNING - <module> - 121 - Shutdown Monitoring system
+2015-09-04 12:29:47,848 - PSENSv0.1 - WARNING - <module> - 104 - Start Monitoring System
+2015-09-04 12:29:47,851 - PSENSv0.1 - WARNING - <module> - 110 - Starting Module: air PID: 5472
+2015-09-04 12:29:47,854 - PSENSv0.1 - DEBUG - sensor - 84 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:29:59,193 - PSENSv0.1 - WARNING - <module> - 121 - Shutdown Monitoring system
+2015-09-04 12:53:32,161 - PSENSv0.1 - WARNING - <module> - 115 - Start Monitoring System
+2015-09-04 12:53:32,164 - PSENSv0.1 - WARNING - <module> - 121 - Starting Module: air PID: 5659
+2015-09-04 12:53:32,168 - PSENSv0.1 - DEBUG - readSensor - 87 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 12:53:44,345 - PSENSv0.1 - WARNING - <module> - 132 - Shutdown Monitoring system
+2015-09-04 13:00:53,503 - PSENSv0.1 - WARNING - <module> - 115 - Start Monitoring System
+2015-09-04 13:00:53,506 - PSENSv0.1 - WARNING - <module> - 121 - Starting Module: air PID: 5732
+2015-09-04 13:00:53,510 - PSENSv0.1 - DEBUG - readSensor - 87 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 13:01:07,780 - PSENSv0.1 - WARNING - <module> - 132 - Shutdown Monitoring system
+2015-09-04 13:03:03,525 - PSENSv0.1 - WARNING - <module> - 115 - Start Monitoring System
+2015-09-04 13:03:03,528 - PSENSv0.1 - WARNING - <module> - 121 - Starting Module: air PID: 5773
+2015-09-04 13:03:03,531 - PSENSv0.1 - DEBUG - readSensor - 87 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 13:03:03,537 - PSENSv0.1 - DEBUG - dht - 40 - Data read: {"device": 22, "driver": "dht", "hora": "2015-09-04 13:03:03", "humidity": 50.0, "name": "air", "pin": 4, "sleep_time": 10, "subtype": "DHT", "temperature": 25.5, "type": "th"}
+2015-09-04 13:03:13,539 - PSENSv0.1 - DEBUG - dht - 40 - Data read: {"device": 22, "driver": "dht", "hora": "2015-09-04 13:03:13", "humidity": 50.0, "name": "air", "pin": 4, "sleep_time": 10, "subtype": "DHT", "temperature": 25.5, "type": "th"}
+2015-09-04 13:03:23,541 - PSENSv0.1 - DEBUG - dht - 40 - Data read: {"device": 22, "driver": "dht", "hora": "2015-09-04 13:03:23", "humidity": 50.0, "name": "air", "pin": 4, "sleep_time": 10, "subtype": "DHT", "temperature": 25.5, "type": "th"}
+2015-09-04 13:03:28,666 - PSENSv0.1 - WARNING - <module> - 132 - Shutdown Monitoring system
+2015-09-04 13:05:19,705 - PSENSv0.1 - WARNING - <module> - 115 - Start Monitoring System
+2015-09-04 13:05:19,708 - PSENSv0.1 - WARNING - <module> - 121 - Starting Module: air PID: 5804
+2015-09-04 13:05:19,713 - PSENSv0.1 - DEBUG - readSensor - 87 - Loading Sensor module sensors.th with driver "dht"
+2015-09-04 13:05:19,719 - PSENSv0.1 - DEBUG - dht - 40 - Data read: {"device": 22, "driver": "dht", "hora": "2015-09-04 13:05:19", "humidity": 50.0, "name": "air", "pin": 4, "sleep_time": 10, "subtype": "DHT", "temperature": 25.5, "type": "th"}
+2015-09-04 13:05:23,568 - PSENSv0.1 - WARNING - <module> - 132 - Shutdown Monitoring system
