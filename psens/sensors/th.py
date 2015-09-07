@@ -49,6 +49,7 @@ def dht(d):
     except Exception, err:
             logger.warning("Critical Error: %s", err)
 
+    return d
 
 def ds18b20(d, *o):
     ''' Function to recover data from DS18B20 type sensor '''

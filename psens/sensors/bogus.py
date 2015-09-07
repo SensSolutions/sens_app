@@ -35,3 +35,5 @@ def bogus(d, *o):
     except KeyboardInterrupt:
         sys.exit(0)
 
+    return None
+
