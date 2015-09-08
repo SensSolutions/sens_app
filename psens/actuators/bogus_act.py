@@ -13,6 +13,7 @@ import sys
 logger = logging.getLogger('PSENSv0.1')
 
 def bogus(d, *o):
+    """Bogus Function"""
     try:
         if o:
             for val in o:

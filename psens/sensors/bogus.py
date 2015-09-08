@@ -12,7 +12,9 @@ import sys
 
 logger = logging.getLogger('PSENSv0.1')
 
-def bogus(d, *o):
+def bogus(*o):
+    """Bogus function does nothing and return a empty dict"""
+    d = {}
     try:
         if o:
             for val in o:
@@ -35,5 +37,5 @@ def bogus(d, *o):
     except KeyboardInterrupt:
         sys.exit(0)
 
-    return None
+    return d
 

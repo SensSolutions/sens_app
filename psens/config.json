@@ -1,11 +1,13 @@
 {"config": {
-    "sensors": [
-        {"name":"air", "type" : "th", "subtype" : "DHT", "driver":"dht","device":22,"pin":4, "sleep_time":10},
-        {"name":"joke", "type":"th", "subtype":"Joke", "driver":"joke"}
+    "device": [
+        {"name":"air", "type" : "sensor", "subtype" : "th", "driver":"dht","model":22,"pin":4, "sleep_time":10},
+        {"name":"joke_sensor", "type":"sensor", "subtype":"th", "driver":"joke"},
+        {"name":"bogus_act", "type":"actuator", "subtype":"th", "driver":"joke"}
      ],
-     "app":[
+     "global":[
          {
-             "brokerIP":"84.88.95122", 
+             "brokerRemoteIP":"84.88.95.122", 
+             "brokerLocalIP":"127.0.0.1",
              "clientID":"PSens",
              "org":"sens.solutions",
              "place":"pool",

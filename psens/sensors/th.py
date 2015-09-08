@@ -25,7 +25,7 @@ def dht(d):
             method which will retry up to 15 times to get a sensor reading
             (waiting 2 seconds between each retry).
             """
-            #d['humidity'], d['temperature'] = Adafruit_DHT.read_retry(round(d['device'],2), round(d['pin'],2)
+            #d['humidity'], d['temperature'] = Adafruit_DHT.read_retry(round(d['model'],2), round(d['pin'],2)
             d['humidity'], d['temperature'] = (50.0, 25.5)
 
             """
@@ -47,7 +47,7 @@ def dht(d):
         pass
         # Just to capture the Traceback
     except Exception, err:
-            logger.warning("Critical Error: %s", err)
+        logger.warning("Critical Error: %s", err)
 
     return d
 
@@ -70,6 +70,7 @@ def ds18b20(d, *o):
 
 
 def joke(d):
+    """Bogus function"""
     print d
     return (u'Wenn ist das Nunst\u00fcck git und Slotermeyer? Ja! ... '
             u'Beiherhund das Oder die Flipperwaldt gersput.')

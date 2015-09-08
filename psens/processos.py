@@ -6,8 +6,8 @@ This module is the main loop:
     - check dependencies
     - Start dependecies
       |- mosquitto
-      |- SSH 
-    
+      |- SSH
+ 
 created on Tue Jul 29 10:12:58 2014
 
 @author: mcollado
@@ -16,13 +16,11 @@ created on Tue Jul 29 10:12:58 2014
 
 from multiprocessing import Process
 import logging
-import importlib
 import json
 import sys
 import os
 import time
 # Import custom modules
-from sensors import bogus
 from pcontrol import pControl
 
 # create logger
@@ -38,8 +36,7 @@ ch = logging.StreamHandler()
 ch.setLevel(logging.WARNING)
 
 # create formatter
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s -
-                               %(funcName)s - %(lineno)d - %(message)s')
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(funcName)s - %(lineno)d - %(message)s')
 
 ch.setFormatter(formatter)
 fh.setFormatter(formatter)
@@ -65,36 +62,33 @@ except IOError, err:
 json.dumps(config, sort_keys=True, ensure_ascii=False)
 
 
-sensorsList = config['config']['sensors']
-configData = config['config']['app']
+deviceList = config['config']['device']
+globalConfig = config['config']['global']
 
 logger.warning("Start Monitoring System UTC %s",
                time.asctime(time.gmtime(time.time())))
 
-for s in sensorsList:
+for device in deviceList:
     try:
         # print s
         """
-        Create new dict from sensorList + configData and 
-        pass it to new process 
-
-        Control process can't be readSersor() must be another function:
-        pcontrol.py
+        Create new dict from deviceList + globalConfig and
+        pass it to new process
         """
-        p = Process(target=pControl, args=(s, configData,))
+        p = Process(target=pControl, args=(device, globalConfig,))
         p.start()
-        logger.warning("Starting Module: %s PID: %i", s["name"], p.pid)
+        logger.warning("Starting Module: %s PID: %i", device["name"], p.pid)
         while True:
             if not p.is_alive():
-                logger.warning('%s is DEAD - Restarting-it', s['name'])
+                logger.warning('%s is DEAD - Restarting-it', device['name'])
                 p.terminate()
                 p.run()
                 time.sleep(0.1)
                 logger.warning("New PID: %s", str(p.pid))
 
     except KeyboardInterrupt:
-        # Not working, not hidding Traceback
-        logger.warning('Shutdown Monitoring system UTC %s', 
+        # Not working, not hidding Traceback?
+        logger.warning('Shutdown Monitoring system UTC %s',
                        time.asctime(time.gmtime(time.time())))
         p.join(timeout=2)
         sys.exit(0)

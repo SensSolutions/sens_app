@@ -42,7 +42,7 @@ def readSensor(SensorDict):
             fun(arg)
         """
 
-        module_name = "sensors." + SensorDict['type']
+        module_name = "sensors." + SensorDict['subtype']
         logger.debug('Loading Sensor module %s with driver "%s"',
                      module_name, SensorDict['driver'])
         sen_module = importlib.import_module(module_name, package=None)
