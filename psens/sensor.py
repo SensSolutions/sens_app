@@ -4,23 +4,7 @@ This module read data from sensors loading specific driver for every sensor
 created on Mon Sep 07 10:12:58 2015
 
 @author: mcollado
-"""
 
-import importlib
-import logging
-# import custom modules
-from sensors import bogus
-
-logger = logging.getLogger('PSENSv0.1')
-
-
-def readSensor(SensorDict):
-    '''
-    This funtion loads correct driver for every sensor
-    and returns the read values
-    '''
-    try:
-        """
         http://stackoverflow.com/a/5391245
         try:
             func = getattr(modulename, funcname)
@@ -40,7 +24,29 @@ def readSensor(SensorDict):
             print 'function not found "%s" (%s)' % (funcname, arg)
         else
             fun(arg)
-        """
+
+"""
+
+import importlib
+import logging
+# import custom modules
+from sensors import bogus
+
+logger = logging.getLogger('PSENSv0.1')
+
+
+def readSensor(SensorDict):
+    '''
+    This funtion loads correct driver for every sensor
+    and returns the read values.
+
+    readSensor() returns a list whith sensor data, usualy a row for every
+    value:
+    [{"name": "air", "temperature": 25.5, "type": "sensor", "what": "sensors"},
+     {"name": "air", "humidity": 50.5, "type": "sensor", "what": "sensors"}]
+
+    '''
+    try:
 
         module_name = "sensors." + SensorDict['subtype']
         logger.debug('Loading Sensor module %s with driver "%s"',

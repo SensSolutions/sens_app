@@ -8,6 +8,14 @@ This module is the main loop:
       |- mosquitto
       |- SSH
  
+TODO: use NaN when no sensor value?
+    import numpy as np
+    a = arange(3,dtype=float)
+    
+    a[0] = np.nan
+    a[1] = np.inf
+    a[2] = -np.inf
+
 created on Tue Jul 29 10:12:58 2014
 
 @author: mcollado
@@ -61,21 +69,23 @@ except IOError, err:
 
 json.dumps(config, sort_keys=True, ensure_ascii=False)
 
+"""Parse config variables (logs etc) to check accuracy"""
 
 deviceList = config['config']['device']
-globalConfig = config['config']['global']
 
 logger.warning("Start Monitoring System UTC %s",
                time.asctime(time.gmtime(time.time())))
 
 for device in deviceList:
     try:
-        # print s
         """
         Create new dict from deviceList + globalConfig and
         pass it to new process
         """
-        p = Process(target=pControl, args=(device, globalConfig,))
+        device.update(config['config']['global'][0])
+        """Merging device dict with config dict"""
+        # logger.warning(device)
+        p = Process(target=pControl, args=(device,))
         p.start()
         logger.warning("Starting Module: %s PID: %i", device["name"], p.pid)
         while True:
@@ -94,5 +104,5 @@ for device in deviceList:
         sys.exit(0)
     except Exception, err:
         logger.warning("Error: %s", str(err))
-    finally:
-        p.join()
+#    finally:
+#        p.join()

@@ -1,5 +1,5 @@
 """
-This module  control the main loop of every sensor & actuator.
+This module  control the main loop of every sensor and/or actuator.
 
 created on Mon Sep 07 10:12:58 2015
 
@@ -28,22 +28,61 @@ def pControl(device):
     execute and send data
     """
 
-    while True:
-        sdata = readSensor(device)
-        sendData(sdata)
-
-
-        time.sleep(device['sleep_time'])
+    if device['type'] == "sensor":
+        pSensor(device)
+    elif device['type'] == "actuator":
+        pActuator(device)
+    elif device['type'] == "hibrid":
+        pHibrid(device)
+    else:
+        logger.warning("Error No controler found for %s device type", device['type'])
 
 
 def pSensor(device):
     """
     Here we define the bussines logic for sensors.
     Specific functions for sensors are defined in sensor.py
+    
+    readSensor() returns a list whith sensor data, usualy a row for every
+    value:
+    [{"name": "air", "temperature": 25.5, "type": "sensor", "what": "sensors"},
+     {"name": "air", "humidity": 50.5, "type": "sensor", "what": "sensors"}]
+
+    device mut look like this:
+
+    {'brokerLocalIP': '127.0.0.1',
+     'brokerRemoteIP': '84.88.95.122',
+     'cache_suffix': '.cache',
+     'clientID': 'PSens',
+     'driver': 'dht',
+     'location': 'pool',
+     'logpath': 'log',
+     'model': 22,
+     'name': 'air',
+     'org': 'sens.solutions',
+     'path': '/Users/mcollado/Coding/rasp-tempsensor/psens',
+     'pin': 4,
+     'place': 'pool',
+     'results': [{'dname': 'temperature',
+                  'dvalue': 25.5,
+                  'time': '2015-09-09 16:22:28'},
+                 {'dname': 'humidity',
+                  'dvalue': 50.0,
+                  'time': '2015-09-09 16:22:28'}],
+     'sleep_time': 10,
+     'subtype': 'th',
+     'type': 'sensor',
+     'what': 'sensors'}
     """
     while True:
-        sdata = readSensor(device)
-        sendData(sdata)
+        # from pprint import pprint
+
+        sResultList = readSensor(device)
+        logger.debug("Results: %s", sResultList)
+        device['results'] = sResultList
+        # pprint(device)
+        """Append result list to device dictionary"""
+        sendData(device)
         time.sleep(device['sleep_time'])
 
 
@@ -64,8 +103,8 @@ def pHibrid(device):
     """
     while True:
         """To think and define this Block"""
-        sdata = readSensor(device)
-        sendData(sdata)
+        sResultList = readSensor(device)
+        sendData(sResultList)
         if "actuators" in device:
             for actuator in device['actuators']:
                 act_module = importlib.import_module(actuator, package=None)
@@ -73,7 +112,7 @@ def pHibrid(device):
                     act_function = getattr(act_module, device['act_function'])
                 except Exception, err:
                     logger.warning("Error: %s", err)
-                act_result = act_function(sdata)
+                act_result = act_function(sResultList)
                 sendData(act_result)
 
         """ Until here """
