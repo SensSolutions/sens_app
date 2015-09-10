@@ -6,8 +6,16 @@ This module is the main loop:
     - check dependencies
     - Start dependecies
       |- mosquitto
-      |- SSH 
+      |- SSH
+ 
+TODO: use NaN when no sensor value?
+    import numpy as np
+    a = arange(3,dtype=float)
     
+    a[0] = np.nan
+    a[1] = np.inf
+    a[2] = -np.inf
+
 created on Tue Jul 29 10:12:58 2014
 
 @author: mcollado
@@ -16,13 +24,11 @@ created on Tue Jul 29 10:12:58 2014
 
 from multiprocessing import Process
 import logging
-import importlib
 import json
 import sys
 import os
 import time
 # Import custom modules
-from sensors import bogus
 from pcontrol import pControl
 
 # create logger
@@ -38,8 +44,7 @@ ch = logging.StreamHandler()
 ch.setLevel(logging.WARNING)
 
 # create formatter
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s -
-                               %(funcName)s - %(lineno)d - %(message)s')
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(funcName)s - %(lineno)d - %(message)s')
 
 ch.setFormatter(formatter)
 fh.setFormatter(formatter)
@@ -64,41 +69,40 @@ except IOError, err:
 
 json.dumps(config, sort_keys=True, ensure_ascii=False)
 
+"""Parse config variables (logs etc) to check accuracy"""
 
-sensorsList = config['config']['sensors']
-configData = config['config']['app']
+deviceList = config['config']['device']
 
 logger.warning("Start Monitoring System UTC %s",
                time.asctime(time.gmtime(time.time())))
 
-for s in sensorsList:
+for device in deviceList:
     try:
-        # print s
         """
-        Create new dict from sensorList + configData and 
-        pass it to new process 
-
-        Control process can't be readSersor() must be another function:
-        pcontrol.py
+        Create new dict from deviceList + globalConfig and
+        pass it to new process
         """
-        p = Process(target=pControl, args=(s, configData,))
+        device.update(config['config']['global'][0])
+        """Merging device dict with config dict"""
+        # logger.warning(device)
+        p = Process(target=pControl, args=(device,))
         p.start()
-        logger.warning("Starting Module: %s PID: %i", s["name"], p.pid)
+        logger.warning("Starting Module: %s PID: %i", device["name"], p.pid)
         while True:
             if not p.is_alive():
-                logger.warning('%s is DEAD - Restarting-it', s['name'])
+                logger.warning('%s is DEAD - Restarting-it', device['name'])
                 p.terminate()
                 p.run()
                 time.sleep(0.1)
                 logger.warning("New PID: %s", str(p.pid))
 
     except KeyboardInterrupt:
-        # Not working, not hidding Traceback
-        logger.warning('Shutdown Monitoring system UTC %s', 
+        # Not working, not hidding Traceback?
+        logger.warning('Shutdown Monitoring system UTC %s',
                        time.asctime(time.gmtime(time.time())))
         p.join(timeout=2)
         sys.exit(0)
     except Exception, err:
         logger.warning("Error: %s", str(err))
-    finally:
-        p.join()
+#    finally:
+#        p.join()
