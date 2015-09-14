@@ -25,6 +25,9 @@ def loadActuators(ActDict):
         logger.debug('Loading Sensor module %s with driver "%s"',
                      module_name, ActDict['driver'])
         act_module = importlib.import_module(module_name, package=None)
+
+        print act_module
+
         try:
             # print s_module
             # print my_module
@@ -37,8 +40,7 @@ def loadActuators(ActDict):
         act_result = act_function(ActDict)
 
     except Exception, err:
-        logger.warning("Error importing custom module: %s No driver for: %s",
-                       str(err), act_module)
+        logger.warning("Error importing custom module: %s No driver for: %s", str(err), act_module)
         logger.debug("Using Bogus function")
         act_result = bogus_act(ActDict)
 

@@ -12,6 +12,8 @@ import paho.mqtt.client as mqtt
 import logging
 import csv
 import os
+import json
+from pprint import pprint
 
 logger = logging.getLogger('PSENSv0.1')
 
@@ -28,9 +30,23 @@ def sendData(d):
     Must remove non required keys before send json:
     required_fields = ['name', 'last_name', 'phone_number', 'email']
     dict2 = {key:value for key, value in dict1.items() if key in required_fields}
+
+        'results': [{'dname': 'temperature',
+                  'dvalue': 25.5,
+                  'time': '2015-09-09 16:22:28'},
+                 {'dname': 'humidity',
+                  'dvalue': 50.0,
+                  'time': '2015-09-09 16:22:28'}],
+
+
+    MySQL server and MQTTWARN are waiting this JSON:
+
+    { "org" : "sens.solutions", "place" : "pool", "what" : "sensors", "sensor" : "air", "type" : "humidity", "value" : 48.7, "timestamp" : "2015-08-04 04:59:49" }
+
     """
+
     cachefile = os.path.join(d['path'], d['logpath'], (d['name'] + d['cache_suffix']))
-    topic = d['clientID'] + "/" + d['location'] + "/" + d['type'] + "/" + d['name']
+    d['topic'] = d['org'] + "/" + d['location'] + "/" + d['type'] + "/" + d['name']
     logger.debug("Using cache file: %s", cachefile)
     logger.debug("Client ID: %s opening connection to: %s", d['clientID'], d['brokerRemoteIP'])
     try:
@@ -41,7 +57,18 @@ def sendData(d):
         if os.path.isfile(cachefile):
             sendFromCache(d['brokerRemoteIP'], d['clientID'], cachefile)
         # mqttc.connect(d['brokerRemoteIP'], 1883)
-        mqttc.publish(d['topic'], d['message'])
+
+        for result in d['results']:
+
+            """ This is ugly, fixit"""
+            required_fields = ['org', 'place', 'type', 'name']
+            result2 = {key:value for key, value in d.items() if key in required_fields}
+            result.update(result2)
+            d['message'] = json.dumps(result, sort_keys=True)
+
+            mqttc.publish(d['topic'] + "/" + result['dname'], d['message'] )
+            
+        # mqttc.publish(d['topic'], d['message'])
         # implement clean disconnect from broker. Maybe
         logger.debug('Topic: %s : %s | Client ID: %s', d['topic'], d['message'], d['clientID'])
     except KeyboardInterrupt:

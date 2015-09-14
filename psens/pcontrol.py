@@ -107,8 +107,8 @@ def pHibrid(device):
         sendData(sResultList)
         if "actuators" in device:
             for actuator in device['actuators']:
-                act_module = importlib.import_module(actuator, package=None)
                 try:
+                    act_module = importlib.import_module(actuator, package=None)
                     act_function = getattr(act_module, device['act_function'])
                 except Exception, err:
                     logger.warning("Error: %s", err)

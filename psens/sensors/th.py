@@ -42,8 +42,8 @@ def dht(d):
             now = datetime.datetime.now()
             hora = now.strftime("%Y-%m-%d %H:%M:%S")
             # logger.debug("Data read: %s", json.dumps(d, sort_keys=True))
-            l.insert(0,{'dname':'temperature', 'dvalue':temperature, 'time':hora})
-            l.insert(1,{'dname':'humidity', 'dvalue':humidity, 'time':hora})
+            l.insert(0,{'dname':'temperature', 'dvalue':temperature, 'timestamp':hora})
+            l.insert(1,{'dname':'humidity', 'dvalue':humidity, 'timestamp':hora})
 
             time.sleep(d['sleep_time'])
         else:
