@@ -16,7 +16,6 @@ from actuator import loadActuators
 
 logger = logging.getLogger('PSENSv0.1')
 
-@profile
 def pControl(device):
     """
     This functions control the main loop of every  device

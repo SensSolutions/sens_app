@@ -49,42 +49,63 @@ def sendData(d):
     d['topic'] = d['org'] + "/" + d['location'] + "/" + d['type'] + "/" + d['name']
     logger.debug("Using cache file: %s", cachefile)
     logger.debug("Client ID: %s opening connection to: %s", d['clientID'], d['brokerRemoteIP'])
+
+    """ TODO: rewrite in more pythonish way:
+        try mqtt.connect:
+            send = mqtt.publish
+        except:
+            send = senToCache
+
+        We have to take care of diferents argument. Use someting linke:
+        We can use the **kwargs argument to accept an arbitrary number of named options:
+            def render(context, **kwargs): 
+                ... template = kwargs['template'] if 'template' in kwargs else 'my_default_template' 
+                ... # do something with your template 
+                ... print template 
+                ... 
+            render() 'my_default_template'
+            render(template='custom_template') 'custom_template' 
+        - See more at: http://www.abidibo.net/blog/2015/04/09/pythons-excess-arguments/#sthash.PbG99nyx.dpuf
+        """
     try:
-        
         mqttc = mqtt.Client(d['clientID'])
         mqttc.connect(d['brokerRemoteIP'], 1883)
-        #
-        if os.path.isfile(cachefile):
-            sendFromCache(d['brokerRemoteIP'], d['clientID'], cachefile)
-        # mqttc.connect(d['brokerRemoteIP'], 1883)
-
-        for result in d['results']:
-
-            """ This is ugly, fixit"""
-            required_fields = ['org', 'place', 'type', 'name']
-            result2 = {key:value for key, value in d.items() if key in required_fields}
-            result.update(result2)
-            d['message'] = json.dumps(result, sort_keys=True)
-
-            mqttc.publish(d['topic'] + "/" + result['dname'], d['message'] )
-            
-        # mqttc.publish(d['topic'], d['message'])
-        # implement clean disconnect from broker. Maybe
-        logger.debug('Topic: %s : %s | Client ID: %s', d['topic'], d['message'], d['clientID'])
+        conn_ok = True
     except KeyboardInterrupt:
         pass
     except Exception, err:
         """Implement code to diferenciate connections error from others"""
+        conn_ok = False
         logger.warning('Error: %s, %s', str(err), d['brokerRemoteIP'])
-        sendToCache(cachefile, d['topic'], d['message'])
 
+        #
+    print "Cachefile: " + cachefile
+    if os.path.isfile(cachefile + ".csv") and conn_ok:
+        logger.warning("There's a cache file loading it")
+        sendFromCache(d['brokerRemoteIP'], d['clientID'], cachefile)
+    # mqttc.connect(d['brokerRemoteIP'], 1883)
+
+    for result in d['results']:
+
+        """ This is ugly, fix-it"""
+        required_fields = ['org', 'place', 'type', 'name']
+        result2 = {key:value for key, value in d.items() if key in required_fields}
+        result.update(result2)
+        d['message'] = json.dumps(result, sort_keys=True)
+
+        if conn_ok:
+            mqttc.publish(d['topic'] + "/" + result['dname'], d['message'] )
+            logger.debug('Topic: %s : %s | Client ID: %s', d['topic'], d['message'], d['clientID'])
+        else:
+            sendToCache(cachefile, d['topic']+ "/" + result['dname'], d['message'])
+        
 
 def sendFromCache(brokerRemoteIP, clientID, cachefile):
     """This function send cache file contens to broker"""
 
     logger.debug('Reading cache file %s', cachefile)
 
-    with open(cachefile, "r") as csvfile:
+    with open(cachefile + ".csv", "r") as csvfile:
         f = csv.reader(csvfile, delimiter=';')
         count = 0
         try:
@@ -100,7 +121,7 @@ def sendFromCache(brokerRemoteIP, clientID, cachefile):
 
             logger.warning("%i lines sent, removing cachefile: %s",
                            count, cachefile)
-            os.remove(cachefile)
+            os.remove(cachefile + ".csv")
 
         except Exception, err:
             logger.warning('Error trying to send cache: %s', str(err))
@@ -110,13 +131,14 @@ def sendToCache(cachefile, topic, message):
     try:
         """
         save data not send in JSON format
+        #d = {'Topic': topic, 'Message': message }
 
-        d = {'Topic': topic, 'Message': message, 'Date': hora}
         with open(cachefile + ".json", 'a') as jsonfile:
-            jsontext = '{"Topic":' + topic + ', "Message":"' + message + '"}'
-            print(d)
+            #jsontext = '{"Topic":' + topic + ', "Message":"' + message + '"}'
+            print(json.dumps(d))
             json.dump(d,jsonfile, sort_keys = True, ensure_ascii=False)
         """
+
         with open(cachefile + ".csv", 'a') as csvfile:
             cachewriter = csv.writer(csvfile, delimiter=';')
             cachewriter.writerow([topic, message])

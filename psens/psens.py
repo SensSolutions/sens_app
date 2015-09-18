@@ -16,6 +16,17 @@ TODO: use NaN when no sensor value?
     a[1] = np.inf
     a[2] = -np.inf
 
+TODO: Use URLparse:
+    import urlparse
+    # Parse CLOUDMQTT_URL (or fallback to localhost)
+    url_str = os.environ.get('CLOUDMQTT_URL', 'mqtt://localhost:1883')
+    url = urlparse.urlparse(url_str)
+    
+    # Connect
+    mqttc.username_pw_set(url.username, url.password)
+    mqttc.connect(url.hostname, url.port)
+    
+
 created on Tue Jul 29 10:12:58 2014
 
 @author: mcollado
