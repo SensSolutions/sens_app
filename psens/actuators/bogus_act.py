@@ -28,6 +28,8 @@ def bogus(d, *o):
         logger.debug("%s is going to sleep for %i s", d['name'], t)
         time.sleep(t)
         logger.warning("%s says bye bye.", d['name'])
+        d['message']= "Bogus actuator, nothing to do"
+
 
 # Specific code ends here
 
@@ -36,5 +38,5 @@ def bogus(d, *o):
     except KeyboardInterrupt:
         sys.exit(0)
 
-    return None
+    return d 
 

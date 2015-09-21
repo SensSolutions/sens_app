@@ -13,7 +13,6 @@ import logging
 import csv
 import os
 import json
-from pprint import pprint
 
 logger = logging.getLogger('PSENSv0.1')
 
@@ -58,13 +57,13 @@ def sendData(d):
 
         We have to take care of diferents argument. Use someting linke:
         We can use the **kwargs argument to accept an arbitrary number of named options:
-            def render(context, **kwargs): 
-                ... template = kwargs['template'] if 'template' in kwargs else 'my_default_template' 
-                ... # do something with your template 
-                ... print template 
-                ... 
+            def render(context, **kwargs):
+                ... template = kwargs['template'] if 'template' in kwargs else 'my_default_template'
+                ... # do something with your template
+                ... print template
+                ...
             render() 'my_default_template'
-            render(template='custom_template') 'custom_template' 
+            render(template='custom_template') 'custom_template'
         - See more at: http://www.abidibo.net/blog/2015/04/09/pythons-excess-arguments/#sthash.PbG99nyx.dpuf
         """
     try:
@@ -94,11 +93,11 @@ def sendData(d):
         d['message'] = json.dumps(result, sort_keys=True)
 
         if conn_ok:
-            mqttc.publish(d['topic'] + "/" + result['dname'], d['message'] )
+            mqttc.publish(d['topic'] + "/" + result['dname'], d['message'])
             logger.debug('Topic: %s : %s | Client ID: %s', d['topic'], d['message'], d['clientID'])
         else:
             sendToCache(cachefile, d['topic']+ "/" + result['dname'], d['message'])
-        
+
 
 def sendFromCache(brokerRemoteIP, clientID, cachefile):
     """This function send cache file contens to broker"""

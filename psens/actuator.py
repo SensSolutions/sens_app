@@ -42,7 +42,7 @@ def loadActuators(ActDict):
     except Exception, err:
         logger.warning("Error importing custom module: %s No driver for: %s", str(err), act_module)
         logger.debug("Using Bogus function")
-        act_result = bogus_act(ActDict)
+        act_result = bogus_act.bogus(ActDict)
 
     return act_result
 

@@ -41,7 +41,7 @@ def pSensor(device):
     """
     Here we define the bussines logic for sensors.
     Specific functions for sensors are defined in sensor.py
-    
+
     readSensor() returns a list whith sensor data, usualy a row for every
     value:
     [{"name": "air", "temperature": 25.5, "type": "sensor", "what": "sensors"},
