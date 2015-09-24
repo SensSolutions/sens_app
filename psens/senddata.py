@@ -78,7 +78,8 @@ def sendData(d):
         logger.warning('Error: %s, %s', str(err), d['brokerRemoteIP'])
 
         #
-    print "Cachefile: " + cachefile
+    #print "Cachefile: " + cachefile
+
     if os.path.isfile(cachefile + ".csv") and conn_ok:
         logger.warning("There's a cache file loading it")
         sendFromCache(d['brokerRemoteIP'], d['clientID'], cachefile)
@@ -141,7 +142,7 @@ def sendToCache(cachefile, topic, message):
         with open(cachefile + ".csv", 'a') as csvfile:
             cachewriter = csv.writer(csvfile, delimiter=';')
             cachewriter.writerow([topic, message])
-        logger.debug('Writing CSV line to cache file: %s', cachefile)
+        logger.warning('Writing CSV line to cache file: %s', cachefile)
 
     except KeyboardInterrupt:
         pass

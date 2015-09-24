@@ -93,6 +93,9 @@ def startup():
     logger.warning("Start Monitoring System UTC %s",
                    time.asctime(time.gmtime(time.time())))
 
+    # print os.path.dirname(os.path.abspath(__file__))
+    config['config']['global'][0]['path'] = os.path.dirname(os.path.abspath(__file__))
+
     for device in deviceList:
         try:
             """
