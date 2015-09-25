@@ -33,6 +33,7 @@ import json
 import sys
 import os
 import time
+from random import randint
 # Import custom modules
 from pcontrol import pControl
 
@@ -95,6 +96,8 @@ def startup():
 
     # print os.path.dirname(os.path.abspath(__file__))
     config['config']['global'][0]['path'] = os.path.dirname(os.path.abspath(__file__))
+    config['config']['global'][0]['clientID'] = config['config']['global'][0]['clientID'] + "-"+ str(randint(1,99999))
+    print config['config']['global'][0]['clientID']
 
     for device in deviceList:
         try:
