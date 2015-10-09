@@ -85,6 +85,7 @@ def sendData(d):
         sendFromCache(d['brokerRemoteIP'], d['clientID'], cachefile)
     # mqttc.connect(d['brokerRemoteIP'], 1883)
 
+    mqttc.loop_start()
     for result in d['results']:
 	print result
         """ This is ugly, fix-it"""
