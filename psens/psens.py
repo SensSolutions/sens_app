@@ -125,8 +125,8 @@ def startup():
                            time.asctime(time.gmtime(time.time())))
             p.join(timeout=2)
             sys.exit(0)
-        except Exception, err:
-            logger.warning("Error: %s", str(err))
+        except Exception, err1:
+            logger.warning("Error: %s", str(err1))
     #    finally:
     #        p.join()
 

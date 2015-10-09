@@ -86,7 +86,7 @@ def sendData(d):
     # mqttc.connect(d['brokerRemoteIP'], 1883)
 
     for result in d['results']:
-
+	print result
         """ This is ugly, fix-it"""
         required_fields = ['org', 'place', 'type', 'name']
         result2 = {key:value for key, value in d.items() if key in required_fields}
@@ -94,8 +94,9 @@ def sendData(d):
         d['message'] = json.dumps(result, sort_keys=True)
 
         if conn_ok:
+            # rewrite this part using code from experiments/mypaho.py
             mqttc.publish(d['topic'] + "/" + result['dname'], d['message'])
-            logger.debug('Topic: %s : %s | Client ID: %s', d['topic'], d['message'], d['clientID'])
+            logger.debug('Topic: %s/%s : %s | Client ID: %s', d['topic'], result['dname'], d['message'], d['clientID'])
         else:
             sendToCache(cachefile, d['topic']+ "/" + result['dname'], d['message'])
 

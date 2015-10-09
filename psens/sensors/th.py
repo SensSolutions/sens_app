@@ -1,10 +1,10 @@
-'''
+"""
 Module containig temperature and humidity modules
 
 created on Tue Jul 29 10:12:58 2014
 
 @author: mcollado
-'''
+"""
 
 from random import randint
 import time
@@ -20,17 +20,18 @@ logger = logging.getLogger('PSENSv0.1')
 """
 
 def dht(d):
-    ''' Function to recover data from DHT type sensor with Adafruit Library '''
+    """  Function to recover data from DHT type sensor with Adafruit Library """ 
     l = list()
     try:
-        # import Adafruit_DHT
+        import Adafruit_DHT
         """
         Try to grab a sensor reading.  Use the read_retry
         method which will retry up to 15 times to get a sensor reading
         (waiting 2 seconds between each retry).
         """
-        #(humidity, temperature) = Adafruit_DHT.read_retry(round(d['model'],2), round(d['pin'],2)
-        (humidity, temperature) = (50.0, 25.5)
+        #(humidity, temperature) = Adafruit_DHT.read_retry(round(d['model'],2), round(d['pin'],2))
+        (humidity, temperature) = Adafruit_DHT.read_retry(d['model'], d['pin'])
+        #(humidity, temperature) = (50.0, 25.5)
         
         """
         Note that sometimes you won't get a reading and
@@ -38,12 +39,13 @@ def dht(d):
         guarantee the timing of calls to read the sensor).
         If this happens try again!
         """
+
         if humidity is not None and temperature is not None:
             now = datetime.datetime.now()
             hora = now.strftime("%Y-%m-%d %H:%M:%S")
             # logger.debug("Data read: %s", json.dumps(d, sort_keys=True))
-            l.insert(0,{'dname':'temperature', 'dvalue':temperature, 'timestamp':hora})
-            l.insert(1,{'dname':'humidity', 'dvalue':humidity, 'timestamp':hora})
+            l.insert(0,{'dname':'temperature', 'dvalue':round(temperature,2), 'timestamp':hora})
+            l.insert(1,{'dname':'humidity', 'dvalue':round(humidity,2), 'timestamp':hora})
 
             time.sleep(d['sleep_time'])
         else:
@@ -59,7 +61,7 @@ def dht(d):
     return l
 
 def ds18b20(d, *o):
-    ''' Function to recover data from DS18B20 type sensor '''
+    """ Function to recover data from DS18B20 type sensor """
     try:
         if o:
             for val in o:

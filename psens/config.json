@@ -1,8 +1,6 @@
 {"config": {
     "device": [
-        {"name":"air", "type" : "sensor", "subtype" : "th", "driver":"dht","model":22,"pin":4, "location":"pool", "sleep_time":10},
-        {"name":"joke_sensor", "type":"sensor", "subtype":"th", "driver":"joke", "location":"pool"},
-        {"name":"bogus_act", "type":"actuator", "subtype":"th", "driver":"joke", "location":"pool"}
+        {"name":"air", "type" : "sensor", "subtype" : "th", "driver":"dht","model":22,"pin":4, "location":"pool", "sleep_time":60}
      ],
      "global":[
          {
