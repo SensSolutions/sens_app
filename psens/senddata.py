@@ -8,7 +8,7 @@ created on Mon Sep 07 10:12:58 2015
 """
 
 #import paho.mqtt.publish as publish
-import paho.mqtt.client as mqtt
+import paho.mqtt.publish as mqtt
 import logging
 import csv
 import os
@@ -16,7 +16,96 @@ import json
 
 logger = logging.getLogger('PSENSv0.1')
 
+
 def sendData(d):
+    """ This function send data recoverd by sensor to broker """
+
+    """
+    Check if remote broker is alive
+    Check if exists a cache file
+    Send cache data to broker then send last data
+    If no broker, append data to cache file
+
+
+    Must remove non required keys before send json:
+    required_fields = ['name', 'last_name', 'phone_number', 'email']
+    dict2 = {key:value for key, value in dict1.items() if key in required_fields}
+
+        'results': [{'dname': 'temperature',
+                  'dvalue': 25.5,
+                  'time': '2015-09-09 16:22:28'},
+                 {'dname': 'humidity',
+                  'dvalue': 50.0,
+                  'time': '2015-09-09 16:22:28'}],
+
+
+    MySQL server and MQTTWARN are waiting this JSON:
+
+    { "org" : "sens.solutions", "place" : "pool", "what" : "sensors", "sensor" : "air", "type" : "humidity", "value" : 48.7, "timestamp" : "2015-08-04 04:59:49" }
+
+    """
+
+    cachefile = os.path.join(d['path'], d['logpath'], (d['name'] + d['cache_suffix']))
+    d['topic'] = d['org'] + "/" + d['location'] + "/" + d['type'] + "/" + d['name']
+    logger.debug("Client ID: %s opening connection to: %s", d['clientID'], d['brokerRemoteIP'])
+
+    """ TODO: rewrite in more pythonish way:
+        try mqtt.connect:
+            send = mqtt.publish
+        except:
+            send = senToCache
+
+        We have to take care of diferents argument. Use someting linke:
+        We can use the **kwargs argument to accept an arbitrary number of named options:
+            def render(context, **kwargs):
+                ... template = kwargs['template'] if 'template' in kwargs else 'my_default_template'
+                ... # do something with your template
+                ... print template
+                ...
+            render() 'my_default_template'
+            render(template='custom_template') 'custom_template'
+        - See more at: http://www.abidibo.net/blog/2015/04/09/pythons-excess-arguments/#sthash.PbG99nyx.dpuf
+        """
+    """
+    try:
+        mqttc = mqtt.Client(d['clientID'])
+        mqttc.connect(d['brokerRemoteIP'], 1883)
+        conn_ok = True
+    except KeyboardInterrupt:
+        pass
+    except Exception, err:
+        conn_ok = False
+        logger.warning('Error: %s, %s', str(err), d['brokerRemoteIP'])
+    """
+
+    conn_ok = True
+        #
+    #print "Cachefile: " + cachefile
+
+    if os.path.isfile(cachefile + ".csv") and conn_ok:
+        logger.warning("There's a cache file loading it")
+        sendFromCache(d['brokerRemoteIP'], d['clientID'], cachefile)
+    # mqttc.connect(d['brokerRemoteIP'], 1883)
+
+    l = list()
+    for result in d['results']:
+        required_fields = ['org', 'place', 'type', 'name']
+        result2 = {key:value for key, value in d.items() if key in required_fields}
+        result.update(result2)
+        d['message'] = json.dumps(result, sort_keys=True)
+        d['newtopic'] = d['topic'] + "/" + result['dname']
+        l.append((d['newtopic'],d['message'],0, False))
+        
+    if conn_ok:
+        mqtt.multiple(l, hostname=d['brokerRemoteIP'])
+        # rewrite this part using code from experiments/mypaho.py
+        #mqttc.publish(d['topic'] + "/" + result['dname'], d['message'])
+        #logger.debug('Topic: %s/%s : %s | Client ID: %s', d['topic'], result['dname'], d['message'], d['clientID'])
+    else:
+        sendToCache(cachefile, d['newtopic'], d['message'])
+
+
+def sendData2(d):
     """ This function send data recoverd by sensor to broker """
 
     """
@@ -111,16 +200,12 @@ def sendFromCache(brokerRemoteIP, clientID, cachefile):
         f = csv.reader(csvfile, delimiter=';')
         count = 0
         try:
-            mqttc = mqtt.Client(clientID)
-            mqttc.connect(brokerRemoteIP, 1883)
-
+            msgs = list()
             for row in f:
-                mqttc.publish(row[0], row[1])
-                # publish.single(row[0] , row[1], brokerRemoteIP, client_id= clientID, will=None, auth=None, tls=None)
+                msgs.append((row[0], row[1], 0, False))
                 count += 1
-                logger.debug('Send line: %i - topic: %s msg: %s',
-                             f.line_num, row[0], str(row[1]))
 
+            mqtt.multiple(msgs, hostname=brokerRemoteIP, client_id= clientID, will=None, auth=None, tls=None)
             logger.warning("%i lines sent, removing cachefile: %s",
                            count, cachefile)
             os.remove(cachefile + ".csv")

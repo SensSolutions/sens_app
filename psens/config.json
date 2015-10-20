@@ -1,6 +1,7 @@
 {"config": {
     "device": [
-        {"name":"air", "type" : "sensor", "subtype" : "th", "driver":"dht","model":22,"pin":4, "location":"pool", "sleep_time":60}
+        {"name":"air_false", "type" : "sensor", "subtype" : "th", "driver":"dht_false","model":22,"pin":4, "location":"pool", "sleep_time":60},
+        {"name":"weather", "type" : "sensor", "subtype" : "th", "driver":"oweather","location":"pool", "sleep_time":60, "api_key":"ce5cdd60706b23fec352881e70ae2b8d", "place": "Cerdanyola del Valles, ES"}
      ],
      "global":[
          {

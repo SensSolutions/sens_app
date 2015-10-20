@@ -111,13 +111,13 @@ def startup():
             p = Process(target=pControl, args=(device,))
             p.start()
             logger.warning("Starting Module: %s PID: %i", device["name"], p.pid)
-            while True:
-                if not p.is_alive():
-                    logger.warning('%s is DEAD - Restarting-it', device['name'])
-                    p.terminate()
-                    p.run()
-                    time.sleep(0.1)
-                    logger.warning("New PID: %s", str(p.pid))
+            #while True:
+            #    if not p.is_alive():
+            #        logger.warning('%s is DEAD - Restarting-it', device['name'])
+            #        p.terminate()
+            #        p.run()
+            #        time.sleep(0.1)
+            #        logger.warning("New PID: %s", str(p.pid))
 
         except KeyboardInterrupt:
             # Not working, not hidding Traceback?

@@ -1,12 +1,12 @@
 """
-Module containig temperature and humidity modules
+Module containig temperature and humidity drivers for diferent sensors
 
 created on Tue Jul 29 10:12:58 2014
 
 @author: mcollado
 """
 
-from random import randint
+import random
 import time
 import datetime
 import logging
@@ -60,6 +60,31 @@ def dht(d):
 
     return l
 
+def dht_false(d):
+    """  Function to recover data from false DHT type sensor with Adafruit Library
+         Same output with random imput. Used to test send function """ 
+    l = list()
+    try:
+        humidity = random.uniform(40, 60)
+        temperature = random.uniform(20, 30)
+        
+        now = datetime.datetime.now()
+        hour = now.strftime("%Y-%m-%d %H:%M:%S")
+        # logger.debug("Data read: %s", json.dumps(d, sort_keys=True))
+        l.insert(0,{'dname':'temperature', 'dvalue':round(temperature,2), 'timestamp':hour})
+        l.insert(1,{'dname':'humidity', 'dvalue':round(humidity,2), 'timestamp':hour})
+
+        time.sleep(d['sleep_time'])
+
+    except KeyboardInterrupt:
+        pass
+        # Just to capture the Traceback
+    except Exception, err:
+        logger.warning("Critical Error: %s", err)
+
+    return l
+
+
 def ds18b20(d, *o):
     """ Function to recover data from DS18B20 type sensor """
     try:
@@ -83,3 +108,39 @@ def joke(d):
     print d
     return (u'Wenn ist das Nunst\u00fcck git und Slotermeyer? Ja! ... '
             u'Beiherhund das Oder die Flipperwaldt gersput.')
+
+def oweather(d):
+    """ Function recovering forecast or actual temp and hum from http://openweathermap.org/
+    or http://www.wunderground.com """
+    # API key: ce5cdd60706b23fec352881e70ae2b8d
+    try:
+        import pyowm
+    except Exception, err:
+        logger.warning("Critical Error: %s", err)
+
+    l = list()
+    obs = dict()
+    try:
+        owm = pyowm.OWM(d['api_key'])
+        observation = owm.weather_at_place(d['place'])
+        w = observation.get_weather()
+        
+        now = datetime.datetime.now()
+        hora = now.strftime("%Y-%m-%d %H:%M:%S")
+        # logger.debug("Data read: o%s", json.dumps(d, sort_keys=True))
+        obs = w.get_temperature('celsius')
+        l.append({'dname':'temperature', 'dvalue':obs['temp'], 'timestamp':hora})
+        l.append({'dname':'humidity', 'dvalue':w.get_humidity(), 'timestamp':hora})
+        obs = w.get_pressure()
+        l.append({'dname':'pressure', 'dvalue':obs['press'], 'timestamp':hora})
+
+        time.sleep(d['sleep_time'])
+
+    except KeyboardInterrupt:
+        pass
+        # Just to capture the Traceback
+
+    except Exception, err:
+        logger.warning("Error: %s", err)
+
+    return l
