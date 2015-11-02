@@ -42,6 +42,7 @@ htmlcov/
 nosetests.xml
 coverage.xml
 *,cover
+*pylint*
 
 # Translations
 *.mo
@@ -56,5 +57,15 @@ docs/_build/
 # PyBuilder
 target/
 
-# Vim swap file
+# Spyder files
+*.spyderproject
+*.spyderworkspace
+
+# Vim swap files
 *.swp
+
+# Mac .DS_Store
+.DS_Store
+
+# ignore app logs
+*.log

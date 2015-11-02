@@ -1,0 +1,6 @@
+argparse
+paho-mqtt
+pip
+setuptools
+wsgiref
+pyowm
