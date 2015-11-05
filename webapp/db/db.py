@@ -34,7 +34,7 @@ mysql> desc data;
 
 http://flask.pocoo.org/docs/0.10/patterns/sqlalchemy/#sql-abstraction-layer
 http://docs.sqlalchemy.org/en/rel_1_0/core/connections.html
-
+http://docs.sqlalchemy.org/en/rel_1_0/orm/tutorial.html
 """
 
 from sqlalchemy import create_engine
@@ -53,11 +53,12 @@ class User(Base):
     passwd = Column(Text)
     email = Column(Text)
     def __repr__(self):
-        return "<User(name='%s', email='%s')>" % (self.name, self.email)
-
+#        return "<User(name='%s', email='%s')>" % (self.name, self.email)
+        return [self.id, self.name, self.passwd, self.email]
 
 class Data(Base):
     __tablename__= 'data'
+    id = Column(Integer, primary_key=True)
     org = Column(String(50))
     place = Column(String(50))
     what = Column(String(50))
@@ -72,6 +73,11 @@ class Data(Base):
         return self
 
 
+engine = create_engine('mysql://mqtt:@localhost/mqtt', echo=True)
+Session = sessionmaker(bind=engine)
+
+Session.configure(bind=engine)  # once engine is available
+session = Session()
 
 ed_user =User(name='edi', passwd='passwd', email='edsmail@mail.org')
 
@@ -80,10 +86,11 @@ session.add_all([
     User(name='mary',  email='mary@mail.org', passwd='xxg527'),
     User(name='fred',  email='fred@mail.org', passwd='blah')])
 
-engine = create_engine('mysql://mqtt:passsecret@localhost/mqtt', echo=True)
-Session = sessionmaker(bind=engine)
+for dades in session.query(Data).filter(Data.timestamp>='2015-11-05 12:00:00').filter(Data.sensor=='air').filter(Data.dname=='temperature'):
+    print dades.dname, dades.dvalue, dades.timestamp
 
-Session.configure(bind=engine)  # once engine is available
-session = Session()
-
-
+"""
+How to get last value:
+""""
+results = session.query(Data).filter(Data.timestamp>='2015-11-05 12:00:00').filter(Data.sensor=='air').filter(Data.dname=='temperature').order_by((Data.id.desc()))
+results.fisrt()

@@ -1,1 +1,3 @@
-flask-httpauth
+Flask-HTTPAuth
+SQLAlchemy
+MySQL-python <= first install mysql-connector-c with brew
