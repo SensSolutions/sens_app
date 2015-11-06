@@ -35,6 +35,9 @@ mysql> desc data;
 http://flask.pocoo.org/docs/0.10/patterns/sqlalchemy/#sql-abstraction-layer
 http://docs.sqlalchemy.org/en/rel_1_0/core/connections.html
 http://docs.sqlalchemy.org/en/rel_1_0/orm/tutorial.html
+
+http://stackoverflow.com/questions/7102754/jsonify-a-sqlalchemy-result-set-in-flask
+http://stackoverflow.com/questions/19406859/sqlalchemy-convert-select-query-result-to-a-list-of-dicts
 """
 
 from sqlalchemy import create_engine
@@ -53,11 +56,11 @@ class User(Base):
     passwd = Column(Text)
     email = Column(Text)
     def __repr__(self):
-#        return "<User(name='%s', email='%s')>" % (self.name, self.email)
-        return [self.id, self.name, self.passwd, self.email]
+        return self
+
 
 class Data(Base):
-    __tablename__= 'data'
+    __tablename__ = 'data'
     id = Column(Integer, primary_key=True)
     org = Column(String(50))
     place = Column(String(50))
@@ -79,18 +82,63 @@ Session = sessionmaker(bind=engine)
 Session.configure(bind=engine)  # once engine is available
 session = Session()
 
-ed_user =User(name='edi', passwd='passwd', email='edsmail@mail.org')
+"""
+Example Add registers
+
+ed_user = User(name='edi', passwd='passwd', email='edsmail@mail.org')
 
 session.add_all([
     User(name='wendy', email='wend@mail.org', passwd='foobar'),
-    User(name='mary',  email='mary@mail.org', passwd='xxg527'),
-    User(name='fred',  email='fred@mail.org', passwd='blah')])
+    User(name='mary', email='mary@mail.org', passwd='xxg527'),
+    User(name='fred', email='fred@mail.org', passwd='blah')])
 
-for dades in session.query(Data).filter(Data.timestamp>='2015-11-05 12:00:00').filter(Data.sensor=='air').filter(Data.dname=='temperature'):
+for dades in session.query(Data).filter(Data.timestamp >= '2015-11-05 12:00:00').filter(Data.sensor == 'air').filter(
+                Data.dname == 'temperature'):
     print dades.dname, dades.dvalue, dades.timestamp
+"""
 
 """
 How to get last value:
-""""
-results = session.query(Data).filter(Data.timestamp>='2015-11-05 12:00:00').filter(Data.sensor=='air').filter(Data.dname=='temperature').order_by((Data.id.desc()))
-results.fisrt()
+Current temp from air sensor
+
+SQL:
+use mqtt;
+SELECT data.place, data.timestamp, data.dvalue
+FROM data
+WHERE  data.timestamp >= '2015-11-06' AND data.dname ='temperature' AND sensor ='air'
+ORDER BY data.timestamp DESC
+LIMIT 0,1
+
+"""
+
+last_user = session.query(User.id, User.name, User.email).order_by(User.id.desc()).first()
+
+import datetime
+i = datetime.datetime.now()
+now = i.strftime('%Y-%m-%d') #2015-11-06
+
+last_temp = session.query(Data.dvalue).filter(Data.timestamp >= now).filter(Data.sensor == 'air').filter(Data.dname == 'temperature').order_by((Data.id.desc())).first()
+print last_temp[0]
+
+"""
+How to get a list and JSONify it
+"""
+row = session.query(User.id, User.name, User.email).all()
+
+import json
+row_json = json.dumps(row, sort_keys=True,indent=4)
+
+row2 = session.query(Data.timestamp, Data.dvalue).filter(Data.timestamp >= '2015-11-05 12:00:00').filter(Data.sensor == 'air').filter(Data.dname == 'temperature').
+
+"""
+use mqtt;
+SELECT data.place, data.timestamp, data.dvalue
+FROM data
+WHERE data.timestamp >= '2015-11-06' AND data.dname ='temperature' AND sensor ='air'
+ORDER BY data.timestamp ASC
+LIMIT 0,9999
+"""
+
+
+
+
