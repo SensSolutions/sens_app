@@ -38,6 +38,9 @@ def get_task(task_id):
 def not_found(error):
     return flask.make_response(flask.jsonify({'error': 'Not found'}), 404)
 
+
+# TODO Remove this dict and connect to DB
+
 tasks = [
     {
         'id': 1,

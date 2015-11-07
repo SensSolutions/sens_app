@@ -1,12 +1,16 @@
 # sens_platform
 Sens Solutions Application Platform
 
-#Installation Steps
-##Step 1:Clone the project to your application folder.
+# Installation Steps
+
+## Step 1:
+
+Clone the project to your application folder.
 
     git clone https://github.com/SensSolutions/sens_platform.git
 
-##Step 2: Activate the virtual environment and install the requirements.
+## Step 2:
+Activate the virtual environment and install the requirements.
  
      cd sens_platform
      virtualenv env

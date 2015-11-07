@@ -3,11 +3,15 @@
 Temperature Sensor Monitoring
 
 ##Installation Steps
-###Step 1:Clone the project to your application folder.
+### Step 1:
+
+Clone the project to your application folder.
 
     git clone https://github.com/SensSolutions/sens_platform.git
 
-###Step 2: Activate the virtual environment and install the requirements.
+### Step 2:
+
+Activate the virtual environment and install the requirements.
  
      cd sens_platform
      virtualenv env
@@ -18,7 +22,7 @@ Temperature Sensor Monitoring
 
      pip freeze|sed -e 's/==.*//'|xargs pip install --upgrade
 
-##TODO
+## TODO
 
  * Make resilience for connecting errors (create a temporary cache file where write JSON and send one by one where the connection will recover)
  * Daemonize code (and create startup scripts).
@@ -28,7 +32,7 @@ Temperature Sensor Monitoring
  * Do a sensor analyse function to calibrate sensor.
 
 
-##Copyright
+## Copyright
 
 * Parts of code are from [Adafruit's Raspberry-Pi Python Code Library](https://github.com/adafruit/Adafruit-Raspberry-Pi-Python-Code) by Tony DiCola.
 * Parts from [Cacti documentation](http://docs.cacti.net/manual:088:3a_advanced_topics.1_data_input_methods#making_your_scripts_work_with_cacti)
