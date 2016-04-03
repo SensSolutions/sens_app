@@ -19,13 +19,14 @@ def loadActuators(ActDict):
     This funtion loads correct driver for every actuator
     and returns the result values
     '''
+    act_module = None
     try:
 
-        module_name = "actuators." + ActDict['type']
-        logger.debug('Loading Sensor module %s with driver "%s"',
+        module_name = str("actuators." + ActDict['subtype'])
+        logger.debug('Loading Actuator module %s with driver "%s"',
                      module_name, ActDict['driver'])
         act_module = importlib.import_module(module_name, package=None)
-
+        # Loading Actuator module actuators.callhome with driver "call_home"
         print act_module
 
         try:
@@ -40,8 +41,9 @@ def loadActuators(ActDict):
         act_result = act_function(ActDict)
 
     except Exception, err:
-        logger.warning("Error importing custom module: %s No driver for: %s", str(err), act_module)
-        logger.debug("Using Bogus function")
+        logger.warning("Error importing custom module: %s No driver for: %s",
+                       str(err), act_module)
+        logger.debug("Using Bogus Actuator function")
         act_result = bogus_act.bogus(ActDict)
 
     return act_result

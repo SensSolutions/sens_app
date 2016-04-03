@@ -92,6 +92,7 @@ def pActuator(device):
     """
     while True:
         actData = loadActuators(device)
+        logger.debug("Actuator data: %s", actData)
         sendData(actData)
         time.sleep(device['sleep_time'])
 

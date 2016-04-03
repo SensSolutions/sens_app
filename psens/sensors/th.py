@@ -19,6 +19,7 @@ logger = logging.getLogger('PSENSv0.1')
        {"type":"sensor","name":"YYYYY"}]
 """
 
+
 def dht(d):
     """  Function to recover data from DHT type sensor with Adafruit Library """ 
     l = list()

@@ -5,57 +5,95 @@ created on Fry Sep 18 11:55:39 2015
 
 @author: mcollado
 """
-
-import paho.mqtt.client as mqtt
+import logging
+import paho.mqtt.publish as mqtt
 import subprocess
+import urllib
+import time
+import datetime
 
 logger = logging.getLogger('PSENSv0.1')
 
-def callHome(d):
-     d['topic'] = d['org'] + "/" + d['location'] + "/callhome"
-    message = 'ON'
-    def on_connect(mosq, obj, rc):
-        mqttc.subscribe(d['topic'] , 0)
-        logger.debug("Connected with Result Code: %s", str(rc))
-    
-    def on_message(mosq, obj, msg):
-        global message
-        missatge = msg.topic + " " + str(msg.qos) + " " + str(msg.payload)
-        logger.warning("Received: %s", missatge)
-        (ip,port) = msg.payload.split(":")
-        #message = msg.payload
-        #mqttc.publish("f2",msg.payload);
-        logger.warning("Calling home: %s:%s", ip, port)
-        startSSH(ip, port)
-        logger.debug("Hanging callhome")
-    
-    def on_publish(mosq, obj, mid):
-        logger.debug("mid: %s", str(mid))
-    
-    def on_subscribe(mosq, obj, mid, granted_qos):
-        logger.debug("Subscribed: %s QOS: %s", str(mid), str(granted_qos))
-    
-    def on_log(mosq, obj, level, string):
-        logger.debug(string)
-    
-    mqttc = mqtt.Client(d['clientID'])
-    # Assign event callbacks
-    mqttc.on_message = on_message
-    mqttc.on_connect = on_connect
-    mqttc.on_publish = on_publish
-    mqttc.on_subscribe = on_subscribe
-    mqttc.on_log = on_log # comment on production
-    # Connect
-    mqttc.connect(d['brokerRemoteIP'], 1883,60)
-    
-    
-    # Continue the network loop
-    mqttc.loop_forever()
+
+def call_home(d):
+    """
+    This functions publish the public ip address.
+    """
+    l = list()
+    d['topic'] = d['org'] + "/" + d['location'] + "/callhome"
+    try:
+        message = get_public_ip(d['get_public_ip'])
+        logger.debug("Got message to send: %s to %s", message, d['get_public_ip'])
+        now = datetime.datetime.now()
+        hora = now.strftime("%Y-%m-%d %H:%M:%S")
+        l.insert(0, {'dname': 'public_ip', 'dvalue': message, 'timestamp': hora})
+
+        """
+        def on_connect(mosq, obj, rc):
+           mqttc.subscribe(d['topic'] , 0)
+           logger.debug("Connected with Result Code: %s", str(rc))
+
+        def on_message(mosq, obj, msg):
+            global message
+            message = msg.topic + " " + str(msg.qos) + " " + str(msg.payload)
+            logger.warning("Received: %s", message)
+            (ip,port) = msg.payload.split(":")
+            #message = msg.payload
+            #mqttc.publish("f2",msg.payload);
+            logger.warning("Calling home: %s:%s", ip, port)
+            #startSSH(ip, port)
+            logger.debug("Hanging callhome")
+
+        def on_publish(mosq, obj, mid):
+            logger.debug("mid: %s", str(mid))
+
+        def on_subscribe(mosq, obj, mid, granted_qos):
+            logger.debug("Subscribed: %s QOS: %s", str(mid), str(granted_qos))
+
+        def on_log(mosq, obj, level, string):
+            logger.debug(string)
+
+        mqttc = mqtt.Client(d['clientID'])
+        # Assign event callbacks
+        #mqttc.on_message = on_message
+        mqttc.on_connect = on_connect
+        mqttc.on_publish = on_publish
+        #mqttc.on_subscribe = on_subscribe
+        mqttc.on_log = on_log # comment on production
+        # Connect
+        mqttc.connect(d['brokerRemoteIP'], 1883,60)
+
+
+        # Continue the network loop
+            mqttc.loop_forever()
+        """
+    except KeyboardInterrupt:
+        pass
+        # Just to capture the Traceback
+    except Exception, err:
+        logger.warning("Critical Error: %s", err)
+
+    return l
+
 
 def startSSH(ip, port):
     p = subprocess.Popen(["ssh", "-N", "-R", port + ":localhost:22", "pi@" + ip], stdout=subprocess.PIPE)
     output, err = p.communicate()
     logger.debug(output)
+
+
+def get_public_ip(ip):
+    """ This functions return the public IP
+    put this PHP script somewhere and call it remoteip.php:
+    <?php echo $_SERVER['REMOTE_ADDR']; ?>
+    """
+    p = None
+    try:
+        p = urllib.urlopen('http://' + ip + '/remoteip.php').read()
+    except Exception, err:
+        logger.warning("Can't get public IP: %s", err)
+
+    return p
 
 """
 TODO: use diferent users to log when callhome
@@ -65,10 +103,14 @@ TODO: use diferent users to log when callhome
 """
 The value of rc indicates success or not:
 
-0: Connection successful 1: Connection refused - incorrect protocol version 2: Connection refused - invalid client identifier 3: Connection refused - server unavailable 4: Connection refused - bad username or password 5: Connection refused - not authorised 6-255: Currently unused.
+0: Connection successful
+1: Connection refused - incorrect protocol version
+2: Connection refused - invalid client identifier
+3: Connection refused - server unavailable
+4: Connection refused - bad username or password
+5: Connection refused - not authorised
+6-255: Currently unused.
 """
-
-
 
 """
 Let's assume that Destination's IP is 192.168.20.55 (box that you want to access).
@@ -81,9 +123,10 @@ ssh -N -R 19999:localhost:22 sourceuser@138.47.99.99
 * port 19999 can be any unused port.
 
 Remote port forwarding for anyone at work !
-
+"""
+"""
 If you want everybody at source to be able to SSH into your destination 
-machine, there’s no -g option for remote forward, so you need to change the 
+machine, there's no -g option for remote forward, so you need to change the
 SSH configuration of source, add to sshd_config :
 
 GatewayPorts yes
