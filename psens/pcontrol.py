@@ -93,8 +93,10 @@ def pActuator(device):
     while True:
         actData = loadActuators(device)
         logger.debug("Actuator data: %s", actData)
-        sendData(actData)
-        time.sleep(device['sleep_time'])
+        device['results'] = actData
+        sendData(device)
+        if device['sleep_time']> 0:
+            time.sleep(device['sleep_time'])
 
 
 def pHibrid(device):

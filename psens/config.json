@@ -28,6 +28,15 @@
             "location": "pool",
             "get_public_ip": "84.88.95.122",
             "sleep_time": 60
+        },
+                {
+            "name": "get_stunnel",
+            "type": "actuator",
+            "subtype": "callhome",
+            "driver": "get_stunnel",
+            "location": "pool",
+            "get_public_ip": "84.88.95.122",
+            "sleep_time": 60
         }
      ],
      "global":[

@@ -20,6 +20,7 @@ def loadActuators(ActDict):
     and returns the result values
     '''
     act_module = None
+    act_result = None
     try:
 
         module_name = str("actuators." + ActDict['subtype'])
