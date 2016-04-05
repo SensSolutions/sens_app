@@ -5,13 +5,12 @@ created on Fry Sep 18 11:55:39 2015
 
 @author: mcollado
 """
+import datetime
 import logging
-import paho.mqtt.publish as mqtt
-import paho.mqtt.subscribe as mqttc
+import paho.mqtt.client as mqttc
 import subprocess
 import urllib
-import time
-import datetime
+
 
 logger = logging.getLogger('PSENSv0.1')
 
@@ -84,11 +83,11 @@ def get_stunnel(d):
     This functions subscribes to a broker's topic waiting for ip, port and user
     to stablish a reverse tunnel
     """
-    d['topic'] = d['org'] + "/" + d['location'] + "/callhome/remote_ip"
-
+    d['topic'] = d['org'] + "/" + d['location'] + "/actuator/callhome/remote_ip"
+    mqtt_con = None
 
     def on_connect(mosq, obj, rc):
-        mqttc.subscribe(d['topic'], 0)
+        #mqtt_con.subscribe(d['topic'], 0)
         logger.debug("Connected with Result Code: %s", str(rc))
 
 
@@ -99,8 +98,9 @@ def get_stunnel(d):
         (ip, port, uid) = msg.payload.split(":")
         # message = msg.payload
         # mqttc.publish("f2",msg.payload);
-        logger.warning("Calling home: %s:%s:%s", ip, port, uid)
-        # startSSH(ip, port)
+        logger.warning("Got message from broker: %s", message)
+        logger.warning("Calling home: IP: %s Port:%s User: %s", ip, port, uid)
+        startSSH(ip, port, uid)
         logger.debug("Hanging callhome")
 
 
@@ -109,25 +109,30 @@ def get_stunnel(d):
 
 
     def on_subscribe(mosq, obj, mid, granted_qos):
-        logger.debug("Subscribed: %s QOS: %s", str(mid), str(granted_qos))
+        logger.warning("Subscribed: %s QOS: %s", str(mid), str(granted_qos))
+        print("Subscribed: " + str(mid) + " " + str(granted_qos))
 
 
     def on_log(mosq, obj, level, string):
         logger.debug(string)
 
     try:
-        mqttc = mqtt.Client(d['clientID'])
+        mqtt_con = mqttc.Client(d['clientID'])
+        logger.debug("Creating object: %s", mqtt_con)
         # Assign event callbacks
-        mqttc.on_message = on_message
-        mqttc.on_connect = on_connect
-        # mqttc.on_publish = on_publish
-        mqttc.on_subscribe = on_subscribe
-        mqttc.on_log = on_log  # comment on production
+        mqtt_con.on_message = on_message
+        mqtt_con.on_connect = on_connect
+        mqttc.on_publish = on_publish
+        mqtt_con.on_subscribe = on_subscribe
+        mqtt_con.on_log = on_log  # comment on production
         # Connect
-        mqttc.connect(d['brokerRemoteIP'], 1883, 60)
+        mqtt_con.connect(d['brokerRemoteIP'], 1883, 60)
+        #mqtt_con.subscribe("$SYS/#", 0)
+        logger.warning("Going to subscribe to: %s", str(d['topic']))
+        mqtt_con.subscribe(str(d['topic']))
 
         # Continue the network loop
-        mqttc.loop_forever()
+        mqtt_con.loop_forever()
     except KeyboardInterrupt:
         pass
         # Just to capture the Traceback
@@ -136,18 +141,21 @@ def get_stunnel(d):
 
     return None
 
-'''
+
 def startSSH(ip, port, uid):
     """
-    This funtion stablishes a reverse tunnel from PSens to tunnel server
+    This function establish a reverse tunnel from PSens to tunnel server
     """
-    ip = "84.88.95.122"
-    port = "22"
-    uid = "pi"
-    p = subprocess.Popen(["ssh", "-N", "-R", port + ":localhost:" + port + ", uid + "@" + ip], stdout=subprocess.PIPE)
-    output, err = p.communicate()
-    logger.debug(output)
-'''
+    #ip = "84.88.95.122"
+    #port = "22"
+    #uid = "pi"
+    p = None
+    try:
+        p = subprocess.Popen(["ssh", "-N", "-R", port + ":localhost:22", uid + "@" + ip], stdout=subprocess.PIPE)
+        output, err = p.communicate()
+        logger.debug(output)
+    except Exception, err:
+        logger.warning("Can't create tunnel: %s", err)
 
 def get_public_ip(ip):
     """ This functions return the public IP
@@ -162,9 +170,6 @@ def get_public_ip(ip):
 
     return p
 
-"""
-TODO: use diferent users to log when callhome
-"""
 
 
 """

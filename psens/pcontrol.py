@@ -73,16 +73,22 @@ def pSensor(device):
      'type': 'sensor',
      'what': 'sensors'}
     """
-    while True:
-        # from pprint import pprint
+    try:
+        while True:
+            # from pprint import pprint
 
-        sResultList = readSensor(device)
-        logger.debug("Results: %s", sResultList)
-        device['results'] = sResultList
-        # pprint(device)
-        """Append result list to device dictionary"""
-        sendData(device)
-        time.sleep(device['sleep_time'])
+            sResultList = readSensor(device)
+            logger.debug("Results: %s", sResultList)
+            device['results'] = sResultList
+            # pprint(device)
+            """Append result list to device dictionary"""
+            sendData(device)
+            time.sleep(device['sleep_time'])
+    except KeyboardInterrupt:
+        pass
+    # Just to capture the Traceback
+    except Exception, err:
+        logger.warning("Critical Error: %s", err)
 
 
 def pActuator(device):
@@ -90,33 +96,50 @@ def pActuator(device):
     Here we define the bussines logic for actuators.
     Specific functions for sensors are defined in actuators.py
     """
-    while True:
-        actData = loadActuators(device)
-        logger.debug("Actuator data: %s", actData)
-        device['results'] = actData
-        sendData(device)
-        if device['sleep_time']> 0:
-            time.sleep(device['sleep_time'])
+    try:
+        while True:
+            actData = loadActuators(device)
+            # logger.debug("Actuator data: %s", actData)
+
+            if actData != None:
+                device['results'] = actData
+                sendData(device)
+
+            if device['sleep_time']> 0:
+                time.sleep(device['sleep_time'])
+
+    except KeyboardInterrupt:
+        pass
+    # Just to capture the Traceback
+    except Exception, err:
+        logger.warning("Critical Error: %s", err)
+
 
 
 def pHibrid(device):
     """
     Here we define the bussines logic for a sensor plus an actuator.
     """
-    while True:
-        """To think and define this Block"""
-        sResultList = readSensor(device)
-        sendData(sResultList)
-        if "actuators" in device:
-            for actuator in device['actuators']:
-                try:
-                    act_module = importlib.import_module(actuator, package=None)
-                    act_function = getattr(act_module, device['act_function'])
-                except Exception, err:
-                    logger.warning("Error: %s", err)
-                act_result = act_function(sResultList)
-                sendData(act_result)
+    try:
+        while True:
+            """To think and define this Block"""
+            sResultList = readSensor(device)
+            sendData(sResultList)
+            if "actuators" in device:
+                for actuator in device['actuators']:
+                    try:
+                        act_module = importlib.import_module(actuator, package=None)
+                        act_function = getattr(act_module, device['act_function'])
+                    except Exception, err:
+                        logger.warning("Error: %s", err)
+                    act_result = act_function(sResultList)
+                    sendData(act_result)
 
-        """ Until here """
-        time.sleep(device['sleep_time'])
+            """ Until here """
+            time.sleep(device['sleep_time'])
+    except KeyboardInterrupt:
+        pass
+    # Just to capture the Traceback
+    except Exception, err:
+        logger.warning("Critical Error: %s", err)
 
