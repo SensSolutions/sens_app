@@ -151,7 +151,7 @@ def startSSH(ip, port, uid):
     #uid = "pi"
     p = None
     try:
-        p = subprocess.Popen(["ssh", "-N", "-R", port + ":localhost:22", uid + "@" + ip], stdout=subprocess.PIPE)
+        p = subprocess.Popen(["ssh", "-N", "-R", port + ":localhost:22", uid + "@" + ip, "-i psens_id_rsa", "-v"], stdout=subprocess.PIPE)
         output, err = p.communicate()
         logger.debug(output)
     except Exception, err:
